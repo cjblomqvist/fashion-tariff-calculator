@@ -1,17 +1,31 @@
 const questions = [
   {
     id: 1,
-    title: "Material",
-    question: "What main material is your shoe made of?",
-    type: "multipleChoice",
-    answers: ["Leather", "Rubber", "Wood"],
+    title: "continent",
+    question: "Are you importing from EU?",
+    type: "boolean",
+    answers: ["yes", "no"],
   },
   {
-    id: 5,
-    title: "Sole material",
-    question: "What material is the sole made of?",
+    id: 2,
+    title: "sole material",
+    question: "What is the upper material?",
     type: "multipleChoice",
-    answers: ["Leather", "Rubber", "Wood", "Metal"],
+    answers: ["leather", "textile", "rubber", "plastic", "other"],
+  },
+  {
+    id: 3,
+    title: "part",
+    question: "Determine what kind of parts?",
+    type: "multipleChoice",
+    answers: [
+      "uppers and parts thereof, other stiffeners",
+      "outer soles and heels",
+      "assemblies of uppers affixed to inne soles or to outer soles but without outer outer soles",
+      "removable insoles and other removable accesories",
+      "outer soles",
+      "gaiters, bone leather and similar articles and parts thereof",
+    ],
   },
 ];
 
@@ -22,10 +36,18 @@ export function calculator(inputData) {
       code: "",
       partial: true,
     };
-  } else
-    return {
-      question: questions[1],
-      code: "6401",
-      partial: true,
-    };
+  } else {
+    if (inputData.answers[0].answer === 0)
+      return {
+        question: questions[1],
+        code: "",
+        partial: true,
+      };
+    else if (inputData.answers[0].answer === 1)
+      return {
+        question: questions[2],
+        code: "6406",
+        partial: true,
+      };
+  }
 }
