@@ -22,28 +22,6 @@ test("When no answers exist, then return first question", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When the user has answered yes", () => {
-  let inputData, result;
-
-  inputData = {
-    euro: "",
-    answers: [{ questionId: 1, answer: 0 }],
-  };
-
-  result = {
-    question: {
-      id: 2,
-      title: "sole material",
-      question: "What is the upper material?",
-      type: "multipleChoice",
-      answers: ["leather", "textile", "rubber", "plastic", "other"],
-    },
-    code: "",
-    partial: true,
-  };
-
-  expect(calculator(inputData)).toStrictEqual(result);
-});
 test("When the user has answered No", () => {
   let inputData, result;
 
@@ -74,18 +52,43 @@ test("When the user has answered No", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When the user has answered No", () => {
+test("When the user has answered yes", () => {
   let inputData, result;
-
   inputData = {
     euro: "",
-    answers: [{ questionId: 2, answer: 0 }],
+    answers: [{ questionId: 1, answer: 0 }],
   };
 
   result = {
     question: {
+      id: 2,
+      title: "sole material",
+      question: "What is the upper material?",
+      type: "multipleChoice",
+      answers: ["leather", "textile", "rubber", "plastic", "other"],
+    },
+    code: "",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When the user answer question id:2 ", () => {
+  let inputData, result;
+  /*   let upperType; */
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 3 },
+    ],
+  };
+  result = {
+    question: {
       id: 4,
-      title: "part",
+      title: "sole material",
       question: "what kind of sole is it?",
       type: "multipleChoice",
       answers: [

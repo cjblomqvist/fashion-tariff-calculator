@@ -27,6 +27,20 @@ const questions = [
       "gaiters, bone leather and similar articles and parts thereof",
     ],
   },
+  {
+    id: 4,
+    title: "sole material",
+    question: "what kind of sole is it?",
+    type: "multipleChoice",
+    answers: [
+      "leather",
+      "imitation leather",
+      "rubber",
+      "plastic",
+      "wood or cork",
+      "other",
+    ],
+  },
 ];
 
 export function calculator(inputData) {
@@ -37,17 +51,26 @@ export function calculator(inputData) {
       partial: true,
     };
   } else {
-    if (inputData.answers[0].answer === 0)
+    if (inputData.answers[0].answer === 0) {
+      if (inputData.answers[1]) {
+        return {
+          question: questions[3],
+          code: "",
+          partial: true,
+        };
+      }
+
       return {
         question: questions[1],
         code: "",
         partial: true,
       };
-    else if (inputData.answers[0].answer === 1)
+    } else if (inputData.answers[0].answer === 1) {
       return {
         question: questions[2],
         code: "6406",
         partial: true,
       };
+    }
   }
 }
