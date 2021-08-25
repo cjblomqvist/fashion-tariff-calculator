@@ -101,9 +101,15 @@ export function calculator(inputData) {
                 inputData.answers[4].answer === 11 ||
                 inputData.answers[4].answer === 12)
             ) {
+              if (inputData.answers[5] && inputData.answers[5].answer === 0) {
+                return {
+                  code: 6401.1,
+                  partial: false,
+                };
+              }
               return {
                 question: questions[6],
-                code: "",
+                code: 6401,
                 partial: true,
               };
             }
@@ -133,7 +139,7 @@ export function calculator(inputData) {
     } else if (inputData.answers[0].answer === 1) {
       return {
         question: questions[2],
-        code: "6406",
+        code: 6406,
         partial: true,
       };
     }

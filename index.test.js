@@ -45,7 +45,7 @@ test("When the user has answered No", () => {
         "gaiters, bone leather and similar articles and parts thereof",
       ],
     },
-    code: "6406",
+    code: 6406,
     partial: true,
   };
 
@@ -194,8 +194,30 @@ test("When waterproof=true and processType=1 or 11 or 12 ", () => {
       type: "boolean",
       answers: ["yes", "no"],
     },
-    code: "",
+    code: 6401,
     partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When metal toEcap =true ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 4 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+      { questionId: 6, answer: 1 },
+      { questionId: 7, answer: 0 },
+    ],
+  };
+  result = {
+    code: 6401.1,
+    partial: false,
   };
 
   expect(calculator(inputData)).toStrictEqual(result);
