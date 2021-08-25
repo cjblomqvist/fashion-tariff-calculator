@@ -8,7 +8,7 @@ const questions = [
   },
   {
     id: 2,
-    title: "sole material",
+    title: "upper material",
     question: "What is the upper material?",
     type: "multipleChoice",
     answers: ["leather", "textile", "rubber", "plastic", "other"],
@@ -41,6 +41,13 @@ const questions = [
       "other",
     ],
   },
+  {
+    id: 5,
+    title: "waterproof",
+    question: "is it water proof?",
+    type: "boolean",
+    answers: ["yes", "no"],
+  },
 ];
 
 export function calculator(inputData) {
@@ -53,6 +60,16 @@ export function calculator(inputData) {
   } else {
     if (inputData.answers[0].answer === 0) {
       if (inputData.answers[1]) {
+        if (
+          (inputData.answers[1].answer === 3 ||
+            inputData.answers[1].answer === 4) &&
+          (inputData.answers[2].answer === 3 ||
+            inputData.answers[2].answer === 4)
+        ) {
+          return { question: questions[4], code: "", partial: true };
+        } else {
+        }
+
         return {
           question: questions[3],
           code: "",

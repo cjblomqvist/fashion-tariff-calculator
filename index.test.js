@@ -62,7 +62,7 @@ test("When the user has answered yes", () => {
   result = {
     question: {
       id: 2,
-      title: "sole material",
+      title: "upper material",
       question: "What is the upper material?",
       type: "multipleChoice",
       answers: ["leather", "textile", "rubber", "plastic", "other"],
@@ -76,13 +76,12 @@ test("When the user has answered yes", () => {
 
 test("When the user answer question id:2 ", () => {
   let inputData, result;
-  /*   let upperType; */
 
   inputData = {
     euro: "",
     answers: [
       { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 3 },
+      { questionId: 2, answer: 0 },
     ],
   };
   result = {
@@ -99,6 +98,32 @@ test("When the user answer question id:2 ", () => {
         "wood or cork",
         "other",
       ],
+    },
+    code: "",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When the user answer question id:4 and upperType=3 or 4 and soleType=3 or 4 ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 4 },
+      { questionId: 4, answer: 4 },
+    ],
+  };
+  result = {
+    question: {
+      id: 5,
+      title: "waterproof",
+      question: "is it water proof?",
+      type: "boolean",
+      answers: ["yes", "no"],
     },
     code: "",
     partial: true,
