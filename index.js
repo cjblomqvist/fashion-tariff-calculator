@@ -48,6 +48,34 @@ const questions = [
     type: "boolean",
     answers: ["yes", "no"],
   },
+  {
+    id: 6,
+    title: "process",
+    question: "which process you used ?",
+    type: "multipleChoice",
+    answers: [
+      "cementing",
+      "moccasins",
+      "sticj down and related",
+      "goodyesr welted",
+      "stich and turn",
+      "pegged",
+      "opanka",
+      "norwegian",
+      "bologna(sacchetto)",
+      "blake and blake rapid",
+      "vulcanization",
+      "direct injection process",
+      "hand stiched",
+    ],
+  },
+  {
+    id: 7,
+    title: "toeCap",
+    question: "is material toeCap?",
+    type: "boolean",
+    answers: ["yes", "no"],
+  },
 ];
 
 export function calculator(inputData) {
@@ -66,6 +94,26 @@ export function calculator(inputData) {
           (inputData.answers[2].answer === 3 ||
             inputData.answers[2].answer === 4)
         ) {
+          if (inputData.answers[3] && inputData.answers[3].answer === 0) {
+            if (
+              inputData.answers[4] &&
+              (inputData.answers[4].answer === 1 ||
+                inputData.answers[4].answer === 11 ||
+                inputData.answers[4].answer === 12)
+            ) {
+              return {
+                question: questions[6],
+                code: "",
+                partial: true,
+              };
+            }
+            return {
+              question: questions[5],
+              code: "",
+              partial: true,
+            };
+          } else {
+          }
           return { question: questions[4], code: "", partial: true };
         } else {
         }

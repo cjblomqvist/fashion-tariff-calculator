@@ -131,6 +131,7 @@ test("When the user answer question id:4 and upperType=3 or 4 and soleType=3 or 
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
+
 test("When upperType=3 or 4 and soleType=3 or 4 and waterproof=true ", () => {
   let inputData, result;
 
@@ -145,9 +146,51 @@ test("When upperType=3 or 4 and soleType=3 or 4 and waterproof=true ", () => {
   };
   result = {
     question: {
-      id: 5,
-      title: "waterproof",
-      question: "is it water proof?",
+      id: 6,
+      title: "process",
+      question: "which process you used ?",
+      type: "multipleChoice",
+      answers: [
+        "cementing",
+        "moccasins",
+        "sticj down and related",
+        "goodyesr welted",
+        "stich and turn",
+        "pegged",
+        "opanka",
+        "norwegian",
+        "bologna(sacchetto)",
+        "blake and blake rapid",
+        "vulcanization",
+        "direct injection process",
+        "hand stiched",
+      ],
+    },
+    code: "",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When waterproof=true and processType=1 or 11 or 12 ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 4 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+      { questionId: 6, answer: 1 },
+    ],
+  };
+  result = {
+    question: {
+      id: 7,
+      title: "toeCap",
+      question: "is material toeCap?",
       type: "boolean",
       answers: ["yes", "no"],
     },
