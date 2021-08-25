@@ -114,7 +114,33 @@ test("When the user answer question id:4 and upperType=3 or 4 and soleType=3 or 
     answers: [
       { questionId: 1, answer: 0 },
       { questionId: 2, answer: 4 },
+      { questionId: 4, answer: 3 },
+    ],
+  };
+  result = {
+    question: {
+      id: 5,
+      title: "waterproof",
+      question: "is it water proof?",
+      type: "boolean",
+      answers: ["yes", "no"],
+    },
+    code: "",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When upperType=3 or 4 and soleType=3 or 4 and waterproof=true ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 4 },
       { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
     ],
   };
   result = {
