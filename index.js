@@ -41,15 +41,9 @@ const questions = [
       "other",
     ],
   },
+
   {
     id: 5,
-    title: "waterproof",
-    question: "is it water proof?",
-    type: "boolean",
-    answers: ["yes", "no"],
-  },
-  {
-    id: 6,
     title: "process",
     question: "which process you used ?",
     type: "multipleChoice",
@@ -70,11 +64,29 @@ const questions = [
     ],
   },
   {
+    id: 6,
+    title: "waterproof",
+    question: "is it water proof?",
+    type: "boolean",
+    answers: ["yes", "no"],
+  },
+  {
     id: 7,
     title: "toeCap",
     question: "is material toeCap?",
     type: "boolean",
     answers: ["yes", "no"],
+  },
+  {
+    id: 8,
+    title: "shaftHeightType",
+    question: "determine how much length the shafts have?",
+    type: "multipleChoice",
+    answers: [
+      "shafts that cover the ankle but not the knee",
+      "shafts that cover the knee",
+      "other",
+    ],
   },
 ];
 
@@ -85,28 +97,53 @@ export function calculator(inputData) {
       code: "",
       partial: true,
     };
-  } else {
-    if (inputData.answers[0].answer === 0) {
-      if (inputData.answers[1]) {
-        if (
-          (inputData.answers[1].answer === 3 ||
-            inputData.answers[1].answer === 4) &&
-          (inputData.answers[2].answer === 3 ||
-            inputData.answers[2].answer === 4)
-        ) {
-          if (inputData.answers[3] && inputData.answers[3].answer === 0) {
-            if (
-              inputData.answers[4] &&
-              (inputData.answers[4].answer === 1 ||
-                inputData.answers[4].answer === 11 ||
-                inputData.answers[4].answer === 12)
-            ) {
-              if (inputData.answers[5] && inputData.answers[5].answer === 0) {
+  }
+  if (inputData.answers[0].answer === 0) {
+    if (inputData.answers[1]) {
+      if (
+        (inputData.answers[1].answer === 3 ||
+          inputData.answers[1].answer === 4) &&
+        (inputData.answers[2].answer === 3 || inputData.answers[2].answer === 4)
+      ) {
+        if (inputData.answers[3] && inputData.answers[3].answer === 0) {
+          if (
+            inputData.answers[4] &&
+            (inputData.answers[4].answer === 1 ||
+              inputData.answers[4].answer === 11 ||
+              inputData.answers[4].answer === 12)
+          ) {
+            if (inputData.answers[5] && inputData.answers[5].answer === 0) {
+              return {
+                code: 64011,
+                partial: false,
+              };
+            } else {
+              if (
+                inputData.answers[6] &&
+                inputData.answers[6].answer === 1 &&
+                inputData.answers[1] === 3
+              ) {
                 return {
-                  code: 6401.1,
+                  code: 6401921000,
                   partial: false,
                 };
               }
+              if (
+                inputData.answers[6] &&
+                inputData.answers[6].answer === 1 &&
+                inputData.answers[1] === 4
+              ) {
+                return {
+                  code: 6401929000,
+                  partial: false,
+                };
+              }
+              return {
+                question: questions[7],
+                code: 6401,
+                partial: true,
+              };
+
               return {
                 question: questions[6],
                 code: 6401,
@@ -118,7 +155,6 @@ export function calculator(inputData) {
               code: "",
               partial: true,
             };
-          } else {
           }
           return { question: questions[4], code: "", partial: true };
         } else {

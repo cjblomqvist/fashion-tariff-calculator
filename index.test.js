@@ -114,39 +114,12 @@ test("When the user answer question id:4 and upperType=3 or 4 and soleType=3 or 
     answers: [
       { questionId: 1, answer: 0 },
       { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 3 },
+      { questionId: 4, answer: 4 },
     ],
   };
   result = {
     question: {
       id: 5,
-      title: "waterproof",
-      question: "is it water proof?",
-      type: "boolean",
-      answers: ["yes", "no"],
-    },
-    code: "",
-    partial: true,
-  };
-
-  expect(calculator(inputData)).toStrictEqual(result);
-});
-
-test("When upperType=3 or 4 and soleType=3 or 4 and waterproof=true ", () => {
-  let inputData, result;
-
-  inputData = {
-    euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-    ],
-  };
-  result = {
-    question: {
-      id: 6,
       title: "process",
       question: "which process you used ?",
       type: "multipleChoice",
@@ -166,6 +139,7 @@ test("When upperType=3 or 4 and soleType=3 or 4 and waterproof=true ", () => {
         "hand stiched",
       ],
     },
+
     code: "",
     partial: true,
   };
@@ -173,7 +147,34 @@ test("When upperType=3 or 4 and soleType=3 or 4 and waterproof=true ", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When waterproof=true and processType=1 or 11 or 12 ", () => {
+test("when user answer question 5", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 4 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+    ],
+  };
+  result = {
+    question: {
+      id: 6,
+      title: "waterproof",
+      question: "is it water proof?",
+      type: "boolean",
+      answers: ["yes", "no"],
+    },
+    code: "",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When waterproof is true and processType is answer: 1 or 11 or 12 ", () => {
   let inputData, result;
 
   inputData = {
@@ -201,7 +202,7 @@ test("When waterproof=true and processType=1 or 11 or 12 ", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When metal toEcap =true ", () => {
+test("When metal toEcap is true ", () => {
   let inputData, result;
 
   inputData = {
@@ -216,7 +217,106 @@ test("When metal toEcap =true ", () => {
     ],
   };
   result = {
-    code: 6401.1,
+    code: 64011,
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When metal toEcap is false ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 4 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+      { questionId: 6, answer: 1 },
+      { questionId: 7, answer: 1 },
+    ],
+  };
+  result = {
+    code: 6401,
+    partial: true,
+    question: {
+      id: 8,
+      title: "shaftHeightType",
+      question: "determine how much length the shafts have?",
+      type: "multipleChoice",
+      answers: [
+        "shafts that cover the ankle but not the knee",
+        "shafts that cover the knee",
+        "other",
+      ],
+    },
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaftHeightTyle is answer:1", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 3 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+      { questionId: 6, answer: 1 },
+      { questionId: 7, answer: 1 },
+      { questionId: 8, answer: 1 },
+    ],
+  };
+  result = {
+    code: 6401921000,
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaftHeightTyle is answer:1", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 3 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+      { questionId: 6, answer: 1 },
+      { questionId: 7, answer: 1 },
+      { questionId: 8, answer: 2 },
+    ],
+  };
+  result = {
+    code: 6401990010,
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaftHeightTyle is answer:1", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    answers: [
+      { questionId: 1, answer: 0 },
+      { questionId: 2, answer: 3 },
+      { questionId: 4, answer: 4 },
+      { questionId: 5, answer: 0 },
+      { questionId: 6, answer: 1 },
+      { questionId: 7, answer: 1 },
+      { questionId: 8, answer: 3 },
+    ],
+  };
+  result = {
+    code: 6401990090,
     partial: false,
   };
 
