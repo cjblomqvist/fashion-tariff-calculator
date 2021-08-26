@@ -90,6 +90,12 @@ const questions = [
   },
 ];
 
+//
+function getAnswer(inputData, n) {
+  return inputData.answers[n] ? inputData.answers[n].answer : -1;
+}
+//
+
 export function calculator(inputData) {
   if (!inputData.answers) {
     return {
@@ -98,76 +104,42 @@ export function calculator(inputData) {
       partial: true,
     };
   }
-  if (inputData.answers[0].answer === 0) {
-    if(inputData.answer[1]){
-
-           if (
+  if (getAnswer(inputData, 0) === 0) {
+    if (inputData.answers[1]) {
+      if (
         (inputData.answers[1].answer === 3 ||
           inputData.answers[1].answer === 4) &&
         (inputData.answers[2].answer === 3 || inputData.answers[2].answer === 4)
       ) {
-
-if (inputData.answers[3]){
-  return{
-    question: questions[5],
-    code: "",
-    partial: true,
-  }
-}
-
-
-        return {
-          question: questions[4],
-          code: "",
-          partial: true,
-        };}
-
-      return{
-        question: questions[3],
-        code: "",
-        partial: true,
-      }
-    }
-    return {
-      question: questions[1],
-      code: "",
-      partial: true,
-    };
-  }
-   
- 
-
-if (inputData.answers[3] && inputData.answers[3].answer === 0) {
+        if (inputData.answers[3]) {
           if (
             inputData.answers[4] &&
-            (inputData.
-        answers[4].answer === 1 ||
+            (inputData.answers[4].answer === 1 ||
               inputData.answers[4].answer === 11 ||
               inputData.answers[4].answer === 12)
           ) {
-            if (inputData.answers[5] && inputData.answers[5].answer === 0) {
+            if (getAnswer(inputData, 5) === 0) {
               return {
                 code: 64011,
                 partial: false,
               };
-            } else {
-              if (
-                inputData.answers[6] &&
-                inputData.answers[6].answer === 1 &&
-                inputData.answers[1] === 3
-              ) {
+            }
+            if (getAnswer(inputData, 5) === 1) {
+              if (getAnswer(inputData, 6) === 1) {
                 return {
                   code: 6401921000,
                   partial: false,
                 };
               }
-              if (
-                inputData.answers[6] &&
-                inputData.answers[6].answer === 1 &&
-                inputData.answers[1] === 4
-              ) {
+              if (getAnswer(inputData, 6) === 2) {
                 return {
-                  code: 6401929000,
+                  code: 6401990010,
+                  partial: false,
+                };
+              }
+              if (getAnswer(inputData, 6) === 3) {
+                return {
+                  code: 6401990090,
                   partial: false,
                 };
               }
@@ -176,29 +148,40 @@ if (inputData.answers[3] && inputData.answers[3].answer === 0) {
                 code: 6401,
                 partial: true,
               };
-
-              return {
-                question: questions[6],
-                code: 6401,
-                partial: true,
-              };
             }
-           
+            return {
+              question: questions[6],
+              code: 6401,
+              partial: true,
+            };
           }
-          return { question: questions[4], code: "", partial: true };
-        } else {
+
+          return {
+            question: questions[5],
+            code: "",
+            partial: true,
+          };
         }
 
         return {
-          question: questions[3],
+          question: questions[4],
           code: "",
           partial: true,
         };
       }
 
-   
-    
-  else {
+      return {
+        question: questions[3],
+        code: "",
+        partial: true,
+      };
+    }
+    return {
+      question: questions[1],
+      code: "",
+      partial: true,
+    };
+  } else {
     return {
       question: questions[2],
       code: 6406,

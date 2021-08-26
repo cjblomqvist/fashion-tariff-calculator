@@ -278,7 +278,7 @@ test("When shaftHeightTyle is answer:1", () => {
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When shaftHeightTyle is answer:1", () => {
+test("When shaftHeightTyle is answer:2", () => {
   let inputData, result;
 
   inputData = {
@@ -300,7 +300,7 @@ test("When shaftHeightTyle is answer:1", () => {
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When shaftHeightTyle is answer:1", () => {
+test("When shaftHeightTyle is answer:3", () => {
   let inputData, result;
 
   inputData = {
