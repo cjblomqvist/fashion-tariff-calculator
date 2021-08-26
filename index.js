@@ -99,16 +99,49 @@ export function calculator(inputData) {
     };
   }
   if (inputData.answers[0].answer === 0) {
-    if (inputData.answers[1]) {
-      if (
+    if(inputData.answer[1]){
+
+           if (
         (inputData.answers[1].answer === 3 ||
           inputData.answers[1].answer === 4) &&
         (inputData.answers[2].answer === 3 || inputData.answers[2].answer === 4)
       ) {
-        if (inputData.answers[3] && inputData.answers[3].answer === 0) {
+
+if (inputData.answers[3]){
+  return{
+    question: questions[5],
+    code: "",
+    partial: true,
+  }
+}
+
+
+        return {
+          question: questions[4],
+          code: "",
+          partial: true,
+        };}
+
+      return{
+        question: questions[3],
+        code: "",
+        partial: true,
+      }
+    }
+    return {
+      question: questions[1],
+      code: "",
+      partial: true,
+    };
+  }
+   
+ 
+
+if (inputData.answers[3] && inputData.answers[3].answer === 0) {
           if (
             inputData.answers[4] &&
-            (inputData.answers[4].answer === 1 ||
+            (inputData.
+        answers[4].answer === 1 ||
               inputData.answers[4].answer === 11 ||
               inputData.answers[4].answer === 12)
           ) {
@@ -150,11 +183,7 @@ export function calculator(inputData) {
                 partial: true,
               };
             }
-            return {
-              question: questions[5],
-              code: "",
-              partial: true,
-            };
+           
           }
           return { question: questions[4], code: "", partial: true };
         } else {
@@ -167,17 +196,13 @@ export function calculator(inputData) {
         };
       }
 
-      return {
-        question: questions[1],
-        code: "",
-        partial: true,
-      };
-    } else if (inputData.answers[0].answer === 1) {
-      return {
-        question: questions[2],
-        code: 6406,
-        partial: true,
-      };
-    }
+   
+    
+  else {
+    return {
+      question: questions[2],
+      code: 6406,
+      partial: true,
+    };
   }
 }
