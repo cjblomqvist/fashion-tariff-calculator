@@ -1,5 +1,5 @@
-import { footwear } from './footwear.js';
+import { footwear } from "./footwear.js";
 
 export function getQuestion(key) {
-  return footwear.find(question => question.key === key);
+  return footwear.find((question) => question.key === key);
 }

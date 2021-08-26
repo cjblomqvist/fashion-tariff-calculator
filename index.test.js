@@ -1,4 +1,5 @@
 import { calculator } from "./index";
+import { getQuestion } from "./questions/index";
 
 test("When no answers exist, then return first question", () => {
   let inputData, result;
@@ -8,13 +9,7 @@ test("When no answers exist, then return first question", () => {
   };
 
   result = {
-    question: {
-      id: 1,
-      title: "continent",
-      question: "Are you importing from EU?",
-      type: "boolean",
-      answers: ["yes", "no"],
-    },
+    question: getQuestion("footwearOrComponents"),
     code: "",
     partial: true,
   };
@@ -31,20 +26,7 @@ test("When the user has answered No", () => {
   };
 
   result = {
-    question: {
-      id: 3,
-      title: "part",
-      question: "Determine what kind of parts?",
-      type: "multipleChoice",
-      answers: [
-        "uppers and parts thereof, other stiffeners",
-        "outer soles and heels",
-        "assemblies of uppers affixed to inne soles or to outer soles but without outer outer soles",
-        "removable insoles and other removable accesories",
-        "outer soles",
-        "gaiters, bone leather and similar articles and parts thereof",
-      ],
-    },
+    question: getQuestion("part"),
     code: 6406,
     partial: true,
   };
@@ -60,13 +42,7 @@ test("When the user has answered yes", () => {
   };
 
   result = {
-    question: {
-      id: 2,
-      title: "upper material",
-      question: "What is the upper material?",
-      type: "multipleChoice",
-      answers: ["leather", "textile", "rubber", "plastic", "other"],
-    },
+    question: getQuestion("upperType"),
     code: "",
     partial: true,
   };
@@ -85,20 +61,7 @@ test("When the user answer question id:2 ", () => {
     ],
   };
   result = {
-    question: {
-      id: 4,
-      title: "sole material",
-      question: "what kind of sole is it?",
-      type: "multipleChoice",
-      answers: [
-        "leather",
-        "imitation leather",
-        "rubber",
-        "plastic",
-        "wood or cork",
-        "other",
-      ],
-    },
+    question: getQuestion("sole"),
     code: "",
     partial: true,
   };
@@ -118,28 +81,7 @@ test("When the user answer question id:4 and upperType=3 or 4 and soleType=3 or 
     ],
   };
   result = {
-    question: {
-      id: 5,
-      title: "process",
-      question: "which process you used ?",
-      type: "multipleChoice",
-      answers: [
-        "cementing",
-        "moccasins",
-        "sticj down and related",
-        "goodyesr welted",
-        "stich and turn",
-        "pegged",
-        "opanka",
-        "norwegian",
-        "bologna(sacchetto)",
-        "blake and blake rapid",
-        "vulcanization",
-        "direct injection process",
-        "hand stiched",
-      ],
-    },
-
+    question: getQuestion("process"),
     code: "",
     partial: true,
   };
@@ -160,13 +102,7 @@ test("when user answer question 5", () => {
     ],
   };
   result = {
-    question: {
-      id: 6,
-      title: "waterproof",
-      question: "is it water proof?",
-      type: "boolean",
-      answers: ["yes", "no"],
-    },
+    question: getQuestion("waterProof"),
     code: "",
     partial: true,
   };
@@ -188,13 +124,7 @@ test("When waterproof is true and processType is answer: 1 or 11 or 12 ", () => 
     ],
   };
   result = {
-    question: {
-      id: 7,
-      title: "toeCap",
-      question: "is material toeCap?",
-      type: "boolean",
-      answers: ["yes", "no"],
-    },
+    question: getQuestion("toeCap"),
     code: 6401,
     partial: true,
   };
@@ -239,19 +169,9 @@ test("When metal toEcap is false ", () => {
     ],
   };
   result = {
+    question: getQuestion("shaft"),
     code: 6401,
     partial: true,
-    question: {
-      id: 8,
-      title: "shaftHeightType",
-      question: "determine how much length the shafts have?",
-      type: "multipleChoice",
-      answers: [
-        "shafts that cover the ankle but not the knee",
-        "shafts that cover the knee",
-        "other",
-      ],
-    },
   };
 
   expect(calculator(inputData)).toStrictEqual(result);

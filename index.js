@@ -1,94 +1,4 @@
-const questions = [
-  {
-    id: 1,
-    title: "continent",
-    question: "Are you importing from EU?",
-    type: "boolean",
-    answers: ["yes", "no"],
-  },
-  {
-    id: 2,
-    title: "upper material",
-    question: "What is the upper material?",
-    type: "multipleChoice",
-    answers: ["leather", "textile", "rubber", "plastic", "other"],
-  },
-  {
-    id: 3,
-    title: "part",
-    question: "Determine what kind of parts?",
-    type: "multipleChoice",
-    answers: [
-      "uppers and parts thereof, other stiffeners",
-      "outer soles and heels",
-      "assemblies of uppers affixed to inne soles or to outer soles but without outer outer soles",
-      "removable insoles and other removable accesories",
-      "outer soles",
-      "gaiters, bone leather and similar articles and parts thereof",
-    ],
-  },
-  {
-    id: 4,
-    title: "sole material",
-    question: "what kind of sole is it?",
-    type: "multipleChoice",
-    answers: [
-      "leather",
-      "imitation leather",
-      "rubber",
-      "plastic",
-      "wood or cork",
-      "other",
-    ],
-  },
-
-  {
-    id: 5,
-    title: "process",
-    question: "which process you used ?",
-    type: "multipleChoice",
-    answers: [
-      "cementing",
-      "moccasins",
-      "sticj down and related",
-      "goodyesr welted",
-      "stich and turn",
-      "pegged",
-      "opanka",
-      "norwegian",
-      "bologna(sacchetto)",
-      "blake and blake rapid",
-      "vulcanization",
-      "direct injection process",
-      "hand stiched",
-    ],
-  },
-  {
-    id: 6,
-    title: "waterproof",
-    question: "is it water proof?",
-    type: "boolean",
-    answers: ["yes", "no"],
-  },
-  {
-    id: 7,
-    title: "toeCap",
-    question: "is material toeCap?",
-    type: "boolean",
-    answers: ["yes", "no"],
-  },
-  {
-    id: 8,
-    title: "shaftHeightType",
-    question: "determine how much length the shafts have?",
-    type: "multipleChoice",
-    answers: [
-      "shafts that cover the ankle but not the knee",
-      "shafts that cover the knee",
-      "other",
-    ],
-  },
-];
+import { getQuestion } from "./questions/index.js";
 
 //
 function getAnswer(inputData, n) {
@@ -99,7 +9,7 @@ function getAnswer(inputData, n) {
 export function calculator(inputData) {
   if (!inputData.answers) {
     return {
-      question: questions[0],
+      question: getQuestion("footwearOrComponents"),
       code: "",
       partial: true,
     };
@@ -144,46 +54,46 @@ export function calculator(inputData) {
                 };
               }
               return {
-                question: questions[7],
+                question: getQuestion("shaft"),
                 code: 6401,
                 partial: true,
               };
             }
             return {
-              question: questions[6],
+              question: getQuestion("toeCap"),
               code: 6401,
               partial: true,
             };
           }
 
           return {
-            question: questions[5],
+            question: getQuestion("waterProof"),
             code: "",
             partial: true,
           };
         }
 
         return {
-          question: questions[4],
+          question: getQuestion("process"),
           code: "",
           partial: true,
         };
       }
 
       return {
-        question: questions[3],
+        question: getQuestion("sole"),
         code: "",
         partial: true,
       };
     }
     return {
-      question: questions[1],
+      question: getQuestion("upperType"),
       code: "",
       partial: true,
     };
   } else {
     return {
-      question: questions[2],
+      question: getQuestion("part"),
       code: 6406,
       partial: true,
     };
