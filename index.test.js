@@ -22,7 +22,7 @@ test("When the user has answered No", () => {
 
   inputData = {
     euro: "",
-    answers: [{ questionId: 1, answer: 1 }],
+    questionAnswers: [{ questionKey: "footwearOrComponents", answerKey: "no" }],
   };
 
   result = {
@@ -38,7 +38,9 @@ test("When the user has answered yes", () => {
   let inputData, result;
   inputData = {
     euro: "",
-    answers: [{ questionId: 1, answer: 0 }],
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+    ],
   };
 
   result = {
@@ -50,14 +52,14 @@ test("When the user has answered yes", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When the user answer question id:2 ", () => {
+test("When the user answer question upperType", () => {
   let inputData, result;
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 0 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
     ],
   };
   result = {
@@ -69,15 +71,15 @@ test("When the user answer question id:2 ", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When the user answer question id:4 and upperType=3 or 4 and soleType=3 or 4 ", () => {
+test("When the user answer question process and upperType=rubber or plastic and soleType= rubber or plastic ", () => {
   let inputData, result;
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 4 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
     ],
   };
   result = {
@@ -94,11 +96,11 @@ test("when user answer question 5", () => {
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "Moccasins" },
     ],
   };
   result = {
@@ -110,17 +112,17 @@ test("when user answer question 5", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When waterproof is true and processType is answer: 1 or 11 or 12 ", () => {
+test("When waterproof is true and processType is answer: Moccasins or direct injection process or handStiched ", () => {
   let inputData, result;
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-      { questionId: 6, answer: 1 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "yes" },
     ],
   };
   result = {
@@ -137,13 +139,13 @@ test("When metal toEcap is true ", () => {
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-      { questionId: 6, answer: 1 },
-      { questionId: 7, answer: 0 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "yes" },
+      { questionKey: "toeCap", answerKey: "yes" },
     ],
   };
   result = {
@@ -159,13 +161,13 @@ test("When metal toEcap is false ", () => {
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 4 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-      { questionId: 6, answer: 1 },
-      { questionId: 7, answer: 1 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "yes" },
+      { questionKey: "toeCap", answerKey: "no" },
     ],
   };
   result = {
@@ -176,19 +178,19 @@ test("When metal toEcap is false ", () => {
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When shaftHeightTyle is answer:1", () => {
+test("When shaftHeightTyle is answer:ankle", () => {
   let inputData, result;
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 3 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-      { questionId: 6, answer: 1 },
-      { questionId: 7, answer: 1 },
-      { questionId: 8, answer: 1 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "yes" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
     ],
   };
   result = {
@@ -198,19 +200,19 @@ test("When shaftHeightTyle is answer:1", () => {
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When shaftHeightTyle is answer:2", () => {
+test("When shaftHeightTyle is answer:knee", () => {
   let inputData, result;
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 3 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-      { questionId: 6, answer: 1 },
-      { questionId: 7, answer: 1 },
-      { questionId: 8, answer: 2 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "yes" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
     ],
   };
   result = {
@@ -220,19 +222,19 @@ test("When shaftHeightTyle is answer:2", () => {
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When shaftHeightTyle is answer:3", () => {
+test("When shaftHeightTyle is answer:other", () => {
   let inputData, result;
 
   inputData = {
     euro: "",
-    answers: [
-      { questionId: 1, answer: 0 },
-      { questionId: 2, answer: 3 },
-      { questionId: 4, answer: 4 },
-      { questionId: 5, answer: 0 },
-      { questionId: 6, answer: 1 },
-      { questionId: 7, answer: 1 },
-      { questionId: 8, answer: 3 },
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "yes" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
     ],
   };
   result = {

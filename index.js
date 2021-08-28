@@ -1,53 +1,63 @@
 import { getQuestion } from "./questions/index.js";
 
 //
-function getAnswer(inputData, n) {
-  return inputData.answers[n] ? inputData.answers[n].answer : -1;
+function getAnswer(inputData, key) {
+  if (inputData.questionAnswers) {
+    for (const a of inputData.questionAnswers) {
+      if (a.questionKey === key) {
+        return a.answerKey;
+      }
+    }
+  }
+  return null;
 }
+
 //
 
 export function calculator(inputData) {
-  if (!inputData.answers) {
+  if (!inputData.questionAnswers) {
     return {
       question: getQuestion("footwearOrComponents"),
       code: "",
       partial: true,
     };
   }
-  if (getAnswer(inputData, 0) === 0) {
-    if (inputData.answers[1]) {
+
+  if (getAnswer(inputData, "footwearOrComponents") === "yes") {
+    if (getAnswer(inputData, "upperType")) {
       if (
-        (inputData.answers[1].answer === 3 ||
-          inputData.answers[1].answer === 4) &&
-        (inputData.answers[2].answer === 3 || inputData.answers[2].answer === 4)
+        (getAnswer(inputData, "upperType") === "rubber" ||
+          getAnswer(inputData, "upperType") === "plastic") &&
+        (getAnswer(inputData, "sole") === "plastic" ||
+          getAnswer(inputData, "sole") === "rubber")
       ) {
-        if (inputData.answers[3]) {
+        if (getAnswer(inputData, "process")) {
           if (
-            inputData.answers[4] &&
-            (inputData.answers[4].answer === 1 ||
-              inputData.answers[4].answer === 11 ||
-              inputData.answers[4].answer === 12)
+            getAnswer(inputData, "waterProof") &&
+            (getAnswer(inputData, "process") === "moccasins" ||
+              getAnswer(inputData, "process") === "hand stiched" ||
+              getAnswer(inputData, "process") === "direct injection process")
           ) {
-            if (getAnswer(inputData, 5) === 0) {
+            if (getAnswer(inputData, "toeCap") === "yes") {
               return {
                 code: 64011,
                 partial: false,
               };
             }
-            if (getAnswer(inputData, 5) === 1) {
-              if (getAnswer(inputData, 6) === 1) {
+            if (getAnswer(inputData, "toeCap") === "no") {
+              if (getAnswer(inputData, "shaft") === "ankle") {
                 return {
                   code: 6401921000,
                   partial: false,
                 };
               }
-              if (getAnswer(inputData, 6) === 2) {
+              if (getAnswer(inputData, "shaft") === "knee") {
                 return {
                   code: 6401990010,
                   partial: false,
                 };
               }
-              if (getAnswer(inputData, 6) === 3) {
+              if (getAnswer(inputData, "shaft") === "other") {
                 return {
                   code: 6401990090,
                   partial: false,
