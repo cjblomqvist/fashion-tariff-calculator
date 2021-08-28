@@ -149,7 +149,7 @@ test("When metal toEcap is true ", () => {
     ],
   };
   result = {
-    code: 64011,
+    code: 6401100000,
     partial: false,
   };
 

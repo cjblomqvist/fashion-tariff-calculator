@@ -40,7 +40,7 @@ export function calculator(inputData) {
           ) {
             if (getAnswer(inputData, "toeCap") === "yes") {
               return {
-                code: 64011,
+                code: 6401100000,
                 partial: false,
               };
             }
