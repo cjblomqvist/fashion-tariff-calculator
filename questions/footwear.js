@@ -250,4 +250,65 @@ export const footwear = [
       },
     ],
   },
+  {
+    key: "winterSports",
+    title: `Winter sports`,
+    text: `Is it foorwear for winter sports?
+		1. Yes
+		2. No
+		
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "skiBoots",
+    title: `Type of ski boots`,
+    text: `What kind of winter sports footwear is it?
+		1. Ski boots
+		2. Snowboard boots
+		3. Other sports footwear
+	`,
+    answers: [
+      {
+        key: "skiBoots",
+        text: "Ski boots",
+      },
+      {
+        key: "snowboardBoots",
+        text: "Snowboard boots",
+      },
+      {
+        key: "other",
+        text: "Other sports footwear",
+      },
+    ],
+  },
+  {
+    key: "upperStrapsOrThongs",
+    title: `Upper staps or thongs`,
+    text: `Does the footwear have upper straps or thongs assempled to the sole by the means of plugs?
+		1. Ski boots
+		2. Snowboard boots
+		3. Other sports footwear
+	`,
+    answers: [
+      {
+        key: "upperStraps",
+        text: "Upper staps",
+      },
+      {
+        key: "thongs",
+        text: "Thongs",
+      },
+    ],
+  },
 ];
