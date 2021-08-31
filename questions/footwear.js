@@ -292,22 +292,98 @@ export const footwear = [
       },
     ],
   },
+
   {
-    key: "upperStrapsOrThongs",
-    title: `Upper staps or thongs`,
-    text: `Does the footwear have upper straps or thongs assempled to the sole by the means of plugs?
-		1. Ski boots
-		2. Snowboard boots
-		3. Other sports footwear
+    key: "slippers",
+    title: `Slippers or other indoor footwear`,
+    text: `Is it slippers or other indoor footwear?
+		1. Yes
+		2. No
 	`,
     answers: [
       {
-        key: "upperStraps",
-        text: "Upper staps",
+        key: "yes",
+        text: "Yes",
       },
       {
-        key: "thongs",
-        text: "Thongs",
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "vamp",
+    title: `Vamp`,
+    text: `Does the footwear have a vamp made of straps and one or several pieces cut out?
+		1. Yes
+		2. No
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "heightOfSoleAndHeel",
+    title: `Height of sole and heel`,
+    text: `Is the height of the sole and heel more than 3cm ?
+		1. Yes
+		2. No
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "lengthOfInsole",
+    title: `Length of insole`,
+    text: `Is the length of the insole more than 24cm?
+		1. Yes
+		2. No(size 36EU or smaller)
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "genderType",
+    title: `Gender`,
+    text: `Is the footwear for women or men?
+		1. Women
+		2. Men
+	`,
+    answers: [
+      {
+        key: "women",
+        text: "Women",
+      },
+      {
+        key: "men",
+        text: "Men",
+      },
+      {
+        key: "unisex",
+        text: "Footwear which can not be identified as men's or women's footwear",
       },
     ],
   },

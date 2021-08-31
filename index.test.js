@@ -486,13 +486,385 @@ test("When upperStrapsOrThongs is false and shaft is not ankle ", () => {
       { questionKey: "waterProof", answerKey: "no" },
       { questionKey: "winterSports", answerKey: "no" },
       { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
-      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "shaft", answerKey: "other" },
     ],
   };
   result = {
     question: getQuestion("toeCap"),
     code: "640299",
     partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When upperStrapsOrThongs is false and shaft is not ankle and ToeCap is yes ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6402990500",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When upperStrapsOrThongs is false and shaft is not ankle and ToeCap is no and upperType is rubber ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "rubber" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6402991000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When upperStrapsOrThongs is false and shaft is not ankle and ToeCap is no and upper type is plastic ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("slippers"),
+    code: "640299",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When slipper is yes ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6402995000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When slipper is no ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("vamp"),
+    code: "640299",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When vamp is no ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640299",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When vamp is yes ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("heightOfSoleAndHeel"),
+    code: "640299",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When heightOfSoleAndHeel is yes ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6402993100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When heightOfSoleAndHeel is no ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6402993900",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When lengthOfInsole is no ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6402999100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When lengthOfInsole is yes ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640299",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When gender is women ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6402999800",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When gender is men ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6402999600",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When gender is unisex ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "plastic" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "process", answerKey: "moccasins" },
+      { questionKey: "waterProof", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "upperStrapsOrThongs", answerKey: "thongs" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6402999300",
+    partial: false,
   };
 
   expect(calculator(inputData)).toStrictEqual(result);

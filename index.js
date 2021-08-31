@@ -106,6 +106,142 @@ function handleToeCapAfterShaft(inputData) {
     partial: false,
   };
 }
+function handleHeightOfSoleAndHeelMoreThan3(inputData) {
+  let code = "640299";
+  const answer = getAnswer(inputData, "heightOfSoleAndHeel");
+  if (!answer) {
+    return {
+      question: getQuestion("heightOfSoleAndHeel"),
+      code: code,
+      partial: true,
+    };
+  }
+  if (answer === "yes") {
+    code = code.concat("3100");
+  }
+  if (answer === "no") {
+    code = code.concat("3900");
+  }
+  return {
+    code: code,
+    partial: false,
+  };
+}
+function handleGenderType(inputData) {
+  let code = "640299";
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return {
+      question: getQuestion("genderType"),
+      code: code,
+      partial: true,
+    };
+  }
+  if (answer === "women") {
+    code = code.concat("9800");
+  }
+  if (answer === "men") {
+    code = code.concat("9600");
+  }
+  if (answer === "unisex") {
+    code = code.concat("9300");
+  }
+  return {
+    code: code,
+    partial: false,
+  };
+}
+function handleInsoleLengthMoreThan24(inputData) {
+  let code = "640299";
+  const answer = getAnswer(inputData, "lengthOfInsole");
+  if (!answer) {
+    return {
+      question: getQuestion("lengthOfInsole"),
+      code: code,
+      partial: true,
+    };
+  }
+  if (answer === "yes") {
+    return handleGenderType(inputData);
+  }
+  if (answer === "no") {
+    return {
+      code: code.concat("9100"),
+      partial: false,
+    };
+  }
+}
+function handleVamp(inputData) {
+  let code = "640299";
+  let answer = getAnswer(inputData, "vamp");
+  if (!answer) {
+    return {
+      question: getQuestion("vamp"),
+      code: code,
+      partial: true,
+    };
+  }
+  if (answer === "yes") {
+    return handleHeightOfSoleAndHeelMoreThan3(inputData);
+  }
+  if (answer === "no") {
+    return handleInsoleLengthMoreThan24(inputData);
+  }
+}
+function handleSlippers(inputData) {
+  let code = "640299";
+  let answer = getAnswer(inputData, "slippers");
+  if (!answer) {
+    return {
+      question: getQuestion("slippers"),
+      code: code,
+      partial: true,
+    };
+  }
+  if (answer === "yes") {
+    return {
+      code: code.concat(5000),
+      partial: false,
+    };
+  }
+  if (answer === "no") {
+    return handleVamp(inputData);
+  }
+}
+function handleRubberOrPlastic(inputData) {
+  let code = "640299";
+  let upperAnswer = getAnswer(inputData, "upperType");
+  if (upperAnswer === "rubber") {
+    return {
+      code: code.concat("1000"),
+      partial: false,
+    };
+  }
+  if (upperAnswer === "plastic") {
+    return handleSlippers(inputData);
+  }
+}
+function handleToeCapAfterUpperStraps(inputData) {
+  let code = "640299";
+  let answer = getAnswer(inputData, "toeCap");
+
+  if (!answer) {
+    return {
+      question: getQuestion("toeCap"),
+      code: code,
+      partial: true,
+    };
+  }
+  if (answer === "yes") {
+    return {
+      code: code.concat("0500"),
+      partial: false,
+    };
+  }
+  if (answer === "no") {
+    return handleRubberOrPlastic(inputData);
+  }
+}
 
 function handleShaftAfterStrapsNo(inputData) {
   let answer = getAnswer(inputData, "shaft");
@@ -121,11 +257,7 @@ function handleShaftAfterStrapsNo(inputData) {
     return handleToeCapAfterShaft(inputData);
   }
   if (answer !== "ankle") {
-    return {
-      question: getQuestion("toeCap"),
-      code: "640299",
-      partial: true,
-    };
+    return handleToeCapAfterUpperStraps(inputData);
   }
 }
 function handleUpperStrapsOrThongs(inputData) {
