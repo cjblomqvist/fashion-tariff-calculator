@@ -71,7 +71,7 @@ test("When the user answer question upperType", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When the user answer question process and upperType=rubber or plastic and soleType= rubber or plastic ", () => {
+test("When the user answer question sole and upperType=rubber or plastic and soleType= rubber or plastic ", () => {
   let inputData, result;
 
   inputData = {
@@ -864,6 +864,219 @@ test("When gender is unisex ", () => {
   };
   result = {
     code: "6402999300",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When the user answer question sole and upperType is leather and sole is leather", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+    ],
+  };
+  result = {
+    question: getQuestion("leatherStraps"),
+    code: "6403",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is leather and sole is not leather", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "textile" },
+    ],
+  };
+  result = {
+    question: getQuestion("toeCap"),
+    code: "6403",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is textile and sole is not other and not wood ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "textile" },
+    ],
+  };
+  result = {
+    question: getQuestion("slippers"),
+    code: "640420",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is textile and sole is leather or textile", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "textile" },
+    ],
+  };
+  result = {
+    question: getQuestion("slippers"),
+    code: "640420",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is textile and sole is leather or textile and slippers is yes", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "slippers", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6404201000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is textile and sole is leather or textile ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "slippers", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6404209000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is textile and sole is plastic or rubber ", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "plastic" },
+    ],
+  };
+  result = {
+    question: getQuestion("sports"),
+    code: "6404",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sport is yes", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "sports", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6404110000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sport is no", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "sports", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("slippers"),
+    code: "640419",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sport is no and slippers is yes", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6404191000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sport is no and slippers is no", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "plastic" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6404199000",
     partial: false,
   };
 

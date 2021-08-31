@@ -1,3 +1,4 @@
+import { footwear } from "./questions/footwear.js";
 import { getQuestion } from "./questions/index.js";
 
 //
@@ -320,50 +321,92 @@ function handleWaterProof(inputData) {
   }
 }
 
-export function calculator(inputData) {
-  if (!inputData.questionAnswers) {
+function createResult(code, question) {
+  if (question) {
     return {
-      question: getQuestion("footwearOrComponents"),
-      code: "",
+      question,
+      code,
       partial: true,
     };
   }
 
-  if (getAnswer(inputData, "footwearOrComponents") === "yes") {
-    if (getAnswer(inputData, "upperType")) {
-      if (
-        (getAnswer(inputData, "upperType") === "rubber" ||
-          getAnswer(inputData, "upperType") === "plastic") &&
-        (getAnswer(inputData, "sole") === "plastic" ||
-          getAnswer(inputData, "sole") === "rubber")
-      ) {
-        if (getAnswer(inputData, "process")) {
-          return handleWaterProof(inputData);
-        }
+  return {
+    code,
+    partial: false,
+  };
+}
 
-        return {
-          question: getQuestion("process"),
-          code: "",
-          partial: true,
-        };
+export function calculator(inputData) {
+  if (!inputData.questionAnswers) {
+    return createResult("", getQuestion("footwearOrComponents"));
+  }
+
+  if (getAnswer(inputData, "footwearOrComponents") === "yes") {
+    if (!getAnswer(inputData, "upperType")) {
+      return createResult("", getQuestion("upperType"));
+    }
+
+    if (!getAnswer(inputData, "sole")) {
+      return createResult("", getQuestion("sole"));
+    }
+
+    if (
+      (getAnswer(inputData, "upperType") === "rubber" ||
+        getAnswer(inputData, "upperType") === "plastic") &&
+      (getAnswer(inputData, "sole") === "plastic" ||
+        getAnswer(inputData, "sole") === "rubber")
+    ) {
+      if (getAnswer(inputData, "process")) {
+        return handleWaterProof(inputData);
       }
 
-      return {
-        question: getQuestion("sole"),
-        code: "",
-        partial: true,
-      };
+      return createResult("", getQuestion("process"));
+    } else if (
+      getAnswer(inputData, "upperType") === "leather" &&
+      getAnswer(inputData, "sole") !== "other" &&
+      getAnswer(inputData, "sole") !== "wood"
+    ) {
+      if (getAnswer(inputData, "sole") === "leather") {
+        return createResult("6403", getQuestion("leatherStraps"));
+      }
+      return createResult("6403", getQuestion("toeCap"));
+    } else if (
+      getAnswer(inputData, "upperType") === "textile" &&
+      getAnswer(inputData, "sole") !== "other" &&
+      getAnswer(inputData, "sole") !== "wood"
+    ) {
+      if (
+        getAnswer(inputData, "sole") === "leather" ||
+        getAnswer(inputData, "sole") === "textile"
+      ) {
+        if (getAnswer(inputData, "slippers") === "yes") {
+          return createResult("6404201000");
+        }
+        if (getAnswer(inputData, "slippers") === "no") {
+          return createResult("6404209000");
+        }
+        return createResult("640420", getQuestion("slippers"));
+      }
+      if (
+        getAnswer(inputData, "sole") === "plastic" ||
+        getAnswer(inputData, "sole") === "rubber"
+      ) {
+        if (getAnswer(inputData, "sports") === "yes") {
+          return createResult("6404110000");
+        }
+        if (getAnswer(inputData, "sports") === "no") {
+          if (getAnswer(inputData, "slippers") === "yes") {
+            return createResult("6404191000");
+          }
+          if (getAnswer(inputData, "slippers") === "no") {
+            return createResult("6404199000");
+          }
+          return createResult("640419", getQuestion("slippers"));
+        }
+        return createResult("6404", getQuestion("sports"));
+      }
     }
-    return {
-      question: getQuestion("upperType"),
-      code: "",
-      partial: true,
-    };
   } else {
-    return {
-      question: getQuestion("part"),
-      code: "6406",
-      partial: true,
-    };
+    return createResult("6406", getQuestion("part"));
   }
 }

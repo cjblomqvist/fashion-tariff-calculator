@@ -387,4 +387,40 @@ export const footwear = [
       },
     ],
   },
+  {
+    key: "leatherStraps",
+    title: `Leather straps`,
+    text: `Does footwear have a leather straps across the instep and around the big toe?
+		1. Yes
+		2. No
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "sports",
+    title: `Sports footwear`,
+    text: `Is it sports footwear?
+		1. Yes
+		2. No
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
 ];
