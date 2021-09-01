@@ -293,7 +293,7 @@ export function calculator(inputData) {
     ) {
       if (
         getAnswer(inputData, "sole") === "leather" ||
-        getAnswer(inputData, "sole") === "textile"
+        getAnswer(inputData, "sole") === "immitationLeather"
       ) {
         return handleSlippers64040(inputData);
       } else if (

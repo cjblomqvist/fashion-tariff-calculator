@@ -52,11 +52,12 @@ export const footwear = [
     key: "part",
     title: `What kind of parts?`,
     text: `Determine what kind of parts?
-		1. Leather
-		2. Textile
-		3. Rubber
-		4. Plastic
-		5. Other`,
+		1. Uppers and parts
+		2. Outer soles and heels 
+		3. Assemblies of uppers affixed to inne soles or to outer soles but without outer soles
+		4. Removable insoles and other removable accesories
+		5. Outer soles
+    6. Gaiters, bone leather and similar articles and parts thereof`,
     answers: [
       {
         key: "uppers",
@@ -89,7 +90,7 @@ export const footwear = [
     title: `Sole material`,
     text: `what kind of sole is it?
 		1. Leather
-		2. Immitation leather
+		2. Imitation leather
 		3. Rubber
 		4. Plastic
 		6. Wood or cork
@@ -97,11 +98,11 @@ export const footwear = [
     answers: [
       {
         key: "leather",
-        text: "Immitation leather",
+        text: "Leather",
       },
       {
-        key: "textile",
-        text: "Textile",
+        key: "immitationLeather",
+        text: "ImmitationLeather",
       },
       {
         key: "rubber",

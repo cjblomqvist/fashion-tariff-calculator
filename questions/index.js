@@ -1,5 +1,11 @@
 import { footwear } from "./footwear.js";
 
 export function getQuestion(key) {
-  return footwear.find((question) => question.key === key);
+  const question = footwear.find((question) => question.key === key);
+
+  if (question) {
+    return question;
+  }
+
+  throw "Question " + key + " does not exist";
 }

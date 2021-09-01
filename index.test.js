@@ -897,7 +897,7 @@ test("When the user answer question sole and upperType is leather and sole is no
     questionAnswers: [
       { questionKey: "footwearOrComponents", answerKey: "yes" },
       { questionKey: "upperType", answerKey: "leather" },
-      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
     ],
   };
   result = {
@@ -908,7 +908,7 @@ test("When the user answer question sole and upperType is leather and sole is no
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When the user answer question sole and upperType is textile and sole is not other and not wood ", () => {
+test("When the user answer question sole and upperType is immitationLeather and sole is not other and not wood ", () => {
   let inputData, result;
 
   inputData = {
@@ -916,7 +916,7 @@ test("When the user answer question sole and upperType is textile and sole is no
     questionAnswers: [
       { questionKey: "footwearOrComponents", answerKey: "yes" },
       { questionKey: "upperType", answerKey: "textile" },
-      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
     ],
   };
   result = {
@@ -927,7 +927,7 @@ test("When the user answer question sole and upperType is textile and sole is no
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
-test("When the user answer question sole and upperType is textile and sole is leather or textile", () => {
+test("When the user answer question sole and upperType is textile and sole is leather or immitationLeather", () => {
   let inputData, result;
 
   inputData = {
@@ -935,7 +935,7 @@ test("When the user answer question sole and upperType is textile and sole is le
     questionAnswers: [
       { questionKey: "footwearOrComponents", answerKey: "yes" },
       { questionKey: "upperType", answerKey: "textile" },
-      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
     ],
   };
   result = {
@@ -954,7 +954,7 @@ test("When the user answer question sole and upperType is textile and sole is le
     questionAnswers: [
       { questionKey: "footwearOrComponents", answerKey: "yes" },
       { questionKey: "upperType", answerKey: "textile" },
-      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "slippers", answerKey: "yes" },
     ],
   };
@@ -973,7 +973,7 @@ test("When the user answer question sole and upperType is textile and sole is le
     questionAnswers: [
       { questionKey: "footwearOrComponents", answerKey: "yes" },
       { questionKey: "upperType", answerKey: "textile" },
-      { questionKey: "sole", answerKey: "textile" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "slippers", answerKey: "no" },
     ],
   };
