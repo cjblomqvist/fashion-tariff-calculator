@@ -261,6 +261,49 @@ function handleSlippers640520(inputData) {
     return createResult("6405209900");
   }
 }
+function shaft640351(inputData) {
+  if (getAnswer(inputData, "shaft") === "ankle") {
+    return createResult("640351", getQuestion("madeOnBase"));
+  }
+  if (getAnswer(inputData, "shaft") === "knee") {
+    return createResult("640351", getQuestion("lengthOfInsole"));
+  }
+}
+function MadeOnBase640359(inputData) {
+  const answer = getAnswer(inputData, "madeOnBase");
+  if (!answer) {
+    return createResult("640359", getQuestion("madeOnBase"));
+  }
+  if (answer === "yes") {
+    return createResult("640359", getQuestion("handmade"));
+  }
+  if (answer === "no") {
+    return createResult("640359", getQuestion("vamp"));
+  }
+}
+function handleShaftLeatherstrapsFalse6403(inputData) {
+  const answer = getAnswer(inputData, "shaft");
+  if (!answer) {
+    return createResult("6403", getQuestion("shaft"));
+  }
+  if (answer === "ankle" || answer === "knee") {
+    return shaft640351(inputData);
+  } else if (answer === "other") {
+    return MadeOnBase640359(inputData);
+  }
+}
+function leatherStraps6403(inputData) {
+  const answer = getAnswer(inputData, "leatherStraps");
+  if (!answer) {
+    return createResult("6403", getQuestion("leatherStraps"));
+  }
+  if (answer === "yes") {
+    return createResult("6403200000");
+  }
+  if (answer === "no") {
+    return handleShaftLeatherstrapsFalse6403(inputData);
+  }
+}
 export function calculator(inputData) {
   if (!inputData.questionAnswers) {
     return createResult("", getQuestion("footwearOrComponents"));
@@ -295,7 +338,7 @@ export function calculator(inputData) {
         getAnswer(inputData, "sole") !== "wood"
       ) {
         if (getAnswer(inputData, "sole") === "leather") {
-          return createResult("6403", getQuestion("leatherStraps"));
+          return leatherStraps6403(inputData);
         }
         if (getAnswer(inputData, "sole") !== "leather") {
           return createResult("6403", getQuestion("toeCap"));

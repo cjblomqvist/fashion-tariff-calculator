@@ -442,4 +442,40 @@ export const footwear = [
       },
     ],
   },
+  {
+    key: "madeOnBase",
+    title: `Made on base`,
+    text: `Is the footwear made on base or plattform made of wood, not having an inner sole?
+		1. Yes
+		2. No
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
+  {
+    key: "handmade",
+    title: `Handmade`,
+    text: `Is the footwear handmade?
+		1. Yes
+		2. No
+	`,
+    answers: [
+      {
+        key: "yes",
+        text: "Yes",
+      },
+      {
+        key: "no",
+        text: "No",
+      },
+    ],
+  },
 ];
