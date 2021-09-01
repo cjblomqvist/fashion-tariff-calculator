@@ -250,6 +250,17 @@ function handleSport6404(inputData) {
     return handleSlippers640419(inputData);
   }
 }
+function handleSlippers640520(inputData) {
+  const answer = getAnswer(inputData, "slippers");
+  if (!answer) {
+    return createResult("640520", getQuestion("slippers"));
+  }
+  if (answer === "yes") {
+    return createResult("6405209100");
+  } else if (answer === "no") {
+    return createResult("6405209900");
+  }
+}
 export function calculator(inputData) {
   if (!inputData.questionAnswers) {
     return createResult("", getQuestion("footwearOrComponents"));
@@ -277,33 +288,65 @@ export function calculator(inputData) {
       if (getAnswer(inputData, "process")) {
         return handleWaterProof(inputData);
       }
-    } else if (
-      getAnswer(inputData, "upperType") === "leather" &&
-      getAnswer(inputData, "sole") !== "other" &&
-      getAnswer(inputData, "sole") !== "wood"
-    ) {
-      if (getAnswer(inputData, "sole") === "leather") {
-        return createResult("6403", getQuestion("leatherStraps"));
-      }
-      return createResult("6403", getQuestion("toeCap"));
-    } else if (
-      getAnswer(inputData, "upperType") === "textile" &&
-      getAnswer(inputData, "sole") !== "other" &&
-      getAnswer(inputData, "sole") !== "wood"
-    ) {
+    } else {
       if (
-        getAnswer(inputData, "sole") === "leather" ||
-        getAnswer(inputData, "sole") === "immitationLeather"
+        getAnswer(inputData, "upperType") === "leather" &&
+        getAnswer(inputData, "sole") !== "other" &&
+        getAnswer(inputData, "sole") !== "wood"
       ) {
-        return handleSlippers64040(inputData);
-      } else if (
-        getAnswer(inputData, "sole") === "plastic" ||
-        getAnswer(inputData, "sole") === "rubber"
-      ) {
-        return handleSport6404(inputData);
+        if (getAnswer(inputData, "sole") === "leather") {
+          return createResult("6403", getQuestion("leatherStraps"));
+        }
+        if (getAnswer(inputData, "sole") !== "leather") {
+          return createResult("6403", getQuestion("toeCap"));
+        }
+      } else {
+        if (
+          getAnswer(inputData, "upperType") === "textile" &&
+          getAnswer(inputData, "sole") !== "other" &&
+          getAnswer(inputData, "sole") !== "wood"
+        ) {
+          if (
+            getAnswer(inputData, "sole") === "leather" ||
+            getAnswer(inputData, "sole") === "immitationLeather"
+          ) {
+            return handleSlippers64040(inputData);
+          } else if (
+            getAnswer(inputData, "sole") === "plastic" ||
+            getAnswer(inputData, "sole") === "rubber"
+          ) {
+            return handleSport6404(inputData);
+          }
+        } else {
+          if (
+            getAnswer(inputData, "upperType") === "leather" &&
+            (getAnswer(inputData, "sole") === "wood" ||
+              getAnswer(inputData, "sole") === "other")
+          ) {
+            return createResult("6405100000");
+          } else {
+            if (
+              getAnswer(inputData, "upperType") === "textile" &&
+              (getAnswer(inputData, "sole") === "wood" ||
+                getAnswer(inputData, "sole") === "other")
+            ) {
+              if (getAnswer(inputData, "sole") === "wood") {
+                return createResult("6405201000");
+              } else if (getAnswer(inputData, "sole") === "other") {
+                return handleSlippers640520(inputData);
+              }
+            } else {
+              if (getAnswer(inputData, "sole") !== "other") {
+                return createResult("6405901000");
+              } else if (getAnswer(inputData, "sole") === "other") {
+                return createResult("6405909000");
+              }
+            }
+          }
+        }
       }
     }
-  } else {
+  } else if (getAnswer(inputData, "footwearOrComponents") === "no") {
     return createResult("6406", getQuestion("part"));
   }
 }

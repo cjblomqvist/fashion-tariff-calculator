@@ -93,8 +93,8 @@ export const footwear = [
 		2. Imitation leather
 		3. Rubber
 		4. Plastic
-		6. Wood or cork
-		5. Other`,
+		5. Wood or cork
+		6. Other`,
     answers: [
       {
         key: "leather",
