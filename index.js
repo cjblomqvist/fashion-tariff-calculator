@@ -1,4 +1,4 @@
-import { getQuestion } from "./questions/index.js";
+import { getQuestion, getQuestionOld } from "./questions/index.js";
 
 //
 function getAnswer(inputData, key) {
@@ -269,16 +269,105 @@ function shaft640351(inputData) {
     return createResult("640351", getQuestion("lengthOfInsole"));
   }
 }
+function handmade640359(inputData) {
+  const answer = getAnswer(inputData, "handmade");
+  if (!answer) {
+    return createResult("640359", getQuestion("handmade"));
+  }
+  if (answer === "yes") {
+    return createResult("6403590510");
+  }
+  if (answer === "no") {
+    return createResult("6403590590");
+  }
+}
+function handleGenderTypeWithLengthOfInsoleTrue64359(inputData) {
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return createResult("640359", getQuestion("genderType"));
+  }
+  if (answer === "women") {
+    return createResult("6403593900");
+  } else if (answer === "men") {
+    return createResult("6403593500");
+  }
+}
+function InsoleLengthWithHeightOfSoleFalse640359(inputData) {
+  const answer = getAnswer(inputData, "lengthOfInsole");
+  if (!answer) {
+    return createResult("640359", getQuestion("lengthOfInsole"));
+  }
+  if (answer === "yes") {
+    return handleGenderTypeWithLengthOfInsoleTrue64359(inputData);
+  } else if (answer === "no") {
+    return createResult("6403593100");
+  }
+}
+function handleHeightOfSoleAndHeel640359(inputData) {
+  const answer = getAnswer(inputData, "heightOfSoleAndHeel");
+  if (!answer) {
+    return createResult("640359", getQuestion("heightOfSoleAndHeel"));
+  }
+  if (answer === "yes") {
+    return createResult("6403591100");
+  }
+  if (answer === "no") {
+    return InsoleLengthWithHeightOfSoleFalse640359(inputData);
+  }
+}
+function genderTypeWithLengthOfInsoleTrue6400359(inputData) {
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return createResult("640359", getQuestion("genderType"));
+  }
+  if (answer === "women") {
+    return createResult("6403599900");
+  } else if (answer === "men") {
+    return createResult("6403599500");
+  }
+}
+function lengthOfInsoleWithSlippersFalse(inputData) {
+  const answer = getAnswer(inputData, "lengthOfInsole");
+  if (!answer) {
+    return createResult("640359", getQuestion("lengthOfInsole"));
+  }
+  if (answer === "yes") {
+    return genderTypeWithLengthOfInsoleTrue6400359(inputData);
+  } else if (answer === "no") {
+    return createResult("6403599100");
+  }
+}
+function handleSlippers640359(inputData) {
+  const answer = getAnswer(inputData, "slippers");
+  if (!answer) {
+    return createResult("640359", getQuestion("slippers"));
+  }
+  if (answer === "yes") {
+    return createResult("6403595000");
+  } else if (answer === "no") {
+    return lengthOfInsoleWithSlippersFalse(inputData);
+  }
+}
+function handleVamp640359(inputData) {
+  const answer = getAnswer(inputData, "vamp");
+  if (!answer) {
+    return createResult("640359", getQuestion("vamp"));
+  }
+  if (answer === "yes") {
+    return handleHeightOfSoleAndHeel640359(inputData);
+  } else if (answer === "no") {
+    return handleSlippers640359(inputData);
+  }
+}
 function MadeOnBase640359(inputData) {
   const answer = getAnswer(inputData, "madeOnBase");
   if (!answer) {
     return createResult("640359", getQuestion("madeOnBase"));
   }
   if (answer === "yes") {
-    return createResult("640359", getQuestion("handmade"));
-  }
-  if (answer === "no") {
-    return createResult("640359", getQuestion("vamp"));
+    return handmade640359(inputData);
+  } else if (answer === "no") {
+    return handleVamp640359(inputData);
   }
 }
 function handleShaftLeatherstrapsFalse6403(inputData) {
@@ -304,6 +393,7 @@ function leatherStraps6403(inputData) {
     return handleShaftLeatherstrapsFalse6403(inputData);
   }
 }
+
 export function calculator(inputData) {
   if (!inputData.questionAnswers) {
     return createResult("", getQuestion("footwearOrComponents"));

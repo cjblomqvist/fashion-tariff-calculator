@@ -1,5 +1,5 @@
 import { calculator } from "./index";
-import { getQuestion } from "./questions/index";
+import { getQuestion, getQuestionOld } from "./questions/index";
 
 test("When no answers exist, then return first question", () => {
   let inputData, result;
@@ -1335,6 +1335,389 @@ test("leather straps is false and shaft is other and made on base is no(640359)"
     question: getQuestion("vamp"),
     code: "640359",
     partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when  made on base is yes and handmade is yes(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+      { questionKey: "handmade", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403590510",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when  made on base is yes and handmade is yes(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+      { questionKey: "handmade", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403590590",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when made on base is no and vamp is yes (640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("heightOfSoleAndHeel"),
+    code: "640359",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when made on base is no and vamp is no (640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("slippers"),
+    code: "640359",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("when vamp is yes and heightOfSoleAndHeel is yes(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403591100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when vamp is yes and heightOfSoleAndHeel is no(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640359",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when vamp is yes and heightOfSoleAndHeel is no and lengthOfInsole is false(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403593100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when vamp is yes and heightOfSoleAndHeel is no and lengthOfInsole is true(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640359",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when lengthOfInsole is true and gender is women(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403593900",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when lengthOfInsole is true and gender is women(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403593500",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when made on base is no and vamp is no and slippers no(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640359",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when made on base is no and vamp is no and slippers yes(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403595000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when  vamp is no and slippers no and length of insole is yes(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640359",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when  vamp is no and slippers no and length of insole is no(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403599100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when  vamp is no and slippers no and length of insole is yes and gender is women(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403599900",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("when  vamp is no and slippers no and length of insole is yes and gender is men(640359)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "leather" },
+      { questionKey: "leatherStraps", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403599500",
+    partial: false,
   };
 
   expect(calculator(inputData)).toStrictEqual(result);
