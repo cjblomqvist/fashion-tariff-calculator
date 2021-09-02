@@ -261,12 +261,82 @@ function handleSlippers640520(inputData) {
     return createResult("6405209900");
   }
 }
-function shaft640351(inputData) {
-  if (getAnswer(inputData, "shaft") === "ankle") {
+function handmade640351(inputData) {
+  const answer = getAnswer(inputData, "handmade");
+  if (!answer) {
+    return createResult("640351", getQuestion("handmade"));
+  }
+  if (answer === "yes") {
+    return createResult("6403510510");
+  }
+  if (answer === "no") {
+    return createResult("6403510590");
+  }
+}
+function handleGenderTypeWithShaftAnkle640351(inputData) {
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return createResult("640351", getQuestion("genderType"));
+  }
+  if (answer === "women") {
+    return createResult("6403519900");
+  }
+  if (answer === "men") {
+    return createResult("6403519500");
+  }
+}
+function lengthOfInsoleWithMadeOnBaseFalse640351(inputData) {
+  const answer = getAnswer(inputData, "lengthOfInsole");
+  if (!answer) {
+    return createResult("640351", getQuestion("lengthOfInsole"));
+  }
+  if (answer === "yes") {
+    return handleGenderTypeWithShaftAnkle640351(inputData);
+  }
+  if (answer === "no") {
+    return createResult("6403519100");
+  }
+}
+function MadeOnBase640351(inputData) {
+  const answer = getAnswer(inputData, "madeOnBase");
+  if (!answer) {
     return createResult("640351", getQuestion("madeOnBase"));
   }
-  if (getAnswer(inputData, "shaft") === "knee") {
+  if (answer === "yes") {
+    return handmade640351(inputData);
+  } else if (answer === "no") {
+    return lengthOfInsoleWithMadeOnBaseFalse640351(inputData);
+  }
+}
+function handleGenderTypeWithShaftKnee640351(inputData) {
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return createResult("640351", getQuestion("genderType"));
+  }
+  if (answer === "women") {
+    return createResult("6403511900");
+  } else if (answer === "men") {
+    return createResult("6403511500");
+  }
+}
+function lengthOfInsoleWithShaftFalse640351(inputData) {
+  const answer = getAnswer(inputData, "lengthOfInsole");
+  if (!answer) {
     return createResult("640351", getQuestion("lengthOfInsole"));
+  }
+  if (answer === "yes") {
+    return handleGenderTypeWithShaftKnee640351(inputData);
+  }
+  if (answer === "no") {
+    return createResult("6403511100");
+  }
+}
+function shaft640351(inputData) {
+  if (getAnswer(inputData, "shaft") === "ankle") {
+    return MadeOnBase640351(inputData);
+  }
+  if (getAnswer(inputData, "shaft") === "knee") {
+    return lengthOfInsoleWithShaftFalse640351(inputData);
   }
 }
 function handmade640359(inputData) {
@@ -373,7 +443,7 @@ function MadeOnBase640359(inputData) {
 function handleShaftLeatherstrapsFalse6403(inputData) {
   const answer = getAnswer(inputData, "shaft");
   if (!answer) {
-    return createResult("6403", getQuestion("shaft"));
+    return createResult("640351", getQuestion("shaft"));
   }
   if (answer === "ankle" || answer === "knee") {
     return shaft640351(inputData);
@@ -407,12 +477,11 @@ export function calculator(inputData) {
     if (!getAnswer(inputData, "sole")) {
       return createResult("", getQuestion("sole"));
     }
-
+    const soleAnswer = getAnswer(inputData, "sole");
+    const upperTypeAnswer = getAnswer(inputData, "upperType");
     if (
-      (getAnswer(inputData, "upperType") === "rubber" ||
-        getAnswer(inputData, "upperType") === "plastic") &&
-      (getAnswer(inputData, "sole") === "plastic" ||
-        getAnswer(inputData, "sole") === "rubber")
+      (upperTypeAnswer === "rubber" || upperTypeAnswer === "plastic") &&
+      (soleAnswer === "plastic" || soleAnswer === "rubber")
     ) {
       const answer = getAnswer(inputData, "process");
       if (!answer) {
@@ -423,55 +492,47 @@ export function calculator(inputData) {
       }
     } else {
       if (
-        getAnswer(inputData, "upperType") === "leather" &&
-        getAnswer(inputData, "sole") !== "other" &&
-        getAnswer(inputData, "sole") !== "wood"
+        upperTypeAnswer === "leather" &&
+        soleAnswer !== "other" &&
+        soleAnswer !== "wood"
       ) {
-        if (getAnswer(inputData, "sole") === "leather") {
+        if (soleAnswer === "leather") {
           return leatherStraps6403(inputData);
         }
-        if (getAnswer(inputData, "sole") !== "leather") {
+        if (soleAnswer !== "leather") {
           return createResult("6403", getQuestion("toeCap"));
         }
       } else {
         if (
-          getAnswer(inputData, "upperType") === "textile" &&
-          getAnswer(inputData, "sole") !== "other" &&
-          getAnswer(inputData, "sole") !== "wood"
+          upperTypeAnswer === "textile" &&
+          soleAnswer !== "other" &&
+          soleAnswer !== "wood"
         ) {
-          if (
-            getAnswer(inputData, "sole") === "leather" ||
-            getAnswer(inputData, "sole") === "immitationLeather"
-          ) {
+          if (soleAnswer === "leather" || soleAnswer === "immitationLeather") {
             return handleSlippers64040(inputData);
-          } else if (
-            getAnswer(inputData, "sole") === "plastic" ||
-            getAnswer(inputData, "sole") === "rubber"
-          ) {
+          } else if (soleAnswer === "plastic" || soleAnswer === "rubber") {
             return handleSport6404(inputData);
           }
         } else {
           if (
-            getAnswer(inputData, "upperType") === "leather" &&
-            (getAnswer(inputData, "sole") === "wood" ||
-              getAnswer(inputData, "sole") === "other")
+            upperTypeAnswer === "leather" &&
+            (soleAnswer === "wood" || soleAnswer === "other")
           ) {
             return createResult("6405100000");
           } else {
             if (
-              getAnswer(inputData, "upperType") === "textile" &&
-              (getAnswer(inputData, "sole") === "wood" ||
-                getAnswer(inputData, "sole") === "other")
+              upperTypeAnswer === "textile" &&
+              (soleAnswer === "wood" || soleAnswer === "other")
             ) {
-              if (getAnswer(inputData, "sole") === "wood") {
+              if (soleAnswer === "wood") {
                 return createResult("6405201000");
-              } else if (getAnswer(inputData, "sole") === "other") {
+              } else if (soleAnswer === "other") {
                 return handleSlippers640520(inputData);
               }
             } else {
-              if (getAnswer(inputData, "sole") !== "other") {
+              if (soleAnswer !== "other") {
                 return createResult("6405901000");
-              } else if (getAnswer(inputData, "sole") === "other") {
+              } else if (soleAnswer === "other") {
                 return createResult("6405909000");
               }
             }
