@@ -1988,3 +1988,106 @@ test("leather straps is false and shaft is  knee and lengthOfInsole is true and 
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
+test("When the user answer question sole and upperType is leather and sole is not leather and toeCap is yes(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403400000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is leather and sole is not leather and toeCap is no(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("shaft"),
+    code: "6403",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is leather and sole is not leather and toeCap is no and shaft ankle(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+    ],
+  };
+  result = {
+    question: getQuestion("madeOnBase"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is leather and sole is not leather and toeCap is no and shaft knee(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+    ],
+  };
+  result = {
+    question: getQuestion("sports"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When the user answer question sole and upperType is leather and sole is not leather and toeCap is no and shaft other(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+    ],
+  };
+  result = {
+    question: getQuestion("madeOnBase"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});

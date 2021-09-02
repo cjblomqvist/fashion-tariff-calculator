@@ -463,6 +463,37 @@ function leatherStraps6403(inputData) {
     return handleShaftLeatherstrapsFalse6403(inputData);
   }
 }
+function shaft640391(inputData) {
+  const answer = getAnswer(inputData, "shaft");
+  if (answer === "ankle") {
+    return createResult("640391", getQuestion("madeOnBase"));
+  } else if (answer === "knee") {
+    return createResult("640391", getQuestion("sports"));
+  }
+}
+function shaft6403(inputData) {
+  const answer = getAnswer(inputData, "shaft");
+  if (!answer) {
+    return createResult("6403", getQuestion("shaft"));
+  }
+  if (answer === "ankle" || answer === "knee") {
+    return shaft640391(inputData);
+  } else if (answer === "other") {
+    return createResult("640399", getQuestion("madeOnBase"));
+  }
+}
+function handleToeCap6403(inputData) {
+  const answer = getAnswer(inputData, "toeCap");
+  if (!answer) {
+    return createResult("6403", getQuestion("toeCap"));
+  }
+  if (answer === "yes") {
+    return createResult("6403400000");
+  }
+  if (answer === "no") {
+    return shaft6403(inputData);
+  }
+}
 
 export function calculator(inputData) {
   if (!inputData.questionAnswers) {
@@ -500,7 +531,7 @@ export function calculator(inputData) {
           return leatherStraps6403(inputData);
         }
         if (soleAnswer !== "leather") {
-          return createResult("6403", getQuestion("toeCap"));
+          return handleToeCap6403(inputData);
         }
       } else {
         if (
