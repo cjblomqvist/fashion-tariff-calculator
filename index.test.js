@@ -1,5 +1,5 @@
 import { calculator } from "./index";
-import { getQuestion, getQuestionOld } from "./questions/index";
+import { getQuestion } from "./questions/index";
 
 test("When no answers exist, then return first question", () => {
   let inputData, result;
