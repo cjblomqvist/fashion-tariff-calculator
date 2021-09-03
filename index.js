@@ -326,16 +326,14 @@ function lengthOfInsoleWithShaftFalse640351(inputData) {
   }
   if (answer === "yes") {
     return handleGenderTypeWithShaftKnee640351(inputData);
-  }
-  if (answer === "no") {
+  } else if (answer === "no") {
     return createResult("6403511100");
   }
 }
 function shaft640351(inputData) {
   if (getAnswer(inputData, "shaft") === "ankle") {
     return MadeOnBase640351(inputData);
-  }
-  if (getAnswer(inputData, "shaft") === "knee") {
+  } else if (getAnswer(inputData, "shaft") === "knee") {
     return lengthOfInsoleWithShaftFalse640351(inputData);
   }
 }
@@ -346,8 +344,7 @@ function handmade640359(inputData) {
   }
   if (answer === "yes") {
     return createResult("6403590510");
-  }
-  if (answer === "no") {
+  } else if (answer === "no") {
     return createResult("6403590590");
   }
 }
@@ -380,8 +377,7 @@ function handleHeightOfSoleAndHeel640359(inputData) {
   }
   if (answer === "yes") {
     return createResult("6403591100");
-  }
-  if (answer === "no") {
+  } else if (answer === "no") {
     return InsoleLengthWithHeightOfSoleFalse640359(inputData);
   }
 }
@@ -458,17 +454,112 @@ function leatherStraps6403(inputData) {
   }
   if (answer === "yes") {
     return createResult("6403200000");
-  }
-  if (answer === "no") {
+  } else if (answer === "no") {
     return handleShaftLeatherstrapsFalse6403(inputData);
   }
 }
+function handmade640391(inputData) {
+  const answer = getAnswer(inputData, "handmade");
+  if (!answer) {
+    return createResult("640391", getQuestion("handmade"));
+  }
+  if (answer === "yes") {
+    return createResult("6403910510");
+  } else if (answer == "no") {
+    return createResult("6403910590");
+  }
+}
+function genderType640391(inputData) {
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return createResult("640391", getQuestion("genderType"));
+  }
+  if (answer === "women") {
+    return createResult("6403919800");
+  } else if (answer === "men") {
+    return createResult("6403919600");
+  } else if (answer === "unisex") {
+    return createResult("6403919300");
+  }
+}
+function lengthOfInsoleWithShaftAnkle640391(inputData) {
+  const answer = getAnswer(inputData, "lengthOfInsole");
+  if (!answer) {
+    return createResult("640391", getQuestion("lengthOfInsole"));
+  }
+  if (answer === "yes") {
+    return genderType640391(inputData);
+  }
+  if (answer === "no") {
+    return createResult("6403919100");
+  }
+}
+function MadeOnBase640391(inputData) {
+  const answer = getAnswer(inputData, "madeOnBase");
+  if (!answer) {
+    return createResult("640391", getQuestion("madeOnBase"));
+  }
+  if (answer === "yes") {
+    return handmade640391(inputData);
+  } else if (answer === "no") {
+    return lengthOfInsoleWithShaftAnkle640391(inputData);
+  }
+}
+function genderType640391WithShaftKnee(inputData) {
+  const answer = getAnswer(inputData, "genderType");
+  if (!answer) {
+    return createResult("640391", getQuestion("genderType"));
+  } else if (answer === "men") {
+    if (getAnswer(inputData, "sports") === "yes") {
+      return createResult("6403911610");
+    } else if (getAnswer(inputData, "sports") === "no") {
+      return createResult("6403911690");
+    }
+  } else if (answer === "women") {
+    if (getAnswer(inputData, "sports") === "yes") {
+      return createResult("6403911810");
+    } else if (getAnswer(inputData, "sports") === "no") {
+      return createResult("6403911890");
+    }
+  } else if (answer === "unisex") {
+    if (getAnswer(inputData, "sports") === "yes") {
+      return createResult("6403911310");
+    } else if (getAnswer(inputData, "sports") === "no") {
+      return createResult("6403911390");
+    }
+  }
+}
+
+function lengthOfInsoleWithShaftKnee640391(inputData) {
+  const answer = getAnswer(inputData, "lengthOfInsole");
+
+  if (!answer) {
+    return createResult("640391", getQuestion("lengthOfInsole"));
+  }
+  if (answer === "yes") {
+    return genderType640391WithShaftKnee(inputData);
+  } else if (answer === "no") {
+    const sportsAnswer = getAnswer(inputData, "sports");
+    if (sportsAnswer === "yes") {
+      return createResult("6403911110");
+    } else if (sportsAnswer === "no") {
+      return createResult("6403911190");
+    }
+  }
+}
+
 function shaft640391(inputData) {
   const answer = getAnswer(inputData, "shaft");
   if (answer === "ankle") {
-    return createResult("640391", getQuestion("madeOnBase"));
+    return MadeOnBase640391(inputData);
   } else if (answer === "knee") {
-    return createResult("640391", getQuestion("sports"));
+    const answer = getAnswer(inputData, "sports");
+    if (!answer) {
+      return createResult("640391", getQuestion("sports"));
+    }
+    if (answer) {
+      return lengthOfInsoleWithShaftKnee640391(inputData);
+    }
   }
 }
 function shaft6403(inputData) {
@@ -489,8 +580,7 @@ function handleToeCap6403(inputData) {
   }
   if (answer === "yes") {
     return createResult("6403400000");
-  }
-  if (answer === "no") {
+  } else if (answer === "no") {
     return shaft6403(inputData);
   }
 }

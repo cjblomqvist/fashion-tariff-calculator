@@ -2091,3 +2091,432 @@ test("When the user answer question sole and upperType is leather and sole is no
 
   expect(calculator(inputData)).toStrictEqual(result);
 });
+test("When  toeCap is no and shaft ankle and made on base true(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("handmade"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When  toeCap is no and shaft ankle and made on base false(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When  toeCap is no and shaft ankle and made on base true and handmade true(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+      { questionKey: "handmade", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403910510",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When  toeCap is no and shaft ankle and made on base true and handmade false(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+      { questionKey: "handmade", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403910590",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When  toeCap is no and shaft ankle and made on base false and length of insole is yes(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When  toeCap is no and shaft ankle and made on base false and length of insole is no(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403919100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When   made on base false and length of insole is yes and gender is women(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403919800",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When   made on base false and length of insole is yes and gender is men(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403919600",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When   made on base false and length of insole is yes and gender is unisex(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "ankle" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6403919300",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When the user answer question sole and upperType is leather and sole is not leather and toeCap is no and shaft knee and sports is yes or no(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is yes or no and length of insole yes(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640391",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is yes and length of insole no(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403911110",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is no and length of insole no(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403911190",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is yes  and length of insole yes and gender is men(640391)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403911610",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is no  and length of insole yes and gender is men(640391)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403911690",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is no  and length of insole yes and gender is women(640391)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403911890",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is yes  and length of insole yes and gender is women(640391)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403911810",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is yes  and length of insole yes and gender is unisex(640391)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6403911310",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When shaft knee and sports is no  and length of insole yes and gender is unisex(640391)", () => {
+  let inputData, result;
+
+  inputData = {
+    euro: "",
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "knee" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6403911390",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
