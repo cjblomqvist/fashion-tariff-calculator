@@ -1,0 +1,7 @@
+export functuin blalba(inputData, systemSpecificCallback) {
+    // bla bla logic for first 6 digits
+
+    if(resultSoFar === "640310") {
+        return systemSpecificCallback(inputData, '640310');
+    }
+}

@@ -7,11 +7,11 @@ export const footwear = [
 		2. Components & Parts of Footwear`,
     answers: [
       {
-        key: "yes",
+        key: "footwear",
         text: "Footwear",
       },
       {
-        key: "no",
+        key: "components",
         text: "Components & Parts of Footwear",
       },
     ],

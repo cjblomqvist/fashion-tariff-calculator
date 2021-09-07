@@ -4,9 +4,7 @@ import { getQuestion } from "./questions/index";
 test("When no answers exist, then return first question", () => {
   let inputData, result;
 
-  inputData = {
-    euro: "",
-  };
+  inputData = {};
 
   result = {
     question: getQuestion("footwearOrComponents"),
@@ -17,29 +15,11 @@ test("When no answers exist, then return first question", () => {
   expect(calculator(inputData)).toStrictEqual(result);
 });
 
-test("When the user has answered No", () => {
-  let inputData, result;
-
-  inputData = {
-    euro: "",
-    questionAnswers: [{ questionKey: "footwearOrComponents", answerKey: "no" }],
-  };
-
-  result = {
-    question: getQuestion("part"),
-    code: "6406",
-    partial: true,
-  };
-
-  expect(calculator(inputData)).toStrictEqual(result);
-});
-
-test("When the user has answered yes", () => {
+test("When the user has answered footwear", () => {
   let inputData, result;
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
     ],
   };
 
@@ -56,9 +36,8 @@ test("When the user answer question upperType", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
     ],
   };
@@ -75,9 +54,8 @@ test("When the user answer question sole and upperType=rubber or plastic and sol
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
     ],
@@ -95,9 +73,8 @@ test("when user answer question process", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "Moccasins" },
@@ -116,9 +93,8 @@ test("When waterproof is true and  processType is answer: Moccasins or direct in
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -138,9 +114,8 @@ test("When metal toEcap is true ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -160,9 +135,8 @@ test("When metal toEcap is false ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -182,9 +156,8 @@ test("When shaftHeightTyle is answer:ankle", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -204,9 +177,8 @@ test("When shaftHeightTyle is answer:knee", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -226,9 +198,8 @@ test("When shaftHeightTyle is answer:other", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -248,9 +219,8 @@ test("When waterproof is false and processType is answer: Moccasins or direct in
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -269,9 +239,8 @@ test("When winterSports is yes", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -292,9 +261,8 @@ test("When user answer skiBoots : skiBoots", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -314,9 +282,8 @@ test("When user answer skiBoots : snowboardBoots", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -336,9 +303,8 @@ test("When winterSports is no", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -358,9 +324,8 @@ test("When upperStrapsOrThongs is true", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -380,9 +345,8 @@ test("When upperStrapsOrThongs is false ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -403,9 +367,8 @@ test("When upperStrapsOrThongs is false and shaft is ankle ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -428,9 +391,8 @@ test("When upperStrapsOrThongs is false and shaft is ankle and toeCap is yes", (
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -453,9 +415,8 @@ test("When upperStrapsOrThongs is false and shaft is ankle and toeCap is no", ()
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -477,9 +438,8 @@ test("When upperStrapsOrThongs is false and shaft is not ankle ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -501,9 +461,8 @@ test("When upperStrapsOrThongs is false and shaft is not ankle and ToeCap is yes
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -525,9 +484,8 @@ test("When upperStrapsOrThongs is false and shaft is not ankle and ToeCap is no 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "rubber" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -550,9 +508,8 @@ test("When upperStrapsOrThongs is false and shaft is not ankle and ToeCap is no 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -575,9 +532,8 @@ test("When slipper is yes ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -600,9 +556,8 @@ test("When slipper is no ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -626,9 +581,8 @@ test("When vamp is no ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -653,9 +607,8 @@ test("When vamp is yes ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -680,9 +633,8 @@ test("When heightOfSoleAndHeel is yes ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -707,9 +659,8 @@ test("When heightOfSoleAndHeel is no ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -734,9 +685,8 @@ test("When lengthOfInsole is no ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -761,9 +711,8 @@ test("When lengthOfInsole is yes ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -789,9 +738,8 @@ test("When gender is women ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -817,9 +765,8 @@ test("When gender is men ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -845,9 +792,8 @@ test("When gender is unisex ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "plastic" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "process", answerKey: "moccasins" },
@@ -874,9 +820,8 @@ test("When the user answer question sole and upperType is leather and sole is le
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
     ],
@@ -893,9 +838,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
     ],
@@ -913,9 +857,8 @@ test("When the user answer question sole and upperType is textile and sole is le
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "immitationLeather" },
     ],
@@ -932,9 +875,8 @@ test("When the user answer question sole and upperType is textile and sole is le
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "slippers", answerKey: "yes" },
@@ -951,9 +893,8 @@ test("When the user answer question sole and upperType is textile and sole is le
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "slippers", answerKey: "no" },
@@ -970,9 +911,8 @@ test("When the user answer question sole and upperType is textile and sole is pl
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "plastic" },
     ],
@@ -989,9 +929,8 @@ test("When sport is yes", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "sports", answerKey: "yes" },
@@ -1008,9 +947,8 @@ test("When sport is no", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "sports", answerKey: "no" },
@@ -1028,9 +966,8 @@ test("When sport is no and slippers is yes", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "sports", answerKey: "no" },
@@ -1048,9 +985,8 @@ test("When sport is no and slippers is no", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "plastic" },
       { questionKey: "sports", answerKey: "no" },
@@ -1068,9 +1004,8 @@ test("When uppertype is leather ans sole wood or other", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "wood" },
     ],
@@ -1086,9 +1021,8 @@ test("When uppertype is textile ans sole wood ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "wood" },
     ],
@@ -1104,9 +1038,8 @@ test("When uppertype is textile and sole other ", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "other" },
     ],
@@ -1123,9 +1056,8 @@ test("When uppertype is textile ans sole other and slippers yes(640520)", () => 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "other" },
       { questionKey: "slippers", answerKey: "yes" },
@@ -1142,9 +1074,8 @@ test("When uppertype is textile ans sole other and slippers no(640520)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "textile" },
       { questionKey: "sole", answerKey: "other" },
       { questionKey: "slippers", answerKey: "no" },
@@ -1161,9 +1092,8 @@ test("sole is not other (640590)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "rubber" },
       { questionKey: "sole", answerKey: "leather" },
     ],
@@ -1179,9 +1109,8 @@ test("sole is other(640590)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "rubber" },
       { questionKey: "sole", answerKey: "other" },
     ],
@@ -1197,9 +1126,8 @@ test("leather straps is true(6403)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "yes" },
@@ -1216,9 +1144,8 @@ test("leather straps is false(6403)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1236,9 +1163,8 @@ test("leather straps is false and shaft is  ankle(640351)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1257,9 +1183,8 @@ test("leather straps is false and shaft is  knee(640351)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1278,9 +1203,8 @@ test("leather straps is false and shaft is other(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1299,9 +1223,8 @@ test("leather straps is false and shaft is other and made on base is yes(640359)
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1321,9 +1244,8 @@ test("leather straps is false and shaft is other and made on base is no(640359)"
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1343,9 +1265,8 @@ test("when  made on base is yes and handmade is yes(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1365,9 +1286,8 @@ test("when  made on base is yes and handmade is yes(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1387,9 +1307,8 @@ test("when made on base is no and vamp is yes (640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1410,9 +1329,8 @@ test("when made on base is no and vamp is no (640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1434,9 +1352,8 @@ test("when vamp is yes and heightOfSoleAndHeel is yes(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1457,9 +1374,8 @@ test("when vamp is yes and heightOfSoleAndHeel is no(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1481,9 +1397,8 @@ test("when vamp is yes and heightOfSoleAndHeel is no and lengthOfInsole is false
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1505,9 +1420,8 @@ test("when vamp is yes and heightOfSoleAndHeel is no and lengthOfInsole is true(
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1530,9 +1444,8 @@ test("when lengthOfInsole is true and gender is women(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1555,9 +1468,8 @@ test("when lengthOfInsole is true and gender is women(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1580,9 +1492,8 @@ test("when made on base is no and vamp is no and slippers no(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1604,9 +1515,8 @@ test("when made on base is no and vamp is no and slippers yes(640359)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1627,9 +1537,8 @@ test("when  vamp is no and slippers no and length of insole is yes(640359)", () 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1652,9 +1561,8 @@ test("when  vamp is no and slippers no and length of insole is no(640359)", () =
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1676,9 +1584,8 @@ test("when  vamp is no and slippers no and length of insole is yes and gender is
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1701,9 +1608,8 @@ test("when  vamp is no and slippers no and length of insole is yes and gender is
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1726,9 +1632,8 @@ test("leather straps is false and shaft is  ankle and made on base is true(64035
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1748,9 +1653,8 @@ test("when shaft is  ankle and made on base is true and handmade is yes(640351)"
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1770,9 +1674,8 @@ test("when shaft is  ankle and made on base is true and handmade is no(640351)",
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1792,9 +1695,8 @@ test("leather straps is false and shaft is  ankle and made on base is false(6403
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1814,9 +1716,8 @@ test("leather straps is false and shaft is  ankle and made on base is false and 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1837,9 +1738,8 @@ test("leather straps is false and shaft is  ankle and made on base is false and 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1859,9 +1759,8 @@ test("when made on base is false and length of insole is yes and gender is women
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1882,9 +1781,8 @@ test("when made on base is false and length of insole is yes and gender is men(6
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1905,9 +1803,8 @@ test("leather straps is false and shaft is  knee and lengthOfInsole is true(6403
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1927,9 +1824,8 @@ test("leather straps is false and shaft is  knee and lengthOfInsole is false(640
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1948,9 +1844,8 @@ test("leather straps is false and shaft is  knee and lengthOfInsole is true and 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1970,9 +1865,8 @@ test("leather straps is false and shaft is  knee and lengthOfInsole is true and 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "leather" },
       { questionKey: "leatherStraps", answerKey: "no" },
@@ -1992,9 +1886,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "yes" },
@@ -2011,9 +1904,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2031,9 +1923,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2052,9 +1943,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2074,9 +1964,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2085,7 +1974,7 @@ test("When the user answer question sole and upperType is leather and sole is no
   };
   result = {
     question: getQuestion("madeOnBase"),
-    code: "640399",
+    code: "6403xx",
     partial: true,
   };
 
@@ -2095,9 +1984,8 @@ test("When  toeCap is no and shaft ankle and made on base true(6403)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2117,9 +2005,8 @@ test("When  toeCap is no and shaft ankle and made on base false(6403)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2139,9 +2026,8 @@ test("When  toeCap is no and shaft ankle and made on base true and handmade true
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2161,9 +2047,8 @@ test("When  toeCap is no and shaft ankle and made on base true and handmade fals
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2183,9 +2068,8 @@ test("When  toeCap is no and shaft ankle and made on base false and length of in
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2206,9 +2090,8 @@ test("When  toeCap is no and shaft ankle and made on base false and length of in
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2228,9 +2111,8 @@ test("When   made on base false and length of insole is yes and gender is women(
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2251,9 +2133,8 @@ test("When   made on base false and length of insole is yes and gender is men(64
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2274,9 +2155,8 @@ test("When   made on base false and length of insole is yes and gender is unisex
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2297,9 +2177,8 @@ test("When the user answer question sole and upperType is leather and sole is no
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2319,9 +2198,8 @@ test("When shaft knee and sports is yes or no and length of insole yes(6403)", (
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2342,9 +2220,8 @@ test("When shaft knee and sports is yes and length of insole no(6403)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2364,9 +2241,8 @@ test("When shaft knee and sports is no and length of insole no(6403)", () => {
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2386,9 +2262,8 @@ test("When shaft knee and sports is yes  and length of insole yes and gender is 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2409,9 +2284,8 @@ test("When shaft knee and sports is no  and length of insole yes and gender is m
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2432,9 +2306,8 @@ test("When shaft knee and sports is no  and length of insole yes and gender is w
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2455,9 +2328,8 @@ test("When shaft knee and sports is yes  and length of insole yes and gender is 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2478,9 +2350,8 @@ test("When shaft knee and sports is yes  and length of insole yes and gender is 
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2501,9 +2372,8 @@ test("When shaft knee and sports is no  and length of insole yes and gender is u
   let inputData, result;
 
   inputData = {
-    euro: "",
     questionAnswers: [
-      { questionKey: "footwearOrComponents", answerKey: "yes" },
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
       { questionKey: "upperType", answerKey: "leather" },
       { questionKey: "sole", answerKey: "immitationLeather" },
       { questionKey: "toeCap", answerKey: "no" },
@@ -2515,6 +2385,699 @@ test("When shaft knee and sports is no  and length of insole yes and gender is u
   };
   result = {
     code: "6403911390",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is yes(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("handmade"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no(6403)", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("vamp"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is yes handmade yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+      { questionKey: "handmade", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403990510",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is yes handmade no", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "yes" },
+      { questionKey: "handmade", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403990590",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("heightOfSoleAndHeel"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("slippers"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403991100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is no", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is no and length yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is no and length no", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403993100",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is no and length yes and gender men", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403993600",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is no and length yes and gender women", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403993800",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is yes and height is no and length yes and gender unisex", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "yes" },
+      { questionKey: "heightOfSoleAndHeel", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6403993300",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers yes ", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "yes" },
+    ],
+  };
+  result = {
+    code: "6403995000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no ", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("winterSports"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and winter sports yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("skiBoots"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and winter sports yes and skiboots is skiboots or snowboard", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "yes" },
+      { questionKey: "skiBoots", answerKey: "snowboardBoots" },
+    ],
+  };
+  result = {
+    code: "6403120000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and winter sports yes and skiboots is other", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "yes" },
+      { questionKey: "skiBoots", answerKey: "other" },
+    ],
+  };
+  result = {
+    code: "6403190000",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and winter sports no", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("sports"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is answered", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "no" },
+    ],
+  };
+  result = {
+    question: getQuestion("lengthOfInsole"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is no with length no", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403999190",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is yes with length no and sports yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "no" },
+    ],
+  };
+  result = {
+    code: "6403999110",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is answered with length yes", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+    ],
+  };
+  result = {
+    question: getQuestion("genderType"),
+    code: "640399",
+    partial: true,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is yes with length yes and gender men", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403999610",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is no with length yes and gender men", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "men" },
+    ],
+  };
+  result = {
+    code: "6403999690",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no ans sports is no with length yes and gender women", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403999890",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no and sports is no with length yes and gender women", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "women" },
+    ],
+  };
+  result = {
+    code: "6403999810",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no and sports is yes with length yes and gender unisex", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "yes" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6403999310",
+    partial: false,
+  };
+
+  expect(calculator(inputData)).toStrictEqual(result);
+});
+test("When sole is not leather and toeCap is no and shaft other made on base is no and vapm is no and slippers no and wintersports no and sports is no with length yes and gender unisex", () => {
+  let inputData, result;
+
+  inputData = {
+    questionAnswers: [
+      { questionKey: "footwearOrComponents", answerKey: "footwear" },
+      { questionKey: "upperType", answerKey: "leather" },
+      { questionKey: "sole", answerKey: "immitationLeather" },
+      { questionKey: "toeCap", answerKey: "no" },
+      { questionKey: "shaft", answerKey: "other" },
+      { questionKey: "madeOnBase", answerKey: "no" },
+      { questionKey: "vamp", answerKey: "no" },
+      { questionKey: "slippers", answerKey: "no" },
+      { questionKey: "winterSports", answerKey: "no" },
+      { questionKey: "sports", answerKey: "no" },
+      { questionKey: "lengthOfInsole", answerKey: "yes" },
+      { questionKey: "genderType", answerKey: "unisex" },
+    ],
+  };
+  result = {
+    code: "6403999390",
     partial: false,
   };
 
