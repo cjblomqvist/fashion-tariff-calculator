@@ -167,7 +167,7 @@ export const footwear = [
         text: "Opanka",
       },
       {
-        key: "onorwegian",
+        key: "norwegian",
         text: "Norwegian",
       },
       {
