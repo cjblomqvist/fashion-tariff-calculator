@@ -40,7 +40,7 @@ test("getQuestion", () => {
   expect(result).toStrictEqual(question);
 });
 
-test.only("createresult", () => {
+test("createresult", () => {
   let obj, result;
   obj = {
     question: "upperType",

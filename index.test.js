@@ -70,21 +70,21 @@ describe("HS (Global)", () => {
       ["rubber", "immitationLeather", null, "6405901000"], // taric 640590
       ["rubber", "plastic", "process", ""],
       ["rubber", "rubber", "process", ""],
-      ["rubber", "wood", null, "6405901000"], // taric 640590
+      ["rubber", "wood", null, "6405909000"], // taric 640590
       ["rubber", "other", null, "6405909000"], // taric 640590
 
       ["plastic", "leather", "", "6405901000"], // taric 640590
       ["plastic", "immitationLeather", "", "6405901000"], // taric 640590
       ["plastic", "plastic", "process", ""],
       ["plastic", "rubber", "process", ""],
-      ["plastic", "wood", null, "6405901000"], // taric 640590
+      ["plastic", "wood", null, "6405909000"], // taric 640590
       ["plastic", "other", null, "6405909000"], // taric 640590
 
       ["other", "leather", null, "6405901000"], //taric 640590
       ["other", "immitationLeather", null, "6405901000"], // taric 640590
       ["other", "rubber", null, "6405901000"], // taric 640590
       ["other", "plastic", null, "6405901000"], // taric  640590
-      ["other", "wood", null, "6405901000"], // taric 640590
+      ["other", "wood", null, "6405909000"], // taric 640590
       ["other", "other", null, "6405909000"], // taric 640590
     ])("uppertype=%s sole=%s", (upperType, sole, question, code) => {
       test("", () => {
@@ -332,17 +332,17 @@ describe("HS (Global)", () => {
         ["leather", null, "ankle", "madeOnBase", "640351"],
         ["leather", null, "knee", "lengthOfInsole", "640351"],
         ["leather", null, "other", "madeOnBase", "640359"],
-        /*         ["immitationLeather", "yes", null, null, null, "6403400000"], */
+
         ["immitationLeather", "no", null, "shaft", "6403"],
         ["immitationLeather", "no", "ankle", "madeOnBase", "640391"],
         ["immitationLeather", "no", "knee", "sports", "640391"],
         ["immitationLeather", "no", "other", "madeOnBase", "6403xx"],
-        /*         ["rubber", "yes", null, null, null, "6403400000"], */
+
         ["rubber", "no", null, "shaft", "6403"],
         ["rubber", "no", "ankle", "madeOnBase", "640391"],
         ["rubber", "no", "knee", "sports", "640391"],
         ["rubber", "no", "other", "madeOnBase", "6403xx"],
-        /*         ["plastic", "yes", null, null, null, "6403400000"], */
+
         ["plastic", "no", null, "shaft", "6403"],
         ["plastic", "no", "ankle", "madeOnBase", "640391"],
         ["plastic", "no", "knee", "sports", "640391"],

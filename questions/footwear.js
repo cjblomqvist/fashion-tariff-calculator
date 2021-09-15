@@ -1,10 +1,8 @@
 export const footwear = [
   {
     key: "footwearOrComponents",
-    title: `Footwear or Footwear Components?`,
-    text: `Are you importing footwear or components for footwear to EU input number in the table below:
-		1. Footwear
-		2. Components & Parts of Footwear`,
+    title: `Are you importing Footwear or Footwear Components?`,
+    text: ``,
     answers: [
       {
         key: "footwear",
@@ -18,13 +16,8 @@ export const footwear = [
   },
   {
     key: "upperType",
-    title: `What's the upper made of?`,
-    text: `Please input a number corresponding to the upper material:
-		1. Leather
-		2. Textile
-		3. Rubber
-		4. Plastic
-		5. Other`,
+    title: `What's the upper of the shoes made of?`,
+    text: ``,
     answers: [
       {
         key: "leather",
@@ -52,12 +45,7 @@ export const footwear = [
     key: "part",
     title: `What kind of parts?`,
     text: `Determine what kind of parts?
-		1. Uppers and parts
-		2. Outer soles and heels 
-		3. Assemblies of uppers affixed to inne soles or to outer soles but without outer soles
-		4. Removable insoles and other removable accesories
-		5. Outer soles
-    6. Gaiters, bone leather and similar articles and parts thereof`,
+`,
     answers: [
       {
         key: "uppers",
@@ -88,13 +76,7 @@ export const footwear = [
   {
     key: "sole",
     title: `Sole material`,
-    text: `what kind of sole is it?
-		1. Leather
-		2. Imitation leather
-		3. Rubber
-		4. Plastic
-		5. Wood or cork
-		6. Other`,
+    text: `What is the sole made of?`,
     answers: [
       {
         key: "leather",
@@ -125,21 +107,8 @@ export const footwear = [
   },
   {
     key: "process",
-    title: `which process you used ?`,
-    text: `Please input a number corresponding to the process?
-	"cementing,
-      1. Moccasins,
-      2. Stich down and related,
-      3. Goodyear welted,
-      4. Stich and turn,
-      5. Pegged,
-      6. Opanka,
-      7. Norwegian,
-      8. Bologna(sacchetto),
-      9. blake and blake rapid,
-      10. Vulcanization,
-      11. Direct injection process,
-      12. Hand stiched,`,
+    title: `Which process have you used?`,
+    text: ``,
     answers: [
       {
         key: "moccasins",
@@ -194,11 +163,8 @@ export const footwear = [
   },
   {
     key: "waterProof",
-    title: `Water Proof`,
-    text: `Is it water proof?
-		1. Yes
-		2. No
-	`,
+    title: `Is it water proof`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -212,11 +178,8 @@ export const footwear = [
   },
   {
     key: "toeCap",
-    title: `Metal toe cap`,
-    text: `Does the foorwear incorporate a metal toe cap?
-		1. Yes
-		2. No
-	`,
+    title: `Does it have a metal toe cap?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -230,12 +193,8 @@ export const footwear = [
   },
   {
     key: "shaft",
-    title: `Length of the shafts`,
-    text: `Determine the length shafts?
-		1. Shafts that cover the ankle but not the knee
-		2. Shafts that cover the knee
-		3. Other
-	`,
+    title: `Determine the length of the shafts?`,
+    text: ``,
     answers: [
       {
         key: "ankle",
@@ -253,11 +212,8 @@ export const footwear = [
   },
   {
     key: "winterSports",
-    title: `Winter sports`,
-    text: `Is it foorwear for winter sports?
-		1. Yes
-		2. No
-		
+    title: `Is the foorwear for winter sports?`,
+    text: `
 	`,
     answers: [
       {
@@ -272,12 +228,8 @@ export const footwear = [
   },
   {
     key: "skiBoots",
-    title: `Type of ski boots`,
-    text: `What kind of winter sports footwear is it?
-		1. Ski boots
-		2. Snowboard boots
-		3. Other sports footwear
-	`,
+    title: `What kind of winter sports footwear is it?`,
+    text: ``,
     answers: [
       {
         key: "skiBoots",
@@ -296,11 +248,8 @@ export const footwear = [
 
   {
     key: "slippers",
-    title: `Slippers or other indoor footwear`,
-    text: `Is it slippers or other indoor footwear?
-		1. Yes
-		2. No
-	`,
+    title: `Is it slippers or other indoor footwear`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -314,11 +263,8 @@ export const footwear = [
   },
   {
     key: "vamp",
-    title: `Vamp`,
-    text: `Does the footwear have a vamp made of straps and one or several pieces cut out?
-		1. Yes
-		2. No
-	`,
+    title: `Does the footwear have a vamp made of straps and one or several pieces cut out?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -332,11 +278,8 @@ export const footwear = [
   },
   {
     key: "heightOfSoleAndHeel",
-    title: `Height of sole and heel`,
-    text: `Is the height of the sole and heel more than 3cm ?
-		1. Yes
-		2. No
-	`,
+    title: `Is the height of the sole and heel more than 3cm ?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -350,11 +293,8 @@ export const footwear = [
   },
   {
     key: "lengthOfInsole",
-    title: `Length of insole`,
-    text: `Is the length of the insole more than 24cm?
-		1. Yes
-		2. No(size 36EU or smaller)
-	`,
+    title: `Is the size of the shoe bigger than 36EU?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -368,11 +308,8 @@ export const footwear = [
   },
   {
     key: "genderType",
-    title: `Gender`,
-    text: `Is the footwear for women or men?
-		1. Women
-		2. Men
-	`,
+    title: `Is the footwear for women or men?`,
+    text: ``,
     answers: [
       {
         key: "women",
@@ -390,11 +327,8 @@ export const footwear = [
   },
   {
     key: "leatherStraps",
-    title: `Leather straps`,
-    text: `Does the footwear have a leather straps across the instep and around the big toe?
-		1. Yes
-		2. No
-	`,
+    title: `Does the footwear have a leather straps across the instep and around the big toe?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -408,11 +342,8 @@ export const footwear = [
   },
   {
     key: "sports",
-    title: `Sports footwear`,
-    text: `Is it sports footwear?
-		1. Yes
-		2. No
-	`,
+    title: `Is it sports footwear`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -426,11 +357,8 @@ export const footwear = [
   },
   {
     key: "upperStrapsOrThongs",
-    title: `Upper staps or thongs`,
-    text: `Does the footwear have upper straps or thongs assembled to the sole by the means of plugs?
-		1. Yes
-		2. No
-	`,
+    title: `Does the footwear have upper straps or thongs assembled to the sole by the means of plugs?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -444,11 +372,8 @@ export const footwear = [
   },
   {
     key: "madeOnBase",
-    title: `Made on base`,
-    text: `Is the footwear made on base or plattform made of wood, not having an inner sole?
-		1. Yes
-		2. No
-	`,
+    title: `Is the footwear made on base or plattform made of wood, not having an inner sole?`,
+    text: ``,
     answers: [
       {
         key: "yes",
@@ -462,11 +387,8 @@ export const footwear = [
   },
   {
     key: "handmade",
-    title: `Handmade`,
-    text: `Is the footwear handmade?
-		1. Yes
-		2. No
-	`,
+    title: `Is the footwear handmade?`,
+    text: ``,
     answers: [
       {
         key: "yes",
