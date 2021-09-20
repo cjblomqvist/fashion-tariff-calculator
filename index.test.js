@@ -1,5 +1,6 @@
-import { calculator } from "./index";
-import { createResult, getQuestion } from "./questions/index";
+import { calculator } from "./calculator";
+import { createResult } from "./questions/createResult.js";
+import { getQuestion} from "./questions/getQuestion.js"
 
 describe("HS (Global)", () => {
   const taricQuestionAnswers = [];

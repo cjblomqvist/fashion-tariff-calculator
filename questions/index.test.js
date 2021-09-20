@@ -1,17 +1,13 @@
-import { createResult, getQuestion } from "./index";
+import { getQuestion } from "../questions/getQuestion.js";
+import { createResult } from "../questions/createResult.js";
 
 test("getQuestion", () => {
   let question, result;
 
   (question = {
     key: "upperType",
-    title: `What's the upper made of?`,
-    text: `Please input a number corresponding to the upper material:
-		1. Leather
-		2. Textile
-		3. Rubber
-		4. Plastic
-		5. Other`,
+    title: `What's the upper of the shoes made of?`,
+    text: ``,
     answers: [
       {
         key: "leather",

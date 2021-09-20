@@ -1,5 +1,5 @@
 import { calculator } from "./index";
-import { getQuestion } from "./questions/index";
+import { getQuestion } from "./questions/getQuestion";
 
 test("when user answer question process", () => {
   let inputData, result;
