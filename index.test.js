@@ -1,4 +1,5 @@
 import { calculator } from "./calculator";
+import { mapNewToOld } from "./mapping/mapNewToOldQuestion";
 import { createResult } from "./questions/createResult.js";
 import { getQuestion} from "./questions/getQuestion.js"
 
@@ -1232,4 +1233,29 @@ describe("TARIC (EU)", () => {
       });
     });
   });
+});
+
+describe.only('Sebastian test', () => {
+  test('First test', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'gender', answerKey: 'man' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "genderType", answerKey: "man" }
+    ];
+
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+
+  test('Second test', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'upperType', answerKey: 'leather' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "upperType", answerKey: "leather" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  })
 });

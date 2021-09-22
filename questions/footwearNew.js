@@ -4,7 +4,7 @@ export const footwearNew = [
     title: 'What country are you shipping to',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'eu',
         text: 'EU',
@@ -13,32 +13,31 @@ export const footwearNew = [
         key: 'other',
         text: 'Other',
       }
-    ],
-    originalQuestionKey: ''
+    ]
   },
   {
-    key: 'footWearOrComponents',
+    key: 'footwearOrComponents',
     title: 'Are you importing footwear or footwear components',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'footwear',
         text: 'Footwear',
+        originalAnswersKey: 'footwear'
       },
       {
         key: 'components',
         text: 'Components',
       }
-    ],
-    originalQuestionKey: 'footwearOrComponents'
+    ]
   },
   {
     key: 'upperType',
     title: 'What is the upper made of',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'leather',
         text: 'Leather',
@@ -59,15 +58,14 @@ export const footwearNew = [
         key: 'other',
         text: 'Other',
       },
-    ],
-    originalQuestionKey: 'upperType'
+    ]
   },
   {
     key: 'soleType',
     title: 'What is the sole made of',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'leather',
         text: 'Leather',
@@ -100,7 +98,7 @@ export const footwearNew = [
     title: 'What are the qualities of your shoe',
     text: '',
     type: 'multi',
-    answer: [
+    answers: [
       {
         key: 'sports',
         text: 'Sports footwear',
@@ -133,7 +131,7 @@ export const footwearNew = [
     title: 'What kind of winter sports footwear is it',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'skiBoots',
         text: 'Ski Boots',
@@ -146,15 +144,14 @@ export const footwearNew = [
         key: 'other',
         text: 'Other',
       }
-    ],
-    originalQuestionKey: 'skiBoots'
+    ]
   },
   {
     key: 'process',
     title: 'Which process is use',
     text: '',
     type: 'single',
-    answers: [
+    answerss: [
       {
         key: "moccasins",
         text: "Moccasins",
@@ -204,15 +201,14 @@ export const footwearNew = [
         key: "handStiched",
         text: "Hand stiched",
       },
-    ],
-    originalQuestionKey: 'process'
+    ]
   },
   {
     key: 'shaft',
     title: 'What part does the shaft cover',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'knee',
         text: 'Knee',
@@ -225,15 +221,14 @@ export const footwearNew = [
         key: 'other',
         text: 'Other',
       }
-    ],
-    originalQuestionKey: 'shaft'
+    ]
   },
   {
     key: 'sandal',
     title: 'Is the shoe a sandal',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'sandal',
         text: 'Sandal',
@@ -250,7 +245,7 @@ export const footwearNew = [
     title: 'What gender is the boot for',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'man',
         text: 'Man',
@@ -271,7 +266,7 @@ export const footwearNew = [
     title: 'Is it a kids shoe',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'yes',
         text: 'Yes',
@@ -288,7 +283,7 @@ export const footwearNew = [
     title: 'Is the height of your sole and heal more then 3cm',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'yes',
         text: 'Yes',
@@ -297,15 +292,14 @@ export const footwearNew = [
         key: 'no',
         text: 'No',
       },
-    ],
-    originalQuestionKey: 'heightOfSoleAndHeel'
+    ]
   },
   {
     key: 'madeOnBase',
     title: 'Is the footwear made on a base or plattform made of wood not having an inner sole',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'yes',
         text: 'Yes',
@@ -314,15 +308,14 @@ export const footwearNew = [
         key: 'no',
         text: 'No',
       },
-    ],
-    originalQuestionKey: 'madeOnBase'
+    ]
   },
   {
     key: 'handmade',
     title: 'Is the footwear handmade',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'yes',
         text: 'Yes',
@@ -331,15 +324,14 @@ export const footwearNew = [
         key: 'no',
         text: 'No',
       },
-    ],
-    originalQuestionKey: 'handmade'
+    ]
   },
   {
     key: 'leatherStraps',
     title: 'Does the footwear have a leather straps across the instep and around the big toe',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'yes',
         text: 'Yes',
@@ -348,15 +340,14 @@ export const footwearNew = [
         key: 'no',
         text: 'No',
       },
-    ],
-    originalQuestionKey: 'leatherStraps'
+    ]
   },
   {
     key: 'upperStrapsOrThongs',
     title: 'Does the footwear have upper straps or thongs assembled to the sole by the means of plugs',
     text: '',
     type: 'single',
-    answer: [
+    answers: [
       {
         key: 'yes',
         text: 'Yes',
@@ -365,7 +356,6 @@ export const footwearNew = [
         key: 'no',
         text: 'No',
       },
-    ],
-    originalQuestionKey: 'upperStrapsOrThongs'
+    ]
   },
 ]

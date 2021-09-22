@@ -312,12 +312,12 @@ export const footwear = [
     text: ``,
     answers: [
       {
-        key: "women",
-        text: "Women",
+        key: "woman",
+        text: "Woman",
       },
       {
-        key: "men",
-        text: "Men",
+        key: "man",
+        text: "Man",
       },
       {
         key: "unisex",
