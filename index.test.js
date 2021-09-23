@@ -1235,8 +1235,8 @@ describe("TARIC (EU)", () => {
   });
 });
 
-describe.only('Sebastian test', () => {
-  test('footwear or component test', () => {
+describe.only('Abstraction logic test', () => {
+  test('footwearOrComponents matches footwearOrComponents', () => {
     const newQuestionAnswers = [
       { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
     ];
@@ -1248,7 +1248,7 @@ describe.only('Sebastian test', () => {
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
 
-  test('upperType test', () => {
+  test('upperType matches upperType', () => {
     const newQuestionAnswers = [
       { questionKey: 'upperType', answerKey: 'leather' }
     ];
@@ -1259,7 +1259,7 @@ describe.only('Sebastian test', () => {
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
 
-  test('Second test', () => {
+  test('SoleType matches sole', () => {
     const newQuestionAnswers = [
       { questionKey: 'soleType', answerKey: 'leather' }
     ];
@@ -1270,7 +1270,7 @@ describe.only('Sebastian test', () => {
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
 
-  test('Second test', () => {
+  test('skiBoots matches skiBoots', () => {
     const newQuestionAnswers = [
       { questionKey: 'skiBoots', answerKey: 'other' }
     ];
@@ -1281,7 +1281,7 @@ describe.only('Sebastian test', () => {
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
 
-  test('Second test', () => {
+  test('process matches process', () => {
     const newQuestionAnswers = [
       { questionKey: 'process', answerKey: 'pegged' }
     ];
@@ -1292,7 +1292,7 @@ describe.only('Sebastian test', () => {
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
 
-  test('Check if all are yes if they are "pressed"', () => {
+  test('Check if all answers are yes if they are "pressed"', () => {
     const newQuestionAnswers = [
       { questionKey: 'qualities', answerKey: 'sports' },
       { questionKey: 'qualities', answerKey: 'slippers' },
@@ -1310,7 +1310,7 @@ describe.only('Sebastian test', () => {
     ];
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
-  test('Check if two are yes if they are "pressed"', () => {
+  test('Check if two answers are yes if they are "pressed"', () => {
     const newQuestionAnswers = [
       { questionKey: 'qualities', answerKey: 'sports' },
       { questionKey: 'qualities', answerKey: 'slippers' }
