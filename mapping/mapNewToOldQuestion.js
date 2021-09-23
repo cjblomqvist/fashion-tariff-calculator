@@ -7,21 +7,26 @@ export function mapNewToOld(newQuestionAnswers) {
   newQuestionAnswers.forEach(questionAnswer => {
     const newQuestion = getNewQuestion(questionAnswer.questionKey);
     
-    const oldQuestionKey = newQuestion.originalQuestionKey || newQuestion.key
-
-    const oldQuestion = getQuestion(oldQuestionKey)
-    const oldAnswer = oldQuestion.answers.find(answer => answer.key === questionAnswer.answerKey)
-    const oldAnswerKey = oldAnswer.key
-
     if(newQuestion.type === 'multi') {
-      //Om det är type multi borde det gå att ha samma sak som i else förutom att man kör forEachquestionAnswer in newQuestion
-      //forEach(qa in newQuestion){
-        //Allt som finns i else fast flyttad till en funktion
-      // }
-      // const newQuestionAnswer = newQuestion.answers.find(a => a.key === questionAnswer.answerKey);
-      // const oldQuestionAnswer = oldQuestion.answers.find(a => a.key === questionAnswer.answerKey);
 
+      const answerKeyList= []
+      const oldQuestionKey = questionAnswer.answerKey
+
+      answerKeyList.push(oldQuestionKey)
+
+      for(let i = 0; i < answerKeyList.length; i++){
+        oldQuestionAnswers.push({
+          answerKey: "yes",
+          questionKey: answerKeyList[i]
+        })
+      }
     } else {
+      const oldQuestionKey = newQuestion.originalQuestionKey || newQuestion.key
+
+      const oldQuestion = getQuestion(oldQuestionKey)
+      const oldAnswer = oldQuestion.answers.find(answer => answer.key === questionAnswer.answerKey)
+
+      const oldAnswerKey = oldAnswer.key
 
       oldQuestionAnswers.push({
         answerKey: oldAnswerKey,

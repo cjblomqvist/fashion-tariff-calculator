@@ -1236,19 +1236,19 @@ describe("TARIC (EU)", () => {
 });
 
 describe.only('Sebastian test', () => {
-  test('First test', () => {
+  test('footwear or component test', () => {
     const newQuestionAnswers = [
-      { questionKey: 'gender', answerKey: 'man' }
+      { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
     ];
 
     const oldQuestionAnswers = [
-      {questionKey: "genderType", answerKey: "man" }
+      {questionKey: "footwearOrComponents", answerKey: "footwear" }
     ];
 
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
 
-  test('Second test', () => {
+  test('upperType test', () => {
     const newQuestionAnswers = [
       { questionKey: 'upperType', answerKey: 'leather' }
     ];
@@ -1257,5 +1257,69 @@ describe.only('Sebastian test', () => {
       {questionKey: "upperType", answerKey: "leather" }
     ];
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
-  })
+  });
+
+  test('Second test', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'soleType', answerKey: 'leather' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "sole", answerKey: "leather" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+
+  test('Second test', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'skiBoots', answerKey: 'other' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "skiBoots", answerKey: "other" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+
+  test('Second test', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'process', answerKey: 'pegged' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "process", answerKey: "pegged" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+
+  test('Check if all are yes if they are "pressed"', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'qualities', answerKey: 'sports' },
+      { questionKey: 'qualities', answerKey: 'slippers' },
+      { questionKey: 'qualities', answerKey: 'waterProof' },
+      { questionKey: 'qualities', answerKey: 'toeCap' },
+      { questionKey: 'qualities', answerKey: 'winterSports' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "sports", answerKey: "yes" },
+      {questionKey: "slippers", answerKey: "yes" },
+      {questionKey: "waterProof", answerKey: "yes" },
+      {questionKey: "toeCap", answerKey: "yes" },
+      {questionKey: "winterSports", answerKey: "yes" },
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+  test('Check if two are yes if they are "pressed"', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'qualities', answerKey: 'sports' },
+      { questionKey: 'qualities', answerKey: 'slippers' }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "sports", answerKey: "yes" },
+      {questionKey: "slippers", answerKey: "yes" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
 });
