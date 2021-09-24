@@ -98,30 +98,95 @@ export const footwearNew = [
     title: 'What are the qualities of your shoe',
     text: '',
     type: 'multi',
-    answers: [
+    subQuestions: [
       {
         key: 'sports',
-        text: 'Sports footwear',
+        label: 'Sports footwear',
+        answers: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ],
+        originalQuestionKey: 'sports'
+      },
+      {
+        key: 'sports',
+        label: 'Sports footwear',
+        answer: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ],
         originalQuestionKey: 'sports'
       },
       {
         key: 'slippers',
-        text: 'Slippers',
+        label: 'Slippers',
+        answer: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ],
         originalQuestionKey: 'slippers'
       },
       {
         key: 'waterProof',
-        text: 'Water Proof',
+        label: 'Water Proof',
+        answer: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ],
         originalQuestionKey: 'waterProof'
       },
       {
         key: 'metalToeCap',
-        text: 'Metal Toe Cap',
+        label: 'Metal Toe Cap',
+        answer: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ],
         originalQuestionKey: 'toeCap'
       },
       {
         key: 'winterSports',
-        text: 'Winter Sports',
+        label: 'Winter Sports',
+        answer: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ],
         originalQuestionKey: 'winterSports'
       }
     ],

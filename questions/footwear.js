@@ -177,7 +177,7 @@ export const footwear = [
     ],
   },
   {
-    key: "toeCap",
+    key: "metalToeCap",
     title: `Does it have a metal toe cap?`,
     text: ``,
     answers: [

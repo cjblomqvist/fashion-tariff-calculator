@@ -1294,31 +1294,61 @@ describe.only('Abstraction logic test', () => {
 
   test('Check if all answers are yes if they are "pressed"', () => {
     const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'sports' },
-      { questionKey: 'qualities', answerKey: 'slippers' },
-      { questionKey: 'qualities', answerKey: 'waterProof' },
-      { questionKey: 'qualities', answerKey: 'toeCap' },
-      { questionKey: 'qualities', answerKey: 'winterSports' }
+      { questionKey: 'qualities', answerKey: 'sports', key: "yes" },
+      { questionKey: 'qualities', answerKey: 'slippers', key: "yes" },
+      { questionKey: 'qualities', answerKey: 'waterProof', key: "yes" },
+      { questionKey: 'qualities', answerKey: 'metalToeCap', key: "yes" },
+      { questionKey: 'qualities', answerKey: 'winterSports', key: "yes" }
     ];
 
     const oldQuestionAnswers = [
       {questionKey: "sports", answerKey: "yes" },
       {questionKey: "slippers", answerKey: "yes" },
       {questionKey: "waterProof", answerKey: "yes" },
-      {questionKey: "toeCap", answerKey: "yes" },
+      {questionKey: "metalToeCap", answerKey: "yes" },
       {questionKey: "winterSports", answerKey: "yes" },
     ];
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
   test('Check if two answers are yes if they are "pressed"', () => {
     const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'sports' },
-      { questionKey: 'qualities', answerKey: 'slippers' }
+      { questionKey: 'qualities', answerKey: 'sports' , key: "yes"},
+      { questionKey: 'qualities', answerKey: 'slippers', key: "yes" }
     ];
 
     const oldQuestionAnswers = [
       {questionKey: "sports", answerKey: "yes" },
       {questionKey: "slippers", answerKey: "yes" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+  test('Check if one answer is no and one is yes', () => {
+    const newQuestionAnswers = [
+      {questionKey: "qualities", answerKey: "sports", key: "yes" },
+      {questionKey: "qualities", answerKey: "slippers", key: "no" }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "sports", answerKey: "yes" },
+      {questionKey: "slippers", answerKey: "no" }
+    ];
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  });
+  test('Check if all answers are no if they are "pressed"', () => {
+    const newQuestionAnswers = [
+      { questionKey: 'qualities', answerKey: 'sports', key: "no" },
+      { questionKey: 'qualities', answerKey: 'slippers', key: "no" },
+      { questionKey: 'qualities', answerKey: 'waterProof', key: "no" },
+      { questionKey: 'qualities', answerKey: 'metalToeCap', key: "no" },
+      { questionKey: 'qualities', answerKey: 'winterSports', key: "no" }
+    ];
+
+    const oldQuestionAnswers = [
+      {questionKey: "sports", answerKey: "no" },
+      {questionKey: "slippers", answerKey: "no" },
+      {questionKey: "waterProof", answerKey: "no" },
+      {questionKey: "metalToeCap", answerKey: "no" },
+      {questionKey: "winterSports", answerKey: "no" },
     ];
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   });
