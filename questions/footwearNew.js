@@ -7,11 +7,11 @@ export const footwearNew = [
     answers: [
       {
         key: 'eu',
-        text: 'EU',
+        text: 'EU'
       },
       {
         key: 'other',
-        text: 'Other',
+        text: 'Other'
       }
     ]
   },
@@ -28,7 +28,7 @@ export const footwearNew = [
       },
       {
         key: 'components',
-        text: 'Components',
+        text: 'Components'
       }
     ]
   },
@@ -40,58 +40,57 @@ export const footwearNew = [
     answers: [
       {
         key: 'leather',
-        text: 'Leather',
+        text: 'Leather'
       },
       {
         key: 'textile',
-        text: 'Textile',
+        text: 'Textile'
       },
       {
         key: 'rubber',
-        text: 'Rubber',
+        text: 'Rubber'
       },
       {
         key: 'plastic',
-        text: 'Plastic',
+        text: 'Plastic'
       },
       {
         key: 'other',
-        text: 'Other',
-      },
+        text: 'Other'
+      }
     ]
   },
   {
-    key: 'soleType',
+    key: 'sole',
     title: 'What is the sole made of',
     text: '',
     type: 'single',
     answers: [
       {
         key: 'leather',
-        text: 'Leather',
+        text: 'Leather'
       },
       {
         key: 'immitationLeather',
-        text: 'ImmitationLeather',
+        text: 'ImmitationLeather'
       },
       {
         key: 'rubber',
-        text: 'Rubber',
+        text: 'Rubber'
       },
       {
         key: 'plastic',
-        text: 'Plastic',
+        text: 'Plastic'
       },
       {
         key: 'wood',
-        text: 'Wood or cork',
+        text: 'Wood or cork'
       },
       {
         key: 'other',
-        text: 'Other',
-      },
-    ],
-    originalQuestionKey: 'sole'
+        text: 'Other'
+      }
+    ]
   },
   {
     key: 'qualities',
@@ -111,8 +110,7 @@ export const footwearNew = [
             key: 'no',
             text: 'No'
           }
-        ],
-        originalQuestionKey: 'sports'
+        ]
       },
       {
         key: 'sports',
@@ -126,8 +124,7 @@ export const footwearNew = [
             key: 'no',
             text: 'No'
           }
-        ],
-        originalQuestionKey: 'sports'
+        ]
       },
       {
         key: 'slippers',
@@ -141,8 +138,7 @@ export const footwearNew = [
             key: 'no',
             text: 'No'
           }
-        ],
-        originalQuestionKey: 'slippers'
+        ]
       },
       {
         key: 'waterProof',
@@ -156,11 +152,10 @@ export const footwearNew = [
             key: 'no',
             text: 'No'
           }
-        ],
-        originalQuestionKey: 'waterProof'
+        ]
       },
       {
-        key: 'metalToeCap',
+        key: 'toeCap',
         label: 'Metal Toe Cap',
         answer: [
           {
@@ -171,8 +166,7 @@ export const footwearNew = [
             key: 'no',
             text: 'No'
           }
-        ],
-        originalQuestionKey: 'toeCap'
+        ]
       },
       {
         key: 'winterSports',
@@ -186,10 +180,9 @@ export const footwearNew = [
             key: 'no',
             text: 'No'
           }
-        ],
-        originalQuestionKey: 'winterSports'
+        ]
       }
-    ],
+    ]
   },
   {
     key: 'skiBoots',
@@ -199,15 +192,15 @@ export const footwearNew = [
     answers: [
       {
         key: 'skiBoots',
-        text: 'Ski Boots',
+        text: 'Ski Boots'
       },
       {
         key: 'snowboardBoots',
-        text: 'Snowboard Boots',
+        text: 'Snowboard Boots'
       },
       {
         key: 'other',
-        text: 'Other',
+        text: 'Other'
       }
     ]
   },
@@ -218,54 +211,54 @@ export const footwearNew = [
     type: 'single',
     answerss: [
       {
-        key: "moccasins",
-        text: "Moccasins",
+        key: 'moccasins',
+        text: 'Moccasins'
       },
       {
-        key: "stichDown",
-        text: "Stich down and related",
+        key: 'stichDown',
+        text: 'Stich down and related'
       },
       {
-        key: "goodyear",
-        text: "Goodyear welted",
+        key: 'goodyear',
+        text: 'Goodyear welted'
       },
       {
-        key: "stichTurn",
-        text: "Stich and turn",
+        key: 'stichTurn',
+        text: 'Stich and turn'
       },
       {
-        key: "pegged",
-        text: "Pegged",
+        key: 'pegged',
+        text: 'Pegged'
       },
 
       {
-        key: "opanka",
-        text: "Opanka",
+        key: 'opanka',
+        text: 'Opanka'
       },
       {
-        key: "norwegian",
-        text: "Norwegian",
+        key: 'norwegian',
+        text: 'Norwegian'
       },
       {
-        key: "bologna",
-        text: "Bologna(sacchetto)",
+        key: 'bologna',
+        text: 'Bologna(sacchetto)'
       },
       {
-        key: "blake",
-        text: "Blake and blake rapid",
+        key: 'blake',
+        text: 'Blake and blake rapid'
       },
       {
-        key: "vulcanization",
-        text: "Vulcanization",
+        key: 'vulcanization',
+        text: 'Vulcanization'
       },
       {
-        key: "direct injection process",
-        text: "Direct injection process",
+        key: 'direct injection process',
+        text: 'Direct injection process'
       },
       {
-        key: "handStiched",
-        text: "Hand stiched",
-      },
+        key: 'handStiched',
+        text: 'Hand stiched'
+      }
     ]
   },
   {
@@ -276,15 +269,15 @@ export const footwearNew = [
     answers: [
       {
         key: 'knee',
-        text: 'Knee',
+        text: 'Knee'
       },
       {
         key: 'ankle',
-        text: 'Ankle',
+        text: 'Ankle'
       },
       {
         key: 'other',
-        text: 'Other',
+        text: 'Other'
       }
     ]
   },
@@ -295,12 +288,12 @@ export const footwearNew = [
     type: 'single',
     answers: [
       {
-        key: 'sandal',
-        text: 'Sandal',
+        key: 'yes',
+        text: 'Yes'
       },
       {
-        key: 'other',
-        text: 'Other',
+        key: 'no',
+        text: 'No'
       }
     ],
     originalQuestionKey: 'vamp'
@@ -313,15 +306,15 @@ export const footwearNew = [
     answers: [
       {
         key: 'man',
-        text: 'Man',
+        text: 'Man'
       },
       {
         key: 'woman',
-        text: 'Woman',
+        text: 'Woman'
       },
       {
         key: 'unisex/other',
-        text: 'Unisex/Other',
+        text: 'Unisex/Other'
       }
     ],
     originalQuestionKey: 'genderType'
@@ -334,12 +327,12 @@ export const footwearNew = [
     answers: [
       {
         key: 'yes',
-        text: 'Yes',
+        text: 'Yes'
       },
       {
         key: 'no',
-        text: 'No',
-      },
+        text: 'No'
+      }
     ],
     originalQuestionKey: 'lengthOfInsole'
   },
@@ -351,28 +344,29 @@ export const footwearNew = [
     answers: [
       {
         key: 'yes',
-        text: 'Yes',
+        text: 'Yes'
       },
       {
         key: 'no',
-        text: 'No',
-      },
+        text: 'No'
+      }
     ]
   },
   {
     key: 'madeOnBase',
-    title: 'Is the footwear made on a base or plattform made of wood not having an inner sole',
+    title:
+      'Is the footwear made on a base or plattform made of wood not having an inner sole',
     text: '',
     type: 'single',
     answers: [
       {
         key: 'yes',
-        text: 'Yes',
+        text: 'Yes'
       },
       {
         key: 'no',
-        text: 'No',
-      },
+        text: 'No'
+      }
     ]
   },
   {
@@ -383,44 +377,46 @@ export const footwearNew = [
     answers: [
       {
         key: 'yes',
-        text: 'Yes',
+        text: 'Yes'
       },
       {
         key: 'no',
-        text: 'No',
-      },
+        text: 'No'
+      }
     ]
   },
   {
     key: 'leatherStraps',
-    title: 'Does the footwear have a leather straps across the instep and around the big toe',
+    title:
+      'Does the footwear have a leather straps across the instep and around the big toe',
     text: '',
     type: 'single',
     answers: [
       {
         key: 'yes',
-        text: 'Yes',
+        text: 'Yes'
       },
       {
         key: 'no',
-        text: 'No',
-      },
+        text: 'No'
+      }
     ]
   },
   {
     key: 'upperStrapsOrThongs',
-    title: 'Does the footwear have upper straps or thongs assembled to the sole by the means of plugs',
+    title:
+      'Does the footwear have upper straps or thongs assembled to the sole by the means of plugs',
     text: '',
     type: 'single',
     answers: [
       {
         key: 'yes',
-        text: 'Yes',
+        text: 'Yes'
       },
       {
         key: 'no',
-        text: 'No',
-      },
+        text: 'No'
+      }
     ]
-  },
+  }
 ]

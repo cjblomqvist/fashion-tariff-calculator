@@ -1,10 +1,10 @@
-import { footwearNew } from "./footwearNew.js";
+import { footwearNew } from './footwearNew.js'
 
 export function getNewQuestion(key) {
-  const question = footwearNew.find((question) => question.key === key);
-  
+  const question = footwearNew.find((question) => question.key === key)
+
   if (question) {
-    return question;
+    return question
   }
-  throw "Question " + key + " does not exist";
+  throw 'Question ' + key + ' does not exist'
 }
