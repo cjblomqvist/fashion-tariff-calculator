@@ -1339,9 +1339,17 @@ describe.only('Abstraction logic test', () => {
     expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
   })
   test('Mapping one old questionAnswer to one new questionAnswer with a different namme', () => {
-    const oldQuestionAnswers = [{ questionKey: 'sole', answerKey: 'leather' }]
+    const oldQuestionAnswers = [{ questionKey: 'genderType', answerKey: 'man' }]
 
-    const newQuestionAnswers = [{ questionKey: 'sole', answerKey: 'leather' }]
+    const newQuestionAnswers = [{ questionKey: 'gender', answerKey: 'man' }]
+    expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
+  })
+  test.only('Mapping one old questionAnswer to one new questionAnswer with a different namme', () => {
+    const oldQuestionAnswers = [{ questionKey: 'slippers', answerKey: 'no' }]
+
+    const newQuestionAnswers = [
+      { questionKey: 'qualities', answerKey: 'slippers', key: 'no' }
+    ]
     expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
   })
 })

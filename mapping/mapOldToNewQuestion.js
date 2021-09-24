@@ -1,26 +1,18 @@
-import { getNewQuestion } from '../questions/getNewQuestion'
-import { getQuestion } from '../questions/getQuestion'
+import { footwearNew } from '../questions/footwearNew.js'
 
 export function mapOldToNew(oldQuestionAnswers) {
-  const newQuestionAnswers = []
+  return oldQuestionAnswers.map((oldQuestionAnswer) => {
+    const newQuestionKey = footwearNew.find(
+      (newQuestion) =>
+        newQuestion.key === oldQuestionAnswer.questionKey ||
+        newQuestion.originalQuestionKey === oldQuestionAnswer.questionKey
+    ).key
 
-  oldQuestionAnswers.forEach((questionAnswer) => {
-    // const newQuestionKey = oldQuestion.key
+    const newQuestionAnswerKey = oldQuestionAnswer.answerKey
 
-    // const newQuestion = getNewQuestion(newQuestionKey)
-
-    //1. Få fram oldQuestion
-    const oldQuestion = getQuestion(questionAnswer.questionKey)
-    //2. Få fram newQuestionKey
-    const newQuestionKey = oldQuestion.key //Eller inte
-    //3. Få fram newQuestion
-
-    const newAnswer = questionAnswer.answerKey
-    const newQuestion = questionAnswer.questionKey
-    newQuestionAnswers.push({
-      answerKey: newAnswer,
-      questionKey: newQuestion
-    })
+    return {
+      questionKey: newQuestionKey,
+      answerKey: newQuestionAnswerKey
+    }
   })
-  return newQuestionAnswers
 }
