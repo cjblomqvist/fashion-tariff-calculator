@@ -1258,11 +1258,11 @@ describe.only('Abstraction logic test', () => {
 
   test('Check if all answers are yes if they are "pressed"', () => {
     const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'sports', key: 'yes' },
-      { questionKey: 'qualities', answerKey: 'slippers', key: 'yes' },
-      { questionKey: 'qualities', answerKey: 'waterProof', key: 'yes' },
-      { questionKey: 'qualities', answerKey: 'toeCap', key: 'yes' },
-      { questionKey: 'qualities', answerKey: 'winterSports', key: 'yes' }
+      { questionKey: 'sports', answerKey: 'yes' },
+      { questionKey: 'slippers', answerKey: 'yes' },
+      { questionKey: 'waterProof', answerKey: 'yes' },
+      { questionKey: 'toeCap', answerKey: 'yes' },
+      { questionKey: 'winterSports', answerKey: 'yes' }
     ]
 
     const oldQuestionAnswers = [
@@ -1276,8 +1276,8 @@ describe.only('Abstraction logic test', () => {
   })
   test('Check if two answers are yes if they are "pressed"', () => {
     const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'sports', key: 'yes' },
-      { questionKey: 'qualities', answerKey: 'slippers', key: 'yes' }
+      { questionKey: 'sports', answerKey: 'yes' },
+      { questionKey: 'slippers', answerKey: 'yes' }
     ]
 
     const oldQuestionAnswers = [
@@ -1288,8 +1288,8 @@ describe.only('Abstraction logic test', () => {
   })
   test('Check if one answer is no and one is yes', () => {
     const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'sports', key: 'yes' },
-      { questionKey: 'qualities', answerKey: 'slippers', key: 'no' }
+      { questionKey: 'sports', answerKey: 'yes' },
+      { questionKey: 'slippers', answerKey: 'no' }
     ]
 
     const oldQuestionAnswers = [
@@ -1300,11 +1300,11 @@ describe.only('Abstraction logic test', () => {
   })
   test('Check if all answers are no if they are not "pressed"', () => {
     const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'sports', key: 'no' },
-      { questionKey: 'qualities', answerKey: 'slippers', key: 'no' },
-      { questionKey: 'qualities', answerKey: 'waterProof', key: 'no' },
-      { questionKey: 'qualities', answerKey: 'toeCap', key: 'no' },
-      { questionKey: 'qualities', answerKey: 'winterSports', key: 'no' }
+      { questionKey: 'sports', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'waterProof', answerKey: 'no' },
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'winterSports', answerKey: 'no' }
     ]
 
     const oldQuestionAnswers = [
@@ -1347,12 +1347,10 @@ describe.only('Abstraction logic test', () => {
   test('Mapping an old question with a multiquestion', () => {
     const oldQuestionAnswers = [{ questionKey: 'slippers', answerKey: 'no' }]
 
-    const newQuestionAnswers = [
-      { questionKey: 'qualities', answerKey: 'slippers', key: 'no' }
-    ]
+    const newQuestionAnswers = [{ questionKey: 'slippers', answerKey: 'no' }]
     expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
   })
-  test.only('Mapping an old question with a multiquestion', () => {
+  test('Mapping an old question with a multiquestion', () => {
     const oldQuestionAnswers = [
       { questionKey: 'winterSports', answerKey: 'no' }
     ]
@@ -1362,5 +1360,11 @@ describe.only('Abstraction logic test', () => {
     ]
 
     expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
+  })
+  test('sandal matches vamp', () => {
+    const newQuestionAnswers = [{ questionKey: 'vamp', answerKey: 'no' }]
+
+    const oldQuestionAnswers = [{ questionKey: 'sandal', answerKey: 'no' }]
+    expect(mapOldToNew(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   })
 })
