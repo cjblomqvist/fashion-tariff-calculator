@@ -1298,7 +1298,7 @@ describe.only('Abstraction logic test', () => {
     ]
     expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
   })
-  test('Check if all answers are no if they are "pressed"', () => {
+  test('Check if all answers are no if they are not "pressed"', () => {
     const newQuestionAnswers = [
       { questionKey: 'qualities', answerKey: 'sports', key: 'no' },
       { questionKey: 'qualities', answerKey: 'slippers', key: 'no' },
@@ -1344,12 +1344,23 @@ describe.only('Abstraction logic test', () => {
     const newQuestionAnswers = [{ questionKey: 'gender', answerKey: 'man' }]
     expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
   })
-  test.only('Mapping one old questionAnswer to one new questionAnswer with a different namme', () => {
+  test('Mapping an old question with a multiquestion', () => {
     const oldQuestionAnswers = [{ questionKey: 'slippers', answerKey: 'no' }]
 
     const newQuestionAnswers = [
       { questionKey: 'qualities', answerKey: 'slippers', key: 'no' }
     ]
+    expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
+  })
+  test.only('Mapping an old question with a multiquestion', () => {
+    const oldQuestionAnswers = [
+      { questionKey: 'winterSports', answerKey: 'no' }
+    ]
+
+    const newQuestionAnswers = [
+      { questionKey: 'winterSports', answerKey: 'no' }
+    ]
+
     expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
   })
 })

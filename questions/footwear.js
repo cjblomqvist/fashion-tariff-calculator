@@ -212,7 +212,7 @@ export const footwear = [
   },
   {
     key: 'winterSports',
-    title: `Is the foorwear for winter sports?`,
+    title: `Is the footwear for winter sports?`,
     text: `
 	`,
     answers: [

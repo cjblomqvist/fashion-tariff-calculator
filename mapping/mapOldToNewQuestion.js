@@ -2,13 +2,21 @@ import { footwearNew } from '../questions/footwearNew.js'
 
 export function mapOldToNew(oldQuestionAnswers) {
   return oldQuestionAnswers.map((oldQuestionAnswer) => {
-    const newQuestionKey = footwearNew.find(
+    const newQuestionAnswerKey = oldQuestionAnswer.answerKey
+
+    const flattenedFootwearNew = footwearNew
+      .map((newQuestion) => {
+        if (newQuestion.type === 'multi') return newQuestion.subQuestions
+
+        return newQuestion
+      })
+      .flat()
+
+    const newQuestionKey = flattenedFootwearNew.find(
       (newQuestion) =>
         newQuestion.key === oldQuestionAnswer.questionKey ||
         newQuestion.originalQuestionKey === oldQuestionAnswer.questionKey
     ).key
-
-    const newQuestionAnswerKey = oldQuestionAnswer.answerKey
 
     return {
       questionKey: newQuestionKey,

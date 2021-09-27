@@ -23,8 +23,7 @@ export const footwearNew = [
     answers: [
       {
         key: 'footwear',
-        text: 'Footwear',
-        originalAnswersKey: 'footwear'
+        text: 'Footwear'
       },
       {
         key: 'components',
@@ -113,20 +112,6 @@ export const footwearNew = [
         ]
       },
       {
-        key: 'sports',
-        label: 'Sports footwear',
-        answer: [
-          {
-            key: 'yes',
-            text: 'Yes'
-          },
-          {
-            key: 'no',
-            text: 'No'
-          }
-        ]
-      },
-      {
         key: 'slippers',
         label: 'Slippers',
         answer: [
@@ -185,6 +170,28 @@ export const footwearNew = [
     ]
   },
   {
+    key: 'smaurl',
+    title: 'What are the qualities of your shoe',
+    text: '',
+    type: 'multi',
+    subQuestions: [
+      {
+        key: 'winterSports',
+        label: 'Is the footwear for winter sports?',
+        answers: [
+          {
+            key: 'yes',
+            text: 'Yes'
+          },
+          {
+            key: 'no',
+            text: 'No'
+          }
+        ]
+      }
+    ]
+  },
+  {
     key: 'skiBoots',
     title: 'What kind of winter sports footwear is it',
     text: '',
@@ -209,7 +216,7 @@ export const footwearNew = [
     title: 'Which process is use',
     text: '',
     type: 'single',
-    answerss: [
+    answers: [
       {
         key: 'moccasins',
         text: 'Moccasins'
