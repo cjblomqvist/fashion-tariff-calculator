@@ -2,7 +2,7 @@ import { footwearNew } from '../questions/footwearNew.js'
 
 export function mapOldToNew(oldQuestionAnswers) {
   return oldQuestionAnswers.map((oldQuestionAnswer) => {
-    const newQuestionAnswerKey = oldQuestionAnswer.answerKey
+    const newAnswerKey = oldQuestionAnswer.answerKey
 
     const flattenedFootwearNew = footwearNew
       .map((newQuestion) => {
@@ -20,7 +20,7 @@ export function mapOldToNew(oldQuestionAnswers) {
 
     return {
       questionKey: newQuestionKey,
-      answerKey: newQuestionAnswerKey
+      answerKey: newAnswerKey
     }
   })
 }

@@ -5,38 +5,16 @@ export function mapNewToOld(newQuestionAnswers) {
   const oldQuestionAnswers = []
 
   newQuestionAnswers.forEach((questionAnswer) => {
-    const newQuestion = getNewQuestion(questionAnswer.questionKey)
+    const questionAnswerQuestionKey =
+      getNewQuestion(questionAnswer.questionKey).originalQuestionKey ||
+      getNewQuestion(questionAnswer.questionKey).key
 
-    if (newQuestion.type === 'multi') {
-      const answerKeyList = []
+    const keyWeNeed = getQuestion(questionAnswerQuestionKey).key
 
-      const oldQuestionKey = questionAnswer.answerKey
-
-      const oldAnswer = questionAnswer.key
-
-      answerKeyList.push(oldQuestionKey)
-
-      for (let i = 0; i < answerKeyList.length; i++) {
-        oldQuestionAnswers.push({
-          answerKey: oldAnswer,
-          questionKey: answerKeyList[i]
-        })
-      }
-    } else {
-      const oldQuestionKey = newQuestion.originalQuestionKey || newQuestion.key
-
-      const oldQuestion = getQuestion(oldQuestionKey)
-      const oldAnswer = oldQuestion.answers.find(
-        (answer) => answer.key === questionAnswer.answerKey
-      )
-
-      const oldAnswerKey = oldAnswer.key
-
-      oldQuestionAnswers.push({
-        answerKey: oldAnswerKey,
-        questionKey: oldQuestionKey
-      })
-    }
+    oldQuestionAnswers.push({
+      answerKey: questionAnswer.answerKey,
+      questionKey: keyWeNeed
+    })
   })
   return oldQuestionAnswers
 }
