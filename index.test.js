@@ -1432,7 +1432,7 @@ describe('Mapping of questions', () => {
 })
 
 describe('Abstraction logic test', () => {
-  test.only('result of footwear = code 64 & upperType is the next question', () => {
+  test('result of footwear = code 64 & upperType is the next question', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
@@ -1451,23 +1451,31 @@ describe('Abstraction logic test', () => {
     //nya calculatorn
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
-  test('upperType next quetion is sole', () => {
+  test.only('upperType next quetion is sole', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
         //nya questionAnswers
-        { questionKey: 'upperType', answerKey: 'leather' }
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
+        { questionKey: 'upperType', answerKey: 'plastic' },
+        { questionKey: 'sole', answerKey: 'plastic' },
+        { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'process', answerKey: 'moccasins' },
+        { questionKey: 'toeCap', answerKey: 'yes' },
+        { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'slipper', answerKey: 'yes' }
       ]
     }
 
     result = {
       //nya frågorna
-      question: getNewQuestion('sole'),
-      code: '',
+      question: getQuestion('toeCap'),
+      code: '6401',
       partial: true
     }
 
     //nya calculatorn
-    expect(calculatorNew(inputData)).toStrictEqual(result)
+    expect(calculator(inputData)).toStrictEqual(result)
+    console.log(result)
   })
 })
