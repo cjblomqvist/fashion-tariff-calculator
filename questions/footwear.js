@@ -1,5 +1,21 @@
 export const footwear = [
   {
+    key: 'country',
+    title: 'What country are you shipping to',
+    text: '',
+    type: 'single',
+    answers: [
+      {
+        key: 'eu',
+        text: 'EU'
+      },
+      {
+        key: 'other',
+        text: 'Other'
+      }
+    ]
+  },
+  {
     key: 'footwearOrComponents',
     title: `Are you importing Footwear or Footwear Components?`,
     text: ``,
@@ -320,7 +336,7 @@ export const footwear = [
         text: 'Man'
       },
       {
-        key: 'unisex',
+        key: 'unisex/other',
         text: "Footwear which can not be identified as men's or women's footwear"
       }
     ]

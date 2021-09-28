@@ -3,6 +3,8 @@ import { mapNewToOld } from './mapping/mapNewToOldQuestion'
 import { mapOldToNew } from './mapping/mapOldToNewQuestion'
 import { createResult } from './questions/createResult.js'
 import { getQuestion } from './questions/getQuestion.js'
+import { getNewQuestion } from './questions/getNewQuestion.js'
+import { calculatorNew } from './calculatorNew'
 
 describe('HS (Global)', () => {
   const taricQuestionAnswers = []
@@ -1189,7 +1191,6 @@ describe('TARIC (EU)', () => {
             ]
           }
           result = createResult(code, question ? getQuestion(question) : null)
-
           expect(calculator(inputData)).toStrictEqual(result)
         })
       })
@@ -1197,7 +1198,14 @@ describe('TARIC (EU)', () => {
   })
 })
 
-describe.only('Abstraction logic test', () => {
+describe('Mapping of questions', () => {
+  test('country matches country', () => {
+    const newQuestionAnswers = [{ questionKey: 'country', answerKey: 'eu' }]
+
+    const oldQuestionAnswers = [{ questionKey: 'country', answerKey: 'eu' }]
+
+    expect(mapNewToOld(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  })
   test('footwearOrComponents matches footwearOrComponents', () => {
     const newQuestionAnswers = [
       { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
@@ -1366,5 +1374,100 @@ describe.only('Abstraction logic test', () => {
 
     const oldQuestionAnswers = [{ questionKey: 'sandal', answerKey: 'no' }]
     expect(mapOldToNew(newQuestionAnswers)).toStrictEqual(oldQuestionAnswers)
+  })
+  test('Check if all answers are yes if they are "pressed"', () => {
+    const oldQuestionAnswers = [
+      { questionKey: 'sports', answerKey: 'yes' },
+      { questionKey: 'slippers', answerKey: 'yes' },
+      { questionKey: 'waterProof', answerKey: 'yes' },
+      { questionKey: 'toeCap', answerKey: 'yes' },
+      { questionKey: 'winterSports', answerKey: 'yes' }
+    ]
+
+    const newQuestionAnswers = [
+      { questionKey: 'sports', answerKey: 'yes' },
+      { questionKey: 'slippers', answerKey: 'yes' },
+      { questionKey: 'waterProof', answerKey: 'yes' },
+      { questionKey: 'toeCap', answerKey: 'yes' },
+      { questionKey: 'winterSports', answerKey: 'yes' }
+    ]
+    expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
+  })
+  test('Check if all answers are no if they are not "pressed"', () => {
+    const oldQuestionAnswers = [
+      { questionKey: 'sports', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'waterProof', answerKey: 'no' },
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'winterSports', answerKey: 'no' }
+    ]
+
+    const newQuestionAnswers = [
+      { questionKey: 'sports', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'waterProof', answerKey: 'no' },
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'winterSports', answerKey: 'no' }
+    ]
+    expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
+  })
+  test('Check if answers are yes or no depending on if they are "pressed"', () => {
+    const oldQuestionAnswers = [
+      { questionKey: 'sports', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'yes' },
+      { questionKey: 'waterProof', answerKey: 'no' },
+      { questionKey: 'toeCap', answerKey: 'yes' },
+      { questionKey: 'winterSports', answerKey: 'no' }
+    ]
+
+    const newQuestionAnswers = [
+      { questionKey: 'sports', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'yes' },
+      { questionKey: 'waterProof', answerKey: 'no' },
+      { questionKey: 'toeCap', answerKey: 'yes' },
+      { questionKey: 'winterSports', answerKey: 'no' }
+    ]
+    expect(mapOldToNew(oldQuestionAnswers)).toStrictEqual(newQuestionAnswers)
+  })
+})
+
+describe('Abstraction logic test', () => {
+  test.only('result of footwear = code 64 & upperType is the next question', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        //nya lista med questionAnswer
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
+      ]
+    }
+
+    result = {
+      //nya frågorna
+      question: getNewQuestion('upperType'),
+      code: '',
+      partial: true
+    }
+
+    //nya calculatorn
+    expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test('upperType next quetion is sole', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        //nya questionAnswers
+        { questionKey: 'upperType', answerKey: 'leather' }
+      ]
+    }
+
+    result = {
+      //nya frågorna
+      question: getNewQuestion('sole'),
+      code: '',
+      partial: true
+    }
+
+    //nya calculatorn
+    expect(calculatorNew(inputData)).toStrictEqual(result)
   })
 })
