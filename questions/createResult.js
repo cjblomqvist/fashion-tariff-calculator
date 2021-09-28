@@ -4,13 +4,13 @@ export function createResult(code, question) {
       question,
       code,
       //has no use atm because when you dont have a question you get a result
-      partial: true,
-    };
+      partial: true
+    }
   }
 
   return {
     code,
     //has no use atm because when you dont have a question you get a result
-    partial: false,
-  };
+    partial: false
+  }
 }

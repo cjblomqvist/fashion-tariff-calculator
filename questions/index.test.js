@@ -1,50 +1,50 @@
-import { getQuestion } from "../questions/getQuestion.js";
-import { createResult } from "../questions/createResult.js";
+import { getQuestion } from '../questions/getQuestion.js'
+import { createResult } from '../questions/createResult.js'
 
-test("getQuestion", () => {
-  let question, result;
+test('getQuestion', () => {
+  let question, result
 
-  (question = {
-    key: "upperType",
+  ;(question = {
+    key: 'upperType',
     title: `What's the upper of the shoes made of?`,
     text: ``,
     answers: [
       {
-        key: "leather",
-        text: "Leather",
+        key: 'leather',
+        text: 'Leather'
       },
       {
-        key: "textile",
-        text: "Textile",
+        key: 'textile',
+        text: 'Textile'
       },
       {
-        key: "rubber",
-        text: "Rubber",
+        key: 'rubber',
+        text: 'Rubber'
       },
       {
-        key: "plastic",
-        text: "Plastic",
+        key: 'plastic',
+        text: 'Plastic'
       },
       {
-        key: "other",
-        text: "Other",
-      },
-    ],
+        key: 'other',
+        text: 'Other'
+      }
+    ]
   }),
-    (result = getQuestion("upperType"));
+    (result = getQuestion('upperType'))
 
-  expect(result).toStrictEqual(question);
-});
+  expect(result).toStrictEqual(question)
+})
 
-test("createresult", () => {
-  let obj, result;
+test('createresult', () => {
+  let obj, result
   obj = {
-    question: "upperType",
-    code: "123",
-    partial: true,
-  };
+    question: 'upperType',
+    code: '123',
+    partial: true
+  }
 
-  result = createResult("123", "upperType");
+  result = createResult('123', 'upperType')
 
-  expect(result).toStrictEqual(obj);
-});
+  expect(result).toStrictEqual(obj)
+})
