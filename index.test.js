@@ -608,7 +608,7 @@ describe('TARIC (EU)', () => {
     describe.each([
       ['yes', 'men', null, '6402999600'],
       ['yes', 'women', null, '6402999800'],
-      ['yes', 'unisex', null, '6402999300'],
+      ['yes', 'unisex/other', null, '6402999300'],
       ['no', null, null, '6402999100']
     ])(
       'length of insole =%s gendertypr=%s',
@@ -701,7 +701,7 @@ describe('TARIC (EU)', () => {
       describe.each([
         ['yes', 'men', null, '6403511500'],
         ['yes', 'women', null, '6403511900'],
-        ['yes', 'unisex', null, '6403511900'],
+        ['yes', 'unisex/other', null, '6403511900'],
         ['no', null, null, '6403511100']
       ])(
         'length of insole =%s and gendertype=%s',
@@ -738,10 +738,10 @@ describe('TARIC (EU)', () => {
       ]
 
       describe.each([
-        ['yes', null, 'handmade', '640359'], //
+        ['yes', null, 'handmade', '640359'],
         ['yes', 'yes', null, '6403590510'],
         ['yes', 'no', null, '6403590590'],
-        ['no', null, 'vamp', '640359'] //
+        ['no', null, 'vamp', '640359']
       ])(
         ' made on base =%s handmade = %s)',
         (madeOnBase, handmade, question, code) => {
@@ -795,7 +795,7 @@ describe('TARIC (EU)', () => {
         ['yes', null, 'genderType', '640359'],
         ['yes', 'men', null, '6403593500'],
         ['yes', 'women', null, '6403593900'],
-        ['yes', 'unisex', null, '6403593900'],
+        ['yes', 'unisex/other', null, '6403593900'],
         ['no', null, null, '6403593100']
       ])(
         'vamp => yes heightOfSoleAndHeel=> no => length of insole=%s => genderType =>%s)',
@@ -828,7 +828,7 @@ describe('TARIC (EU)', () => {
         ['no', 'yes', null, 'genderType', '640359'],
         ['no', 'yes', 'men', null, '6403599500'],
         ['no', 'yes', 'women', null, '6403599900'],
-        ['no', 'yes', 'unisex', null, '6403599900']
+        ['no', 'yes', 'unisex/other', null, '6403599900']
       ])(
         'leather straps=no => shaft=other => made on base =no => vamp=no => slippers=%s lengthOfInsole=%s genderType=%s',
         (slippers, lengthOfInsole, genderType, question, code) => {
@@ -872,7 +872,7 @@ describe('TARIC (EU)', () => {
           ['no', 'yes', null, null, 'genderType', '640391'],
           ['no', 'yes', 'men', null, null, '6403919600'],
           ['no', 'yes', 'women', null, null, '6403919800'],
-          ['no', 'yes', 'unisex', null, null, '6403919300']
+          ['no', 'yes', 'unisex/other', null, null, '6403919300']
         ])(
           'madeOnBase=%s lengthOfInsole=%s genderType=%s handmade=%s',
           (
@@ -923,8 +923,8 @@ describe('TARIC (EU)', () => {
           ['yes', 'yes', 'men', null, '6403911610'],
           ['no', 'yes', 'women', null, '6403911890'],
           ['yes', 'yes', 'women', null, '6403911810'],
-          ['no', 'yes', 'unisex', null, '6403911390'],
-          ['yes', 'yes', 'unisex', null, '6403911310']
+          ['no', 'yes', 'unisex/other', null, '6403911390'],
+          ['yes', 'yes', 'unisex/other', null, '6403911310']
         ])(
           'sports=%s lengthOfInsole=%s genderType=%s',
           (sports, lengthOfInsole, genderType, question, code) => {
@@ -1003,7 +1003,7 @@ describe('TARIC (EU)', () => {
           ['yes', 'no', null, 'yes', null, 'genderType', '640399'], //
           ['yes', 'no', null, 'yes', 'men', null, '6403993600'],
           ['yes', 'no', null, 'yes', 'women', null, '6403993800'],
-          ['yes', 'no', null, 'yes', 'unisex', null, '6403993300'],
+          ['yes', 'no', null, 'yes', 'unisex/other', null, '6403993300'],
           ['yes', 'no', null, 'no', null, null, '6403993100'],
           ['no', null, null, null, null, 'slippers', '640399'], //
           ['no', null, 'yes', null, null, null, '6403995000'],
@@ -1064,8 +1064,8 @@ describe('TARIC (EU)', () => {
           ['no', null, 'yes', 'yes', 'men', null, '6403999610'],
           ['no', null, 'yes', 'yes', 'women', null, '6403999810'],
           ['no', null, 'no', 'yes', 'women', null, '6403999890'],
-          ['no', null, 'no', 'yes', 'unisex', null, '6403999390'],
-          ['no', null, 'yes', 'yes', 'unisex', null, '6403999310'],
+          ['no', null, 'no', 'yes', 'unisex/other', null, '6403999390'],
+          ['no', null, 'yes', 'yes', 'unisex/other', null, '6403999310'],
           ['no', null, 'no', 'no', null, null, '6403999190'],
           ['no', null, 'yes', 'no', null, null, '6403999110']
         ])(
@@ -1432,50 +1432,84 @@ describe('Mapping of questions', () => {
 })
 
 describe('Abstraction logic test', () => {
-  test('result of footwear = code 64 & upperType is the next question', () => {
+  test('Answering footwear will give upperType as the next question', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
-        //nya lista med questionAnswer
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
       ]
     }
 
     result = {
-      //nya frågorna
       question: getNewQuestion('upperType'),
       code: '',
       partial: true
     }
-
-    //nya calculatorn
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
-  test.only('upperType next quetion is sole', () => {
+  test('Answering upperType will give sole as the next question', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
-        //nya questionAnswers
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
-        { questionKey: 'upperType', answerKey: 'plastic' },
-        { questionKey: 'sole', answerKey: 'plastic' },
-        { questionKey: 'waterProof', answerKey: 'yes' },
-        { questionKey: 'process', answerKey: 'moccasins' },
-        { questionKey: 'toeCap', answerKey: 'yes' },
-        { questionKey: 'waterProof', answerKey: 'yes' },
-        { questionKey: 'slipper', answerKey: 'yes' }
+        { questionKey: 'upperType', answerKey: 'leather' }
       ]
     }
 
     result = {
-      //nya frågorna
-      question: getQuestion('toeCap'),
-      code: '6401',
+      question: getNewQuestion('sole'),
+      code: '',
       partial: true
     }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test('Answering alot of questions will give you a result', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
+        { questionKey: 'upperType', answerKey: 'leather' },
+        { questionKey: 'sole', answerKey: 'leather' },
+        { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'winterSports', answerKey: 'no' },
+        { questionKey: 'shaft', answerKey: 'knee' },
+        { questionKey: 'genderType', answerKey: 'man' },
+        { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+        { questionKey: 'madeOnBase', answerKey: 'yes' },
+        { questionKey: 'handmade', answerKey: 'yes' },
+        { questionKey: 'leatherStraps', answerKey: 'no' }
+      ]
+    }
 
-    //nya calculatorn
-    expect(calculator(inputData)).toStrictEqual(result)
-    console.log(result)
+    result = {
+      code: '6403511500',
+      partial: false
+    }
+
+    expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test('Answering alot of questions with new-question names will give you a result', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
+        { questionKey: 'upperType', answerKey: 'leather' },
+        { questionKey: 'sole', answerKey: 'leather' },
+        { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'winterSports', answerKey: 'no' },
+        { questionKey: 'shaft', answerKey: 'knee' },
+        { questionKey: 'gender', answerKey: 'man' },
+        { questionKey: 'kidsShoe', answerKey: 'yes' },
+        { questionKey: 'madeOnBase', answerKey: 'yes' },
+        { questionKey: 'handmade', answerKey: 'yes' },
+        { questionKey: 'leatherStraps', answerKey: 'no' }
+      ]
+    }
+
+    result = {
+      code: '6403511500',
+      partial: false
+    }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
   })
 })

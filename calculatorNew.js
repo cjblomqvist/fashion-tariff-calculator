@@ -1,11 +1,22 @@
 import hsFootwear from './lib/hs-footwear'
 import taricFootwear from './lib/taric-footwear'
+import { mapNewToOld } from './mapping/mapNewToOldQuestion'
+import { getNewQuestion } from './questions/getNewQuestion'
 
 export function calculatorNew(inputData) {
-  return hsFootwear(inputData, taricFootwear)
+  const oldQuestionAnswers = mapNewToOld(inputData.questionAnswers)
+
+  inputData.questionAnswers = oldQuestionAnswers
+
+  const checky = hsFootwear(inputData, taricFootwear)
+  if (checky.partial === false) {
+    return checky
+  } else {
+    const oldQuestion = checky.question
+    const newQuestion = getNewQuestion(oldQuestion.key)
+
+    checky.question = newQuestion
+
+    return checky
+  }
 }
-
-//inputData är en lsita med QuestionAnswer
-
-//Skapa en lista med questionAnswers som läggs till varje gång man svara på en fråga
-//När alla frågor har blivit besvarade eller under tiden de besvaras så ska de kollas av mha calculatorNew för att se om det blir en final code

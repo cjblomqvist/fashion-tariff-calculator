@@ -8,7 +8,10 @@ export function getNewQuestion(key) {
     })
     .flat()
 
-  const question = flatQuestion.find((fQuestion) => fQuestion.key === key)
+  const question = flatQuestion.find(
+    (fQuestion) =>
+      fQuestion.key === key || fQuestion.originalQuestionKey === key
+  )
 
   if (question) {
     return question
