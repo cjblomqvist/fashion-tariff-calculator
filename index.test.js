@@ -61,36 +61,36 @@ describe('HS (Global)', () => {
       ['leather', 'immitationLeather', 'toeCap', '6403'],
       ['leather', 'rubber', 'toeCap', '6403'],
       ['leather', 'plastic', 'toeCap', '6403'],
-      ['leather', 'wood', null, '6405100000'], // taric 640510
-      ['leather', 'other', null, '6405100000'], // taric 640510
+      ['leather', 'wood', null, '6405100000'],
+      ['leather', 'other', null, '6405100000'],
 
       ['textile', 'leather', 'slippers', '640420'],
       ['textile', 'immitationLeather', 'slippers', '640420'],
       ['textile', 'rubber', 'sports', '6404'],
       ['textile', 'plastic', 'sports', '6404'],
-      ['textile', 'wood', null, '6405201000'], // taric 640520
+      ['textile', 'wood', null, '6405201000'],
       ['textile', 'other', 'slippers', '640520'],
 
-      ['rubber', 'leather', null, '6405901000'], // taric 640590
-      ['rubber', 'immitationLeather', null, '6405901000'], // taric 640590
+      ['rubber', 'leather', null, '6405901000'],
+      ['rubber', 'immitationLeather', null, '6405901000'],
       ['rubber', 'plastic', 'process', ''],
       ['rubber', 'rubber', 'process', ''],
-      ['rubber', 'wood', null, '6405909000'], // taric 640590
-      ['rubber', 'other', null, '6405909000'], // taric 640590
+      ['rubber', 'wood', null, '6405909000'],
+      ['rubber', 'other', null, '6405909000'],
 
-      ['plastic', 'leather', '', '6405901000'], // taric 640590
-      ['plastic', 'immitationLeather', '', '6405901000'], // taric 640590
+      ['plastic', 'leather', '', '6405901000'],
+      ['plastic', 'immitationLeather', '', '6405901000'],
       ['plastic', 'plastic', 'process', ''],
       ['plastic', 'rubber', 'process', ''],
-      ['plastic', 'wood', null, '6405909000'], // taric 640590
-      ['plastic', 'other', null, '6405909000'], // taric 640590
+      ['plastic', 'wood', null, '6405909000'],
+      ['plastic', 'other', null, '6405909000'],
 
-      ['other', 'leather', null, '6405901000'], //taric 640590
-      ['other', 'immitationLeather', null, '6405901000'], // taric 640590
-      ['other', 'rubber', null, '6405901000'], // taric 640590
-      ['other', 'plastic', null, '6405901000'], // taric  640590
-      ['other', 'wood', null, '6405909000'], // taric 640590
-      ['other', 'other', null, '6405909000'] // taric 640590
+      ['other', 'leather', null, '6405901000'],
+      ['other', 'immitationLeather', null, '6405901000'],
+      ['other', 'rubber', null, '6405901000'],
+      ['other', 'plastic', null, '6405901000'],
+      ['other', 'wood', null, '6405909000'],
+      ['other', 'other', null, '6405909000']
     ])('uppertype=%s sole=%s', (upperType, sole, question, code) => {
       test('', () => {
         let inputData, result
@@ -912,13 +912,13 @@ describe('TARIC (EU)', () => {
 
       describe('shaft=knee', () => {
         describe.each([
-          [null, null, null, 'sports', '640391'], //
-          ['yes', null, null, 'lengthOfInsole', '640391'], //
-          ['no', null, null, 'lengthOfInsole', '640391'], //
+          [null, null, null, 'sports', '640391'],
+          ['yes', null, null, 'lengthOfInsole', '640391'],
+          ['no', null, null, 'lengthOfInsole', '640391'],
           ['no', 'no', null, null, '6403911190'],
           ['yes', 'no', null, null, '6403911110'],
-          ['no', 'yes', null, 'genderType', '640391'], //
-          ['yes', 'yes', null, 'genderType', '640391'], //
+          ['no', 'yes', null, 'genderType', '640391'],
+          ['yes', 'yes', null, 'genderType', '640391'],
           ['no', 'yes', 'men', null, '6403911690'],
           ['yes', 'yes', 'men', null, '6403911610'],
           ['no', 'yes', 'women', null, '6403911890'],
@@ -966,11 +966,11 @@ describe('TARIC (EU)', () => {
 
       describe('madeOnBase', () => {
         describe.each([
-          [null, null, 'madeOnBase', '6403xx'], //
-          ['yes', null, 'handmade', '640399'], //
+          [null, null, 'madeOnBase', '6403xx'],
+          ['yes', null, 'handmade', '640399'],
           ['yes', 'yes', null, '6403990510'],
           ['yes', 'no', null, '6403990590'],
-          ['no', null, 'vamp', '640399'] //
+          ['no', null, 'vamp', '640399']
         ])(
           'madeOnBase=%s handmade=%s',
           (madeOnBase, handmade, question, code) => {
@@ -997,17 +997,17 @@ describe('TARIC (EU)', () => {
 
       describe('vamp', () => {
         describe.each([
-          ['yes', null, null, null, null, 'heightOfSoleAndHeel', '640399'], //
+          ['yes', null, null, null, null, 'heightOfSoleAndHeel', '640399'],
           ['yes', 'yes', null, null, null, null, '6403991100'],
-          ['yes', 'no', null, null, null, 'lengthOfInsole', '640399'], //
-          ['yes', 'no', null, 'yes', null, 'genderType', '640399'], //
+          ['yes', 'no', null, null, null, 'lengthOfInsole', '640399'],
+          ['yes', 'no', null, 'yes', null, 'genderType', '640399'],
           ['yes', 'no', null, 'yes', 'men', null, '6403993600'],
           ['yes', 'no', null, 'yes', 'women', null, '6403993800'],
           ['yes', 'no', null, 'yes', 'unisex/other', null, '6403993300'],
           ['yes', 'no', null, 'no', null, null, '6403993100'],
-          ['no', null, null, null, null, 'slippers', '640399'], //
+          ['no', null, null, null, null, 'slippers', '640399'],
           ['no', null, 'yes', null, null, null, '6403995000'],
-          ['no', null, 'no', null, null, 'winterSports', '6403xx'] //
+          ['no', null, 'no', null, null, 'winterSports', '6403xx']
         ])(
           'vamp=%s heightOfSoleAndHeel=%s slippers=%s lengthOfInsole=%s genderType=%s     ',
           (
@@ -1052,14 +1052,14 @@ describe('TARIC (EU)', () => {
 
       describe('winter sports', () => {
         describe.each([
-          ['yes', null, null, null, null, 'skiBoots', '6403xx'], //
+          ['yes', null, null, null, null, 'skiBoots', '6403xx'],
           ['yes', 'skiBoots', null, null, null, null, '6403120000'],
           ['yes', 'snowboardBoots', null, null, null, null, '6403120000'],
           ['yes', 'other', null, null, null, null, '6403190000'],
-          ['no', null, null, null, null, 'sports', '640399'], //
-          ['no', null, 'yes', null, null, 'lengthOfInsole', '640399'], //
-          ['no', null, 'no', null, null, 'lengthOfInsole', '640399'], //
-          ['no', null, 'no', 'yes', null, 'genderType', '640399'], //
+          ['no', null, null, null, null, 'sports', '640399'],
+          ['no', null, 'yes', null, null, 'lengthOfInsole', '640399'],
+          ['no', null, 'no', null, null, 'lengthOfInsole', '640399'],
+          ['no', null, 'no', 'yes', null, 'genderType', '640399'],
           ['no', null, 'no', 'yes', 'men', null, '6403999690'],
           ['no', null, 'yes', 'yes', 'men', null, '6403999610'],
           ['no', null, 'yes', 'yes', 'women', null, '6403999810'],
@@ -1144,7 +1144,7 @@ describe('TARIC (EU)', () => {
     describe('460411,640419', () => {
       describe.each([
         ['yes', null, null, '6404110000'],
-        ['no', null, 'slippers', '640419'], //
+        ['no', null, 'slippers', '640419'],
         ['no', 'yes', null, '6404191000'],
         ['no', 'no', null, '6404199000']
       ])(
