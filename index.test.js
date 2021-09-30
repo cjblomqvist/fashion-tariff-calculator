@@ -1461,6 +1461,7 @@ describe('Abstraction logic test', () => {
       code: '',
       partial: true
     }
+
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
   test('Answering alot of questions will give you a result', () => {
@@ -1509,6 +1510,27 @@ describe('Abstraction logic test', () => {
     result = {
       code: '6403511500',
       partial: false
+    }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test.only('Get a part of a code', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
+        { questionKey: 'upperType', answerKey: 'leather' },
+        { questionKey: 'sole', answerKey: 'leather' },
+        { questionKey: 'leatherStraps', answerKey: 'no' },
+        { questionKey: 'shaft', answerKey: 'other' },
+        { questionKey: 'madeOnBase', answerKey: 'no' },
+        { questionKey: 'sandal', answerKey: 'yes' }
+      ]
+    }
+
+    result = {
+      question: getNewQuestion('heightOfSoleAndHeel'),
+      code: '640359',
+      partial: true
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })

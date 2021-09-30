@@ -8,15 +8,17 @@ export function calculatorNew(inputData) {
 
   inputData.questionAnswers = oldQuestionAnswers
 
-  const checky = hsFootwear(inputData, taricFootwear)
-  if (checky.partial === false) {
-    return checky
+  const outputData = hsFootwear(inputData, taricFootwear)
+  if (outputData.partial === false) {
+    console.log('code ' + outputData.code)
+    return outputData
   } else {
-    const oldQuestion = checky.question
+    console.log('code ' + outputData.code)
+    const oldQuestion = outputData.question
     const newQuestion = getNewQuestion(oldQuestion.key)
 
-    checky.question = newQuestion
+    outputData.question = newQuestion
 
-    return checky
+    return outputData
   }
 }

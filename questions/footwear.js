@@ -3,7 +3,6 @@ export const footwear = [
     key: 'country',
     title: 'What country are you shipping to',
     text: '',
-    type: 'single',
     answers: [
       {
         key: 'eu',

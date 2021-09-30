@@ -285,7 +285,7 @@ export const footwearNew = [
   },
   {
     key: 'gender',
-    title: 'What gender is the boot for',
+    title: 'What gender is the shoes for',
     text: '',
     type: 'single',
     answers: [
