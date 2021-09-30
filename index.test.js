@@ -58,35 +58,35 @@ describe('HS (Global)', () => {
 
     describe.each([
       ['leather', 'leather', 'leatherStraps', '6403'],
-      ['leather', 'immitationLeather', 'toeCap', '6403'],
+      ['leather', 'imitationLeather', 'toeCap', '6403'],
       ['leather', 'rubber', 'toeCap', '6403'],
       ['leather', 'plastic', 'toeCap', '6403'],
       ['leather', 'wood', null, '6405100000'],
       ['leather', 'other', null, '6405100000'],
 
       ['textile', 'leather', 'slippers', '640420'],
-      ['textile', 'immitationLeather', 'slippers', '640420'],
+      ['textile', 'imitationLeather', 'slippers', '640420'],
       ['textile', 'rubber', 'sports', '6404'],
       ['textile', 'plastic', 'sports', '6404'],
       ['textile', 'wood', null, '6405201000'],
       ['textile', 'other', 'slippers', '640520'],
 
       ['rubber', 'leather', null, '6405901000'],
-      ['rubber', 'immitationLeather', null, '6405901000'],
+      ['rubber', 'imitationLeather', null, '6405901000'],
       ['rubber', 'plastic', 'process', ''],
       ['rubber', 'rubber', 'process', ''],
       ['rubber', 'wood', null, '6405909000'],
       ['rubber', 'other', null, '6405909000'],
 
       ['plastic', 'leather', '', '6405901000'],
-      ['plastic', 'immitationLeather', '', '6405901000'],
+      ['plastic', 'imitationLeather', '', '6405901000'],
       ['plastic', 'plastic', 'process', ''],
       ['plastic', 'rubber', 'process', ''],
       ['plastic', 'wood', null, '6405909000'],
       ['plastic', 'other', null, '6405909000'],
 
       ['other', 'leather', null, '6405901000'],
-      ['other', 'immitationLeather', null, '6405901000'],
+      ['other', 'imitationLeather', null, '6405901000'],
       ['other', 'rubber', null, '6405901000'],
       ['other', 'plastic', null, '6405901000'],
       ['other', 'wood', null, '6405909000'],
@@ -120,7 +120,7 @@ describe('HS (Global)', () => {
       ['blake', 'waterProof', '', ''],
       ['vulcanization', 'waterProof', '', ''],
       ['direct injection ', 'waterProof', '', ''],
-      ['handStiched', 'waterProof', '']
+      ['handStitched', 'waterProof', '']
     ])(
       'upper type =plastic sole=plastic process=%s ',
       (process, question, code) => {
@@ -146,7 +146,7 @@ describe('HS (Global)', () => {
       describe.each([
         ['moccasins', 'yes', 'toeCap', '6401'],
         ['direct injection process', 'yes', 'toeCap', '6401'],
-        ['handStiched', 'yes', 'toeCap', '6401'],
+        ['handStitched', 'yes', 'toeCap', '6401'],
 
         ['stichDown', 'yes', 'winterSports', '6402'],
         ['goodyear', 'yes', 'winterSports', '6402'],
@@ -160,7 +160,7 @@ describe('HS (Global)', () => {
 
         ['moccasins', 'no', 'winterSports', '6402'],
         ['direct injection process', 'no', 'winterSports', '6402'],
-        ['handStiched', 'no', 'winterSports', '6402'],
+        ['handStitched', 'no', 'winterSports', '6402'],
 
         ['stichDown', 'no', 'winterSports', '6402'],
         ['goodyear', 'no', 'winterSports', '6402'],
@@ -329,10 +329,10 @@ describe('HS (Global)', () => {
         ['leather', null, 'knee', 'lengthOfInsole', '640351'],
         ['leather', null, 'other', 'madeOnBase', '640359'],
 
-        ['immitationLeather', 'no', null, 'shaft', '6403'],
-        ['immitationLeather', 'no', 'ankle', 'madeOnBase', '640391'],
-        ['immitationLeather', 'no', 'knee', 'sports', '640391'],
-        ['immitationLeather', 'no', 'other', 'madeOnBase', '6403xx'],
+        ['imitationLeather', 'no', null, 'shaft', '6403'],
+        ['imitationLeather', 'no', 'ankle', 'madeOnBase', '640391'],
+        ['imitationLeather', 'no', 'knee', 'sports', '640391'],
+        ['imitationLeather', 'no', 'other', 'madeOnBase', '6403xx'],
 
         ['rubber', 'no', null, 'shaft', '6403'],
         ['rubber', 'no', 'ankle', 'madeOnBase', '640391'],
@@ -645,7 +645,7 @@ describe('TARIC (EU)', () => {
   describe('6403', () => {
     describe.each([
       ['leather', 'yes', null, null, '6403200000'],
-      ['immitationLeather', null, 'yes', null, '6403400000'],
+      ['imitationLeather', null, 'yes', null, '6403400000'],
       ['rubber', null, 'yes', null, '6403400000'],
       ['plastic', null, 'yes', null, '6403400000']
     ])(
@@ -1122,7 +1122,7 @@ describe('TARIC (EU)', () => {
         ['yes', null, '6404201000'],
         ['no', null, '6404209000']
       ])(
-        'sole= immitationLeather or leather and slippers=%s ',
+        'sole= imitationLeather or leather and slippers=%s ',
         (slippers, question, code) => {
           test(' ', () => {
             let inputData, result
@@ -1433,7 +1433,7 @@ describe('Mapping of questions', () => {
 })
 
 describe('Abstraction logic test', () => {
-  test('Answering footwear will give upperType as the next question', () => {
+  test('Answering footwear will give you the question upperType', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
@@ -1449,7 +1449,7 @@ describe('Abstraction logic test', () => {
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
-  test('Answering upperType will give sole as the next question', () => {
+  test('Answering upperType will give you the question sole', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
@@ -1539,5 +1539,57 @@ describe('Abstraction logic test', () => {
       partial: true
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test('Answering country will give you the question  footwearOrComponents', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [{ questionKey: 'country', answerKey: 'eu' }]
+    }
+
+    result = {
+      question: getNewQuestion('footwearOrComponents'),
+      code: '',
+      partial: true
+    }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test('If the input is empty you shall get the first question', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: []
+    }
+
+    result = {
+      question: getNewQuestion('country'),
+      code: '',
+      partial: true
+    }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
+  })
+  test('Answering country will give you the oldQuestion  footwearOrComponents', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [{ questionKey: 'country', answerKey: 'eu' }]
+    }
+
+    result = {
+      question: getQuestion('footwearOrComponents'),
+      code: '',
+      partial: true
+    }
+    expect(calculator(inputData)).toStrictEqual(result)
+  })
+  test('If the input is empty you shall get the first question', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: []
+    }
+
+    result = {
+      question: getQuestion('country'),
+      code: '',
+      partial: true
+    }
+    expect(calculator(inputData)).toStrictEqual(result)
   })
 })

@@ -98,8 +98,8 @@ export const footwear = [
         text: 'Leather'
       },
       {
-        key: 'immitationLeather',
-        text: 'ImmitationLeather'
+        key: 'imitationLeather',
+        text: 'ImitationLeather'
       },
       {
         key: 'rubber',
@@ -171,8 +171,8 @@ export const footwear = [
         text: 'Direct injection process'
       },
       {
-        key: 'handStiched',
-        text: 'Hand stiched'
+        key: 'handStitched',
+        text: 'Hand stitched'
       }
     ]
   },
