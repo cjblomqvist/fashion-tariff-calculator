@@ -4,12 +4,7 @@ import htsFootwear from './lib/hts-footwear'
 
 export function calculator(inputData) {
   const isFootwear = true
-  let system = ''
-  if (inputData.questionAnswers[0].answerKey === 'eu') {
-    system = 'TARIC'
-  } else {
-    system = 'HTS'
-  }
+  let system = 'TARIC'
 
   if (isFootwear) {
     if (system === 'TARIC') {

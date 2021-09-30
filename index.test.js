@@ -1553,19 +1553,6 @@ describe('Abstraction logic test', () => {
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
-  test('If the input is empty you shall get the first question', () => {
-    let inputData, result
-    inputData = {
-      questionAnswers: []
-    }
-
-    result = {
-      question: getNewQuestion('country'),
-      code: '',
-      partial: true
-    }
-    expect(calculatorNew(inputData)).toStrictEqual(result)
-  })
   test('Answering country will give you the oldQuestion  footwearOrComponents', () => {
     let inputData, result
     inputData = {
@@ -1578,6 +1565,19 @@ describe('Abstraction logic test', () => {
       partial: true
     }
     expect(calculator(inputData)).toStrictEqual(result)
+  })
+  test('If the input is empty you shall get the first question', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: []
+    }
+
+    result = {
+      question: getNewQuestion('country'),
+      code: '',
+      partial: true
+    }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
   })
   test('If the input is empty you shall get the first question', () => {
     let inputData, result
