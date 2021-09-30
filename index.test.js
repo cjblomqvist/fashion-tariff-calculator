@@ -7,7 +7,7 @@ import { getNewQuestion } from './questions/getNewQuestion.js'
 import { calculatorNew } from './calculatorNew'
 
 describe('HS (Global)', () => {
-  const taricQuestionAnswers = []
+  const taricQuestionAnswers = [{ questionKey: 'country', answerKey: 'eu' }]
 
   describe('Footwear', () => {
     const footwearQuestionAnswers = [
@@ -432,6 +432,7 @@ describe('HS (Global)', () => {
 
 describe('TARIC (EU)', () => {
   const footwearQuestionAnswers = [
+    { questionKey: 'country', answerKey: 'eu' },
     { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
   ]
 
@@ -1436,6 +1437,7 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
       ]
     }
@@ -1451,6 +1453,7 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' }
       ]
@@ -1468,6 +1471,7 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },
@@ -1493,6 +1497,7 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },
@@ -1513,10 +1518,11 @@ describe('Abstraction logic test', () => {
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
-  test.only('Get a part of a code', () => {
+  test('Get a part of a code and a question', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },

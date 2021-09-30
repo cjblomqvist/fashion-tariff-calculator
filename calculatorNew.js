@@ -10,10 +10,8 @@ export function calculatorNew(inputData) {
 
   const outputData = hsFootwear(inputData, taricFootwear)
   if (outputData.partial === false) {
-    console.log('code ' + outputData.code)
     return outputData
   } else {
-    console.log('code ' + outputData.code)
     const oldQuestion = outputData.question
     const newQuestion = getNewQuestion(oldQuestion.key)
 
