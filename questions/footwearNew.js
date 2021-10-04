@@ -99,7 +99,7 @@ export const footwearNew = [
     subQuestions: [
       {
         key: 'sports',
-        label: 'Sports footwear',
+        title: 'Sports footwear',
         answers: [
           {
             key: 'yes',
@@ -113,7 +113,7 @@ export const footwearNew = [
       },
       {
         key: 'slippers',
-        label: 'Slippers',
+        title: 'Slippers',
         answer: [
           {
             key: 'yes',
@@ -127,7 +127,7 @@ export const footwearNew = [
       },
       {
         key: 'waterProof',
-        label: 'Water Proof',
+        title: 'Water Proof',
         answer: [
           {
             key: 'yes',
@@ -141,7 +141,7 @@ export const footwearNew = [
       },
       {
         key: 'toeCap',
-        label: 'Metal Toe Cap',
+        title: 'Metal Toe Cap',
         answer: [
           {
             key: 'yes',
@@ -155,7 +155,7 @@ export const footwearNew = [
       },
       {
         key: 'winterSports',
-        label: 'Winter Sports',
+        title: 'Winter Sports',
         answer: [
           {
             key: 'yes',
