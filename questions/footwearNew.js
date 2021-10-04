@@ -114,7 +114,7 @@ export const footwearNew = [
       {
         key: 'slippers',
         title: 'Slippers',
-        answer: [
+        answers: [
           {
             key: 'yes',
             text: 'Yes'
@@ -128,7 +128,7 @@ export const footwearNew = [
       {
         key: 'waterProof',
         title: 'Water Proof',
-        answer: [
+        answers: [
           {
             key: 'yes',
             text: 'Yes'
@@ -142,7 +142,7 @@ export const footwearNew = [
       {
         key: 'toeCap',
         title: 'Metal Toe Cap',
-        answer: [
+        answers: [
           {
             key: 'yes',
             text: 'Yes'
@@ -156,7 +156,7 @@ export const footwearNew = [
       {
         key: 'winterSports',
         title: 'Winter Sports',
-        answer: [
+        answers: [
           {
             key: 'yes',
             text: 'Yes'
