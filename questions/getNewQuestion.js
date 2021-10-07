@@ -1,20 +1,24 @@
 import { footwearNew } from './footwearNew.js'
 
 export function getNewQuestion(key) {
-  const flatQuestion = footwearNew
-    .map((fQuestion) => {
-      if (fQuestion.type === 'multi') return fQuestion.subQuestions
-      return fQuestion
-    })
-    .flat()
+  const newQuestion = footwearNew.find((question) => {
+    if (question.key === key) return true
 
-  const question = flatQuestion.find(
-    (fQuestion) =>
-      fQuestion.key === key || fQuestion.originalQuestionKey === key
-  )
+    if (question.type === 'multi') {
+      if (
+        question.subQuestions
+          .map((subQuestion) => subQuestion.key)
+          .includes(key)
+      ) {
+        return true
+      }
+    }
 
-  if (question) {
-    return question
+    return false
+  })
+
+  if (newQuestion) {
+    return newQuestion
   }
   throw 'Question ' + key + ' does not exist'
 }
