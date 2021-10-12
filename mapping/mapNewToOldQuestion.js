@@ -5,9 +5,20 @@ export function mapNewToOld(newQuestionAnswers) {
   const oldQuestionAnswers = []
 
   newQuestionAnswers.forEach((questionAnswer) => {
-    const questionAnswerQuestionKey =
-      getNewQuestion(questionAnswer.questionKey).originalQuestionKey ||
-      getNewQuestion(questionAnswer.questionKey).key
+    let questionAnswerQuestionKey
+    const newQuestion = getNewQuestion(questionAnswer.questionKey)
+
+    if (newQuestion.type === 'multi') {
+      const subQuestion = newQuestion.subQuestions.find(
+        (subQuestion) => subQuestion.key === questionAnswer.questionKey
+      )
+
+      questionAnswerQuestionKey =
+        subQuestion.originalQuestionKey || subQuestion.key
+    } else {
+      questionAnswerQuestionKey =
+        newQuestion.originalQuestionKey || newQuestion.key
+    }
 
     const keyWeNeed = getQuestion(questionAnswerQuestionKey).key
 

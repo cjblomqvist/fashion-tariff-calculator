@@ -1473,21 +1473,28 @@ describe('Abstraction logic test', () => {
       questionAnswers: [
         { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
-        { questionKey: 'upperType', answerKey: 'leather' },
-        { questionKey: 'sole', answerKey: 'leather' },
+        { questionKey: 'upperType', answerKey: 'rubber' },
+        { questionKey: 'sole', answerKey: 'rubber' },
+
+        { questionKey: 'process', answerKey: 'moccasins' },
+        { questionKey: 'leatherStraps', answerKey: 'no' },
+        { questionKey: 'shaft', answerKey: 'other' },
         { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'sports', answerKey: 'no' },
+        { questionKey: 'slippers', answerKey: 'no' },
+        { questionKey: 'toeCap', answerKey: 'yes' },
         { questionKey: 'winterSports', answerKey: 'no' },
-        { questionKey: 'shaft', answerKey: 'knee' },
+        { questionKey: 'winterSports', answerKey: 'no' },
+
         { questionKey: 'genderType', answerKey: 'man' },
         { questionKey: 'lengthOfInsole', answerKey: 'yes' },
         { questionKey: 'madeOnBase', answerKey: 'yes' },
-        { questionKey: 'handmade', answerKey: 'yes' },
-        { questionKey: 'leatherStraps', answerKey: 'no' }
+        { questionKey: 'handmade', answerKey: 'yes' }
       ]
     }
 
     result = {
-      code: '6403511500',
+      code: '6401100000',
       partial: false
     }
 
@@ -1501,19 +1508,19 @@ describe('Abstraction logic test', () => {
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },
-        { questionKey: 'waterProof', answerKey: 'yes' },
-        { questionKey: 'winterSports', answerKey: 'no' },
+        // { questionKey: 'waterProof', answerKey: 'yes' },
+        // { questionKey: 'winterSports', answerKey: 'no' },
+        { questionKey: 'leatherStraps', answerKey: 'no' },
         { questionKey: 'shaft', answerKey: 'knee' },
-        { questionKey: 'gender', answerKey: 'man' },
-        { questionKey: 'kidsShoe', answerKey: 'yes' },
-        { questionKey: 'madeOnBase', answerKey: 'yes' },
-        { questionKey: 'handmade', answerKey: 'yes' },
-        { questionKey: 'leatherStraps', answerKey: 'no' }
+        { questionKey: 'kidsShoe', answerKey: 'no' }
+        // { questionKey: 'gender', answerKey: 'man' }
+        // { questionKey: 'madeOnBase', answerKey: 'yes' },
+        // { questionKey: 'handmade', answerKey: 'yes' },
       ]
     }
 
     result = {
-      code: '6403511500',
+      code: '6403511100',
       partial: false
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
@@ -1591,5 +1598,53 @@ describe('Abstraction logic test', () => {
       partial: true
     }
     expect(calculator(inputData)).toStrictEqual(result)
+  })
+  test('Input matches a specific number (6401100000)', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
+        { questionKey: 'upperType', answerKey: 'rubber' },
+        { questionKey: 'sole', answerKey: 'rubber' },
+        { questionKey: 'process', answerKey: 'moccasins' },
+
+        { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'sports', answerKey: 'no' },
+        { questionKey: 'slippers', answerKey: 'yes' },
+        { questionKey: 'toeCap', answerKey: 'no' },
+        { questionKey: 'winterSports', answerKey: 'no' }
+      ]
+    }
+
+    result = {
+      code: '6401100000',
+      partial: false
+    }
+    expect(calculator(inputData)).toStrictEqual(result)
+  })
+
+  test.only('Input matches a specific number (6401100000)', () => {
+    let inputData, result
+    inputData = {
+      questionAnswers: [
+        { questionKey: 'country', answerKey: 'eu' },
+        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
+        { questionKey: 'upperType', answerKey: 'rubber' },
+        { questionKey: 'sole', answerKey: 'rubber' },
+        { questionKey: 'process', answerKey: 'moccasins' },
+        { questionKey: 'waterProof', answerKey: 'yes' },
+        { questionKey: 'sports', answerKey: 'no' },
+        { questionKey: 'slippers', answerKey: 'yes' },
+        { questionKey: 'toeCap', answerKey: 'no' },
+        { questionKey: 'winterSports', answerKey: 'no' }
+      ]
+    }
+
+    result = {
+      code: '6401100000',
+      partial: false
+    }
+    expect(calculatorNew(inputData)).toStrictEqual(result)
   })
 })

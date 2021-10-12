@@ -6,6 +6,6 @@ export function getQuestion(key) {
   if (question) {
     return question
   }
-
+  console.trace()
   throw 'Question ' + key + ' does not exist'
 }
