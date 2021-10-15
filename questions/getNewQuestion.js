@@ -2,7 +2,8 @@ import { footwearNew } from './footwearNew.js'
 
 export function getNewQuestion(key) {
   const newQuestion = footwearNew.find((question) => {
-    if (question.key === key) return true
+    if (question.originalQuestionKey === key || question.key === key)
+      return true
 
     if (question.type === 'multi') {
       if (

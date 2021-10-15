@@ -1473,28 +1473,20 @@ describe('Abstraction logic test', () => {
       questionAnswers: [
         { questionKey: 'country', answerKey: 'eu' },
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
-        { questionKey: 'upperType', answerKey: 'rubber' },
-        { questionKey: 'sole', answerKey: 'rubber' },
+        { questionKey: 'upperType', answerKey: 'leather' },
+        { questionKey: 'sole', answerKey: 'leather' },
 
-        { questionKey: 'process', answerKey: 'moccasins' },
+        { questionKey: 'vamp', answerKey: 'yes' },
         { questionKey: 'leatherStraps', answerKey: 'no' },
-        { questionKey: 'shaft', answerKey: 'other' },
-        { questionKey: 'waterProof', answerKey: 'yes' },
-        { questionKey: 'sports', answerKey: 'no' },
-        { questionKey: 'slippers', answerKey: 'no' },
-        { questionKey: 'toeCap', answerKey: 'yes' },
-        { questionKey: 'winterSports', answerKey: 'no' },
-        { questionKey: 'winterSports', answerKey: 'no' },
-
-        { questionKey: 'genderType', answerKey: 'man' },
+        { questionKey: 'shaft', answerKey: 'ankle' },
+        { questionKey: 'madeOnBase', answerKey: 'no' },
         { questionKey: 'lengthOfInsole', answerKey: 'yes' },
-        { questionKey: 'madeOnBase', answerKey: 'yes' },
-        { questionKey: 'handmade', answerKey: 'yes' }
+        { questionKey: 'genderType', answerKey: 'man' }
       ]
     }
 
     result = {
-      code: '6401100000',
+      code: '6403519500',
       partial: false
     }
 
@@ -1599,32 +1591,7 @@ describe('Abstraction logic test', () => {
     }
     expect(calculator(inputData)).toStrictEqual(result)
   })
-  test('Input matches a specific number (6401100000)', () => {
-    let inputData, result
-    inputData = {
-      questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
-        { questionKey: 'upperType', answerKey: 'rubber' },
-        { questionKey: 'sole', answerKey: 'rubber' },
-        { questionKey: 'process', answerKey: 'moccasins' },
-
-        { questionKey: 'waterProof', answerKey: 'yes' },
-        { questionKey: 'sports', answerKey: 'no' },
-        { questionKey: 'slippers', answerKey: 'yes' },
-        { questionKey: 'toeCap', answerKey: 'no' },
-        { questionKey: 'winterSports', answerKey: 'no' }
-      ]
-    }
-
-    result = {
-      code: '6401100000',
-      partial: false
-    }
-    expect(calculator(inputData)).toStrictEqual(result)
-  })
-
-  test.only('Input matches a specific number (6401100000)', () => {
+  test('Input matches a specific number (6401921000)', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
@@ -1637,12 +1604,13 @@ describe('Abstraction logic test', () => {
         { questionKey: 'sports', answerKey: 'no' },
         { questionKey: 'slippers', answerKey: 'yes' },
         { questionKey: 'toeCap', answerKey: 'no' },
-        { questionKey: 'winterSports', answerKey: 'no' }
+        { questionKey: 'winterSports', answerKey: 'no' },
+        { questionKey: 'shaft', answerKey: 'ankle' }
       ]
     }
 
     result = {
-      code: '6401100000',
+      code: '6401921000',
       partial: false
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
