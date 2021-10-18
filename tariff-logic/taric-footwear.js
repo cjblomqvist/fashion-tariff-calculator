@@ -451,10 +451,7 @@ export default function taricFootwear(inputData, code) {
   }
 
   if (code === '640219') {
-    let answer = getAnswerKey(inputData, 'skiBoots')
-    if (answer === 'other') {
-      return createResult('6402190000')
-    }
+    return createResult('6402190000')
   }
 
   if (code === '640220') {
