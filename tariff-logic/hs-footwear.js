@@ -1,6 +1,6 @@
-import { getQuestion } from '../questions/getQuestion.js'
-import { getAnswer } from '../questions/getAnswer.js'
-import { createResult } from '../questions/createResult.js'
+import { getQuestion } from '../lib/getQuestion.js'
+import { getAnswer } from '../lib/getAnswer.js'
+import { createResult } from '../lib/createResult.js'
 
 export default function hsFootwear(inputData, systemSpecificCallback) {
   if (getAnswer(inputData, 'country') === 'eu') {
