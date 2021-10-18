@@ -290,12 +290,12 @@ export const footwearNew = [
     type: 'single',
     answers: [
       {
-        key: 'man',
-        text: 'Man'
+        key: 'men',
+        text: 'Men'
       },
       {
-        key: 'woman',
-        text: 'Woman'
+        key: 'women',
+        text: 'Women'
       },
       {
         key: 'unisex/other',
