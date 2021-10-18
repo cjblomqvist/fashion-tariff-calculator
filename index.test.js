@@ -1,6 +1,8 @@
-import { calculator, calculatorNew } from './lib/calculator.js'
+import { calculator as calculatorNew, calculatorFactory } from './lib/calculator.js'
 import { mapNewToOld, mapOldToNew } from './lib/mapping'
 import { createResult, getQuestion, getNewQuestion } from './lib/helpers.js'
+
+const calculator = calculatorFactory({ questions: 'simple' });
 
 describe('HS (Global)', () => {
   const taricQuestionAnswers = [{ questionKey: 'country', answerKey: 'eu' }]
