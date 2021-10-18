@@ -1,8 +1,8 @@
 import hsFootwear from './tariff-logic/hs-footwear'
 import taricFootwear from './tariff-logic/taric-footwear'
 import htsFootwear from './tariff-logic/hts-footwear'
-import { mapNewToOld } from './lib/mapNewToOldQuestion'
-import { getNewQuestion } from './lib/getNewQuestion'
+import { mapNewToOld } from './lib/mapping'
+import { getNewQuestion } from './lib/helpers'
 
 export function calculator(inputData) {
   const isFootwear = true

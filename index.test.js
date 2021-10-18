@@ -1,9 +1,6 @@
 import { calculator, calculatorNew } from './index.js'
-import { mapNewToOld } from './lib/mapNewToOldQuestion'
-import { mapOldToNew } from './lib/mapOldToNewQuestion'
-import { createResult } from './lib/createResult.js'
-import { getQuestion } from './lib/getQuestion.js'
-import { getNewQuestion } from './lib/getNewQuestion.js'
+import { mapNewToOld, mapOldToNew } from './lib/mapping'
+import { createResult, getQuestion, getNewQuestion } from './lib/helpers.js'
 
 describe('HS (Global)', () => {
   const taricQuestionAnswers = [{ questionKey: 'country', answerKey: 'eu' }]

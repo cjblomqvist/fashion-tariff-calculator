@@ -1,6 +1,4 @@
-import { getQuestion } from '../lib/getQuestion.js'
-import { getAnswer } from '../lib/getAnswer.js'
-import { createResult } from '../lib/createResult.js'
+import { createResult, getAnswer, getQuestion } from '../lib/helpers.js'
 
 function handleHeightOfSoleAndHeel640299(inputData) {
   const answer = getAnswer(inputData, 'heightOfSoleAndHeel')
