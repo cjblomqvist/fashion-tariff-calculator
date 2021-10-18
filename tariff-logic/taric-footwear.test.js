@@ -1,218 +1,135 @@
+import taricFootwear from './taric-footwear.js'
+
 import { calculatorFactory } from '../lib/calculator.js'
 import { footwear } from '../questions/footwear.js'
 import { createResult, getQuestion } from '../lib/helpers.js'
 
 const calculator = calculatorFactory({ questions: 'simple' });
+
 const footwearQuestionAnswers = [
   { questionKey: 'country', answerKey: 'eu' },
   { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
 ]
 
-describe('6401', () => {
-  describe('640199,640192', () => {
-    describe.each([
-      ['rubber', 'ankle', null, '6401921000'],
-      ['plastic', 'ankle', null, '6401929000'],
-      ['plastic', 'knee', null, '6401990010'],
-      ['rubber', 'knee', null, '6401990010'],
-      ['plastic', 'other', null, '6401990090'],
-      ['rubber', 'other', null, '6401990090']
-    ])('toe cap no and shaft %s  ', (upperType, shaft, question, code) => {
-      test('', () => {
-        let inputData, result
+test.each([
+  // 6401
+  ['640110', [], '6401100000'],
+  ['640192', [{ questionKey: 'upperType', answerKey: 'rubber' }], '6401921000'],
+  ['640192', [{ questionKey: 'upperType', answerKey: 'plastic' }], '6401929000'],
+  ['640199', [{ questionKey: 'shaft', answerKey: 'knee' }], '6401990010'],
+  ['640199', [{ questionKey: 'shaft', answerKey: 'other' }], '6401990090'],
 
-        inputData = {
-          questionAnswers: [
-            ...footwearQuestionAnswers,
-            { questionKey: 'upperType', answerKey: upperType },
-            { questionKey: 'sole', answerKey: 'plastic' },
-            { questionKey: 'process', answerKey: 'moccasins' },
-            { questionKey: 'waterProof', answerKey: 'yes' },
-            { questionKey: 'toeCap', answerKey: 'no' },
-            { questionKey: 'shaft', answerKey: shaft }
-          ]
-        }
-        result = createResult(code, question ? getQuestion(question, footwear) : null)
+  // 6402
+  ['640212', [{ questionKey: 'skiBoots', answerKey: 'skiBoots' }], '6402121000'],
+  ['640212', [{ questionKey: 'skiBoots', answerKey: 'snowboardBoots' }], '6402129000'],
+  ['640219', [], '6402190000'],
+  ['640220', [], '6402200000'],
+  ['640291', [{ questionKey: 'toeCap', answerKey: 'yes' }], '6402911000'],
+  ['640291', [{ questionKey: 'toeCap', answerKey: 'no' }], '6402919000'],
+  // 640299
+  ['640299', [{ questionKey: 'toeCap', answerKey: 'yes' }], '6402990500'],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'rubber' }
+  ], '6402991000'],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+  ], { code: '640299', questionKey: 'slippers' }],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'yes' }
+  ], '6402995000'],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' }
+  ], { code: '640299', questionKey: 'vamp' }],
+  // Vamp = Yes
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'yes' }
+  ], { code: '640299', questionKey: 'heightOfSoleAndHeel' }],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'yes' },
+    { questionKey: 'heightOfSoleAndHeel', answerKey: 'yes' }
+  ], '6402993100'],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'yes' },
+    { questionKey: 'heightOfSoleAndHeel', answerKey: 'no' }
+  ], '6402993900'],
+  // Vamp = No
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'no' }
+  ], { code: '640299', questionKey: 'lengthOfInsole' }],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'no' },
+    { questionKey: 'lengthOfInsole', answerKey: 'no' }
+  ], '6402999100'],
+  // LengthOfInsole = Yes
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'no' },
+    { questionKey: 'lengthOfInsole', answerKey: 'yes' }
+  ], { code: '640299', questionKey: 'genderType' }],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'no' },
+    { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+    { questionKey: 'genderType', answerKey: 'men' }
+  ], '6402999600' ],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'no' },
+    { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+    { questionKey: 'genderType', answerKey: 'women' }
+  ], '6402999800' ],
+  ['640299', [
+    { questionKey: 'toeCap', answerKey: 'no' },
+    { questionKey: 'upperType', answerKey: 'plastic' },
+    { questionKey: 'slippers', answerKey: 'no' },
+    { questionKey: 'vamp', answerKey: 'no' },
+    { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+    { questionKey: 'genderType', answerKey: 'other' }
+  ], '6402999300' ],
+])(
+  'TBD',
+  (hsCode, questionAnswers, resultData) => {
+    const inputData = {
+      questionAnswers
+    };
 
-        expect(calculator(inputData)).toStrictEqual(result)
-      })
-    })
-  })
-  describe('640110 ', () => {
-    describe.each([['yes', null, '6401100000']])(
-      'toe cap= %s  ',
-      (toeCap, question, code) => {
-        test('', () => {
-          let inputData, result
+    const resultCode = resultData.code || resultData;
+    const questionKey = resultData.questionKey
+      ? getQuestion(resultData.questionKey, footwear)
+      : null;
 
-          inputData = {
-            questionAnswers: [
-              ...footwearQuestionAnswers,
-              { questionKey: 'upperType', answerKey: 'plastic' },
-              { questionKey: 'sole', answerKey: 'plastic' },
-              { questionKey: 'process', answerKey: 'moccasins' },
-              { questionKey: 'waterProof', answerKey: 'yes' },
-              { questionKey: 'toeCap', answerKey: toeCap }
-            ]
-          }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+    const result = createResult(resultCode, questionKey);
 
-          expect(calculator(inputData)).toStrictEqual(result)
-        })
-      }
-    )
-  })
-})
-
-describe('6402', () => {
-  describe('640299,640291', () => {
-    describe.each([
-      ['no', 'plastic', 'ankle', 'yes', null, null, '6402911000'],
-      ['no', 'plastic', 'ankle', 'no', null, null, '6402919000'],
-      ['no', 'plastic', 'knee', 'yes', null, null, '6402990500'],
-      ['no', 'plastic', 'other', 'yes', null, null, '6402990500'],
-
-      ['no', 'plastic', 'knee', 'no', 'yes', null, '6402995000'],
-      ['no', 'plastic', 'other', 'no', 'yes', null, '6402995000'],
-
-      ['no', 'rubber', 'knee', 'no', null, null, '6402991000'],
-      ['no', 'rubber', 'other', 'no', null, null, '6402991000'],
-      ['yes', 'plastic', null, null, null, null, '6402200000'],
-      ['yes', 'rubber', null, null, null, null, '6402200000']
-    ])(
-      'upperStrapsOrThongs =%s upper type= %s and shaft = %s and toe cap = %s slippers=%s',
-      (
-        upperStrapsOrThongs,
-        upperType,
-        shaft,
-        toeCap,
-        slippers,
-        question,
-        code
-      ) => {
-        test('', () => {
-          let inputData, result
-
-          inputData = {
-            questionAnswers: [
-              ...footwearQuestionAnswers,
-              { questionKey: 'upperType', answerKey: upperType },
-              { questionKey: 'sole', answerKey: 'plastic' },
-              { questionKey: 'process', answerKey: 'moccasins' },
-              { questionKey: 'waterProof', answerKey: 'no' },
-              { questionKey: 'winterSports', answerKey: 'no' },
-              {
-                questionKey: 'upperStrapsOrThongs',
-                answerKey: upperStrapsOrThongs
-              },
-              { questionKey: 'shaft', answerKey: shaft },
-              { questionKey: 'toeCap', answerKey: toeCap },
-              { questionKey: 'slippers', answerKey: slippers }
-            ]
-          }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
-
-          expect(calculator(inputData)).toStrictEqual(result)
-        })
-      }
-    )
-  })
-
-  describe.each([
-    ['skiBoots', null, '6402121000'],
-    ['snowboardBoots', null, '6402129000'],
-    ['other', null, '6402190000']
-  ])('winter sports yes and ski boots %s ', (skiBoots, question, code) => {
-    test('upper type => sole => process => water proof => winter sports => skiBoots=%s', () => {
-      let inputData, result
-
-      inputData = {
-        questionAnswers: [
-          ...footwearQuestionAnswers,
-          { questionKey: 'upperType', answerKey: 'plastic' },
-          { questionKey: 'sole', answerKey: 'plastic' },
-          { questionKey: 'process', answerKey: 'moccasins' },
-          { questionKey: 'waterProof', answerKey: 'no' },
-          { questionKey: 'winterSports', answerKey: 'yes' },
-          { questionKey: 'skiBoots', answerKey: skiBoots }
-        ]
-      }
-      result = createResult(code, question ? getQuestion(question, footwear) : null)
-
-      expect(calculator(inputData)).toStrictEqual(result)
-    })
-  })
-
-  describe.each([
-    ['yes', null, '6402993100'],
-    ['no', null, '6402993900']
-  ])(
-    'toeCap is no upperType is plastic and slippers no and vamp yes and heightOfSoleAndHeel =%s ',
-    (heightOfSoleAndHeel, question, code) => {
-      test('', () => {
-        let inputData, result
-
-        inputData = {
-          questionAnswers: [
-            ...footwearQuestionAnswers,
-            { questionKey: 'upperType', answerKey: 'plastic' },
-            { questionKey: 'sole', answerKey: 'plastic' },
-            { questionKey: 'process', answerKey: 'moccasins' },
-            { questionKey: 'waterProof', answerKey: 'no' },
-            { questionKey: 'winterSports', answerKey: 'no' },
-            { questionKey: 'upperStrapsOrThongs', answerKey: 'no' },
-            { questionKey: 'shaft', answerKey: 'knee' },
-            { questionKey: 'toeCap', answerKey: 'no' },
-            { questionKey: 'slippers', answerKey: 'no' },
-            { questionKey: 'vamp', answerKey: 'yes' },
-            {
-              questionKey: 'heightOfSoleAndHeel',
-              answerKey: heightOfSoleAndHeel
-            }
-          ]
-        }
-        result = createResult(code, question ? getQuestion(question, footwear) : null)
-
-        expect(calculator(inputData)).toStrictEqual(result)
-      })
-    }
-  )
-
-  describe.each([
-    ['yes', 'men', null, '6402999600'],
-    ['yes', 'women', null, '6402999800'],
-    ['yes', 'unisex/other', null, '6402999300'],
-    ['no', null, null, '6402999100']
-  ])(
-    'length of insole =%s gendertypr=%s',
-    (lengthOfInsole, genderType, question, code) => {
-      test('', () => {
-        let inputData, result
-
-        inputData = {
-          questionAnswers: [
-            ...footwearQuestionAnswers,
-            { questionKey: 'upperType', answerKey: 'plastic' },
-            { questionKey: 'sole', answerKey: 'plastic' },
-            { questionKey: 'process', answerKey: 'moccasins' },
-            { questionKey: 'waterProof', answerKey: 'no' },
-            { questionKey: 'winterSports', answerKey: 'no' },
-            { questionKey: 'upperStrapsOrThongs', answerKey: 'no' },
-            { questionKey: 'shaft', answerKey: 'knee' },
-            { questionKey: 'toeCap', answerKey: 'no' },
-            { questionKey: 'slippers', answerKey: 'no' },
-            { questionKey: 'vamp', answerKey: 'no' },
-            { questionKey: 'lengthOfInsole', answerKey: lengthOfInsole },
-            { questionKey: 'genderType', answerKey: genderType }
-          ]
-        }
-        result = createResult(code, question ? getQuestion(question, footwear) : null)
-
-        expect(calculator(inputData)).toStrictEqual(result)
-      })
-    }
-  )
-})
+    expect(taricFootwear(inputData, hsCode)).toStrictEqual(result);
+  }
+);
 
 describe('6403', () => {
   describe.each([
