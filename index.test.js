@@ -1,4 +1,4 @@
-import { calculator, calculatorNew } from './index.js'
+import { calculator, calculatorNew } from './lib/calculator.js'
 import { mapNewToOld, mapOldToNew } from './lib/mapping'
 import { createResult, getQuestion, getNewQuestion } from './lib/helpers.js'
 
