@@ -1,6 +1,7 @@
 import { calculator as calculatorNew, calculatorFactory } from './lib/calculator.js'
 import { mapNewToOld, mapOldToNew } from './lib/mapping'
-import { createResult, getQuestion, getNewQuestion } from './lib/helpers.js'
+import { footwear } from './questions/footwear.js'
+import { createResult, getQuestion } from './lib/helpers.js'
 
 const calculator = calculatorFactory({ questions: 'simple' });
 
@@ -20,7 +21,7 @@ describe('HS (Global)', () => {
       }
 
       result = {
-        question: getQuestion('upperType'),
+        question: getQuestion('upperType', footwear),
         code: '',
         partial: true
       }
@@ -45,7 +46,7 @@ describe('HS (Global)', () => {
           ]
         }
         result = {
-          question: getQuestion('sole'),
+          question: getQuestion('sole', footwear),
           code: '',
           partial: true
         }
@@ -100,7 +101,7 @@ describe('HS (Global)', () => {
             { questionKey: 'sole', answerKey: sole }
           ]
         }
-        result = createResult(code, question ? getQuestion(question) : null)
+        result = createResult(code, question ? getQuestion(question, footwear) : null)
 
         expect(calculator(inputData)).toStrictEqual(result)
       })
@@ -133,7 +134,7 @@ describe('HS (Global)', () => {
               { questionKey: 'process', answerKey: process }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -184,7 +185,7 @@ describe('HS (Global)', () => {
                 { questionKey: 'waterProof', answerKey: waterProof }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -209,7 +210,7 @@ describe('HS (Global)', () => {
                 { questionKey: 'toeCap', answerKey: toeCap }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -242,7 +243,7 @@ describe('HS (Global)', () => {
                 }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -277,7 +278,7 @@ describe('HS (Global)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -312,7 +313,7 @@ describe('HS (Global)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -357,7 +358,7 @@ describe('HS (Global)', () => {
                 { questionKey: 'shaft', answerKey: shaft }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -390,7 +391,7 @@ describe('HS (Global)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -416,7 +417,7 @@ describe('HS (Global)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -458,7 +459,7 @@ describe('TARIC (EU)', () => {
               { questionKey: 'shaft', answerKey: shaft }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -481,7 +482,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'toeCap', answerKey: toeCap }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -536,7 +537,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'slippers', answerKey: slippers }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -563,7 +564,7 @@ describe('TARIC (EU)', () => {
             { questionKey: 'skiBoots', answerKey: skiBoots }
           ]
         }
-        result = createResult(code, question ? getQuestion(question) : null)
+        result = createResult(code, question ? getQuestion(question, footwear) : null)
 
         expect(calculator(inputData)).toStrictEqual(result)
       })
@@ -597,7 +598,7 @@ describe('TARIC (EU)', () => {
               }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -632,7 +633,7 @@ describe('TARIC (EU)', () => {
               { questionKey: 'genderType', answerKey: genderType }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -661,7 +662,7 @@ describe('TARIC (EU)', () => {
               { questionKey: 'toeCap', answerKey: toeCap }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -691,7 +692,7 @@ describe('TARIC (EU)', () => {
               { questionKey: 'handmade', answerKey: handmade }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -719,7 +720,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'genderType', answerKey: genderType }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -754,7 +755,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'handmade', answerKey: handmade }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -783,7 +784,7 @@ describe('TARIC (EU)', () => {
                 }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -815,7 +816,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'genderType', answerKey: genderType }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -844,7 +845,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'genderType', answerKey: genderType }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -900,7 +901,7 @@ describe('TARIC (EU)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -944,7 +945,7 @@ describe('TARIC (EU)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -985,7 +986,7 @@ describe('TARIC (EU)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -1040,7 +1041,7 @@ describe('TARIC (EU)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -1099,7 +1100,7 @@ describe('TARIC (EU)', () => {
               }
               result = createResult(
                 code,
-                question ? getQuestion(question) : null
+                question ? getQuestion(question, footwear) : null
               )
 
               expect(calculator(inputData)).toStrictEqual(result)
@@ -1132,7 +1133,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'slippers', answerKey: slippers }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -1160,7 +1161,7 @@ describe('TARIC (EU)', () => {
                 { questionKey: 'slippers', answerKey: slippers }
               ]
             }
-            result = createResult(code, question ? getQuestion(question) : null)
+            result = createResult(code, question ? getQuestion(question, footwear) : null)
 
             expect(calculator(inputData)).toStrictEqual(result)
           })
@@ -1189,7 +1190,7 @@ describe('TARIC (EU)', () => {
               { questionKey: 'slippers', answerKey: slippers }
             ]
           }
-          result = createResult(code, question ? getQuestion(question) : null)
+          result = createResult(code, question ? getQuestion(question, footwear) : null)
           expect(calculator(inputData)).toStrictEqual(result)
         })
       })
@@ -1441,7 +1442,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getNewQuestion('upperType'),
+      question: getQuestion('upperType'),
       code: '',
       partial: true
     }
@@ -1458,7 +1459,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getNewQuestion('sole'),
+      question: getQuestion('sole'),
       code: '',
       partial: true
     }
@@ -1531,7 +1532,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getNewQuestion('heightOfSoleAndHeel'),
+      question: getQuestion('heightOfSoleAndHeel'),
       code: '640359',
       partial: true
     }
@@ -1544,7 +1545,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getNewQuestion('footwearOrComponents'),
+      question: getQuestion('footwearOrComponents'),
       code: '',
       partial: true
     }
@@ -1557,7 +1558,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getQuestion('footwearOrComponents'),
+      question: getQuestion('footwearOrComponents', footwear),
       code: '',
       partial: true
     }
@@ -1570,7 +1571,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getNewQuestion('country'),
+      question: getQuestion('country'),
       code: '',
       partial: true
     }
@@ -1583,7 +1584,7 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getQuestion('country'),
+      question: getQuestion('country', footwear),
       code: '',
       partial: true
     }

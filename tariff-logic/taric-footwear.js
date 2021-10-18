@@ -1,9 +1,10 @@
+import { footwear } from '../questions/footwear.js'
 import { createResult, getAnswerKey, getQuestion } from '../lib/helpers.js'
 
 function handleHeightOfSoleAndHeel640299(inputData) {
   const answer = getAnswerKey(inputData, 'heightOfSoleAndHeel')
   if (!answer) {
-    return createResult('640299', getQuestion('heightOfSoleAndHeel'))
+    return createResult('640299', getQuestion('heightOfSoleAndHeel', footwear))
   }
   if (answer === 'yes') {
     return createResult('6402993100')
@@ -13,7 +14,7 @@ function handleHeightOfSoleAndHeel640299(inputData) {
 function handleGenderType640299(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640299', getQuestion('genderType'))
+    return createResult('640299', getQuestion('genderType', footwear))
   }
   if (answer === 'women') {
     return createResult('6402999800')
@@ -25,7 +26,7 @@ function handleGenderType640299(inputData) {
 function handleInsoleLength640299(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640299', getQuestion('lengthOfInsole'))
+    return createResult('640299', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return handleGenderType640299(inputData)
@@ -35,7 +36,7 @@ function handleInsoleLength640299(inputData) {
 function handleVamp640299(inputData) {
   let answer = getAnswerKey(inputData, 'vamp')
   if (!answer) {
-    return createResult('640299', getQuestion('vamp'))
+    return createResult('640299', getQuestion('vamp', footwear))
   }
   if (answer === 'yes') {
     return handleHeightOfSoleAndHeel640299(inputData)
@@ -45,7 +46,7 @@ function handleVamp640299(inputData) {
 function handleSlippers640299(inputData) {
   let answer = getAnswerKey(inputData, 'slippers')
   if (!answer) {
-    return createResult('640299', getQuestion('slippers'))
+    return createResult('640299', getQuestion('slippers', footwear))
   }
   if (answer === 'yes') {
     return createResult('6402995000')
@@ -63,7 +64,7 @@ function handleRubberOrPlastic640299(inputData) {
 function handleSlippers640520(inputData) {
   const answer = getAnswerKey(inputData, 'slippers')
   if (!answer) {
-    return createResult('640520', getQuestion('slippers'))
+    return createResult('640520', getQuestion('slippers', footwear))
   }
   if (answer === 'yes') {
     return createResult('6405209100')
@@ -73,7 +74,7 @@ function handleSlippers640520(inputData) {
 function handmade640351(inputData) {
   const answer = getAnswerKey(inputData, 'handmade')
   if (!answer) {
-    return createResult('640351', getQuestion('handmade'))
+    return createResult('640351', getQuestion('handmade', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403510510')
@@ -83,7 +84,7 @@ function handmade640351(inputData) {
 function handleGenderTypeWithShaftAnkle640351(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640351', getQuestion('genderType'))
+    return createResult('640351', getQuestion('genderType', footwear))
   }
   if (answer === 'women' || answer === 'unisex/other') {
     return createResult('6403519900')
@@ -93,7 +94,7 @@ function handleGenderTypeWithShaftAnkle640351(inputData) {
 function lengthOfInsoleWithMadeOnBaseFalse640351(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640351', getQuestion('lengthOfInsole'))
+    return createResult('640351', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return handleGenderTypeWithShaftAnkle640351(inputData)
@@ -103,7 +104,7 @@ function lengthOfInsoleWithMadeOnBaseFalse640351(inputData) {
 function MadeOnBase640351(inputData) {
   const answer = getAnswerKey(inputData, 'madeOnBase')
   if (!answer) {
-    return createResult('640351', getQuestion('madeOnBase'))
+    return createResult('640351', getQuestion('madeOnBase', footwear))
   }
   if (answer === 'yes') {
     return handmade640351(inputData)
@@ -113,7 +114,7 @@ function MadeOnBase640351(inputData) {
 function handleGenderTypeWithShaftKnee640351(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640351', getQuestion('genderType'))
+    return createResult('640351', getQuestion('genderType', footwear))
   }
   if (answer === 'women' || answer === 'unisex/other') {
     return createResult('6403511900')
@@ -123,7 +124,7 @@ function handleGenderTypeWithShaftKnee640351(inputData) {
 function lengthOfInsoleWithShaftFalse640351(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640351', getQuestion('lengthOfInsole'))
+    return createResult('640351', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return handleGenderTypeWithShaftKnee640351(inputData)
@@ -134,7 +135,7 @@ function lengthOfInsoleWithShaftFalse640351(inputData) {
 function handmade640359(inputData) {
   const answer = getAnswerKey(inputData, 'handmade')
   if (!answer) {
-    return createResult('640359', getQuestion('handmade'))
+    return createResult('640359', getQuestion('handmade', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403590510')
@@ -144,7 +145,7 @@ function handmade640359(inputData) {
 function handleGenderTypeWithLengthOfInsoleTrue64359(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640359', getQuestion('genderType'))
+    return createResult('640359', getQuestion('genderType', footwear))
   }
   if (answer === 'women' || answer === 'unisex/other') {
     return createResult('6403593900')
@@ -154,7 +155,7 @@ function handleGenderTypeWithLengthOfInsoleTrue64359(inputData) {
 function InsoleLengthWithHeightOfSoleFalse640359(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640359', getQuestion('lengthOfInsole'))
+    return createResult('640359', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return handleGenderTypeWithLengthOfInsoleTrue64359(inputData)
@@ -164,7 +165,7 @@ function InsoleLengthWithHeightOfSoleFalse640359(inputData) {
 function handleHeightOfSoleAndHeel640359(inputData) {
   const answer = getAnswerKey(inputData, 'heightOfSoleAndHeel')
   if (!answer) {
-    return createResult('640359', getQuestion('heightOfSoleAndHeel'))
+    return createResult('640359', getQuestion('heightOfSoleAndHeel', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403591100')
@@ -174,7 +175,7 @@ function handleHeightOfSoleAndHeel640359(inputData) {
 function genderTypeWithLengthOfInsoleTrue6400359(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640359', getQuestion('genderType'))
+    return createResult('640359', getQuestion('genderType', footwear))
   }
   if (answer === 'women' || answer === 'unisex/other') {
     return createResult('6403599900')
@@ -184,7 +185,7 @@ function genderTypeWithLengthOfInsoleTrue6400359(inputData) {
 function lengthOfInsoleWithSlippersFalse(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640359', getQuestion('lengthOfInsole'))
+    return createResult('640359', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return genderTypeWithLengthOfInsoleTrue6400359(inputData)
@@ -194,7 +195,7 @@ function lengthOfInsoleWithSlippersFalse(inputData) {
 function handleSlippers640359(inputData) {
   const answer = getAnswerKey(inputData, 'slippers')
   if (!answer) {
-    return createResult('640359', getQuestion('slippers'))
+    return createResult('640359', getQuestion('slippers', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403595000')
@@ -204,7 +205,7 @@ function handleSlippers640359(inputData) {
 function handleVamp640359(inputData) {
   const answer = getAnswerKey(inputData, 'vamp')
   if (!answer) {
-    return createResult('640359', getQuestion('vamp'))
+    return createResult('640359', getQuestion('vamp', footwear))
   }
   if (answer === 'yes') {
     return handleHeightOfSoleAndHeel640359(inputData)
@@ -215,7 +216,7 @@ function handleVamp640359(inputData) {
 function handmade640391(inputData) {
   const answer = getAnswerKey(inputData, 'handmade')
   if (!answer) {
-    return createResult('640391', getQuestion('handmade'))
+    return createResult('640391', getQuestion('handmade', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403910510')
@@ -225,7 +226,7 @@ function handmade640391(inputData) {
 function genderType640391(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640391', getQuestion('genderType'))
+    return createResult('640391', getQuestion('genderType', footwear))
   }
   if (answer === 'women') {
     return createResult('6403919800')
@@ -237,7 +238,7 @@ function genderType640391(inputData) {
 function lengthOfInsoleWithShaftAnkle640391(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640391', getQuestion('lengthOfInsole'))
+    return createResult('640391', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return genderType640391(inputData)
@@ -247,7 +248,7 @@ function lengthOfInsoleWithShaftAnkle640391(inputData) {
 function MadeOnBase640391(inputData) {
   const answer = getAnswerKey(inputData, 'madeOnBase')
   if (!answer) {
-    return createResult('640391', getQuestion('madeOnBase'))
+    return createResult('640391', getQuestion('madeOnBase', footwear))
   }
   if (answer === 'yes') {
     return handmade640391(inputData)
@@ -258,7 +259,7 @@ function genderType640391WithShaftKnee(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   const sportsAnswer = getAnswerKey(inputData, 'sports')
   if (!answer) {
-    return createResult('640391', getQuestion('genderType'))
+    return createResult('640391', getQuestion('genderType', footwear))
   } else if (answer === 'men') {
     if (sportsAnswer === 'yes') {
       return createResult('6403911610')
@@ -281,7 +282,7 @@ function lengthOfInsoleWithShaftKnee640391(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
 
   if (!answer) {
-    return createResult('640391', getQuestion('lengthOfInsole'))
+    return createResult('640391', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return genderType640391WithShaftKnee(inputData)
@@ -296,7 +297,7 @@ function lengthOfInsoleWithShaftKnee640391(inputData) {
 function handmade640399(inputData) {
   const answer = getAnswerKey(inputData, 'handmade')
   if (!answer) {
-    return createResult('640399', getQuestion('handmade'))
+    return createResult('640399', getQuestion('handmade', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403990510')
@@ -306,7 +307,7 @@ function handmade640399(inputData) {
 function genderTypeWithTrueVamp640399(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   if (!answer) {
-    return createResult('640399', getQuestion('genderType'))
+    return createResult('640399', getQuestion('genderType', footwear))
   }
   if (answer === 'women') {
     return createResult('6403993800')
@@ -318,7 +319,7 @@ function genderTypeWithTrueVamp640399(inputData) {
 function lengthOfInsoleWithTrueVamp640399(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   if (!answer) {
-    return createResult('640399', getQuestion('lengthOfInsole'))
+    return createResult('640399', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return genderTypeWithTrueVamp640399(inputData)
@@ -328,7 +329,7 @@ function lengthOfInsoleWithTrueVamp640399(inputData) {
 function heightOfSole640399(inputData) {
   const answer = getAnswerKey(inputData, 'heightOfSoleAndHeel')
   if (!answer) {
-    return createResult('640399', getQuestion('heightOfSoleAndHeel'))
+    return createResult('640399', getQuestion('heightOfSoleAndHeel', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403991100')
@@ -338,7 +339,7 @@ function heightOfSole640399(inputData) {
 function skiBoots6403xx(inputData) {
   const answer = getAnswerKey(inputData, 'skiBoots')
   if (!answer) {
-    return createResult('6403xx', getQuestion('skiBoots'))
+    return createResult('6403xx', getQuestion('skiBoots', footwear))
   }
   if (answer === 'snowboardBoots' || answer === 'skiBoots') {
     return createResult('6403120000')
@@ -349,7 +350,7 @@ function genderTypeWithFalseVamp640399(inputData) {
   const answer = getAnswerKey(inputData, 'genderType')
   const answerSports = getAnswerKey(inputData, 'sports')
   if (!answer) {
-    return createResult('640399', getQuestion('genderType'))
+    return createResult('640399', getQuestion('genderType', footwear))
   }
   if (answer === 'men') {
     if (answerSports === 'yes') {
@@ -371,7 +372,7 @@ function lengthOfInsoleWithFalseVamp640399(inputData) {
   const answer = getAnswerKey(inputData, 'lengthOfInsole')
   const answerSports = getAnswerKey(inputData, 'sports')
   if (!answer) {
-    return createResult('640399', getQuestion('lengthOfInsole'))
+    return createResult('640399', getQuestion('lengthOfInsole', footwear))
   }
   if (answer === 'yes') {
     return genderTypeWithFalseVamp640399(inputData)
@@ -384,7 +385,7 @@ function lengthOfInsoleWithFalseVamp640399(inputData) {
 function sports640399(inputData) {
   const answer = getAnswerKey(inputData, 'sports')
   if (!answer) {
-    return createResult('640399', getQuestion('sports'))
+    return createResult('640399', getQuestion('sports', footwear))
   }
   if (answer) {
     return lengthOfInsoleWithFalseVamp640399(inputData)
@@ -393,7 +394,7 @@ function sports640399(inputData) {
 function winterSports6403xx(inputData) {
   const answer = getAnswerKey(inputData, 'winterSports')
   if (!answer) {
-    return createResult('6403xx', getQuestion('winterSports'))
+    return createResult('6403xx', getQuestion('winterSports', footwear))
   }
   if (answer === 'yes') {
     return skiBoots6403xx(inputData)
@@ -403,7 +404,7 @@ function winterSports6403xx(inputData) {
 function slippers640399(inputData) {
   const answer = getAnswerKey(inputData, 'slippers')
   if (!answer) {
-    return createResult('640399', getQuestion('slippers'))
+    return createResult('640399', getQuestion('slippers', footwear))
   }
   if (answer === 'yes') {
     return createResult('6403995000')
@@ -413,7 +414,7 @@ function slippers640399(inputData) {
 function vampWithFalseMadeOnBase640399(inputData) {
   const answer = getAnswerKey(inputData, 'vamp')
   if (!answer) {
-    return createResult('640399', getQuestion('vamp'))
+    return createResult('640399', getQuestion('vamp', footwear))
   }
   if (answer === 'yes') {
     return heightOfSole640399(inputData)
@@ -464,7 +465,7 @@ export default function taricFootwear(inputData, code) {
     let answer = getAnswerKey(inputData, 'toeCap')
 
     if (!answer) {
-      return createResult('640291', getQuestion('toeCap'))
+      return createResult('640291', getQuestion('toeCap', footwear))
     }
     if (answer === 'yes') {
       return createResult('6402911000')
@@ -475,7 +476,7 @@ export default function taricFootwear(inputData, code) {
     let answer = getAnswerKey(inputData, 'toeCap')
 
     if (!answer) {
-      return createResult('640299', getQuestion('toeCap'))
+      return createResult('640299', getQuestion('toeCap', footwear))
     }
     if (answer === 'yes') {
       return createResult('6402990500')
@@ -496,7 +497,7 @@ export default function taricFootwear(inputData, code) {
   if (code === '640359') {
     const answer = getAnswerKey(inputData, 'madeOnBase')
     if (!answer) {
-      return createResult('640359', getQuestion('madeOnBase'))
+      return createResult('640359', getQuestion('madeOnBase', footwear))
     }
     if (answer === 'yes') {
       return handmade640359(inputData)
@@ -514,7 +515,7 @@ export default function taricFootwear(inputData, code) {
     } else {
       const answer = getAnswerKey(inputData, 'sports')
       if (!answer) {
-        return createResult('640391', getQuestion('sports'))
+        return createResult('640391', getQuestion('sports', footwear))
       }
       if (answer) {
         return lengthOfInsoleWithShaftKnee640391(inputData)
@@ -525,7 +526,7 @@ export default function taricFootwear(inputData, code) {
   if (code === '6403xx') {
     const answer = getAnswerKey(inputData, 'madeOnBase')
     if (!answer) {
-      return createResult('6403xx', getQuestion('madeOnBase'))
+      return createResult('6403xx', getQuestion('madeOnBase', footwear))
     }
     if (answer === 'yes') {
       return handmade640399(inputData)
@@ -536,7 +537,7 @@ export default function taricFootwear(inputData, code) {
   if (code === '640420') {
     const answer = getAnswerKey(inputData, 'slippers')
     if (!answer) {
-      return createResult('640420', getQuestion('slippers'))
+      return createResult('640420', getQuestion('slippers', footwear))
     }
     if (answer === 'yes') {
       return createResult('6404201000')
@@ -549,7 +550,7 @@ export default function taricFootwear(inputData, code) {
   if (code === '640419') {
     const answer = getAnswerKey(inputData, 'slippers')
     if (!answer) {
-      return createResult('640419', getQuestion('slippers'))
+      return createResult('640419', getQuestion('slippers', footwear))
     }
     if (answer === 'yes') {
       return createResult('6404191000')

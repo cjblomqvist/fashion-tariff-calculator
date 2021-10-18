@@ -1,3 +1,4 @@
+import { footwear } from '../questions/footwear.js'
 import { createResult, getAnswerKey, getQuestion } from '../lib/helpers.js'
 
 export default function hsFootwear(inputData, systemSpecificCallback) {
@@ -7,17 +8,17 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
       'footwearOrComponents'
     )
     if (!footwearOrComponentsAnswer) {
-      return createResult('', getQuestion('footwearOrComponents'))
+      return createResult('', getQuestion('footwearOrComponents', footwear))
     }
     if (footwearOrComponentsAnswer === 'footwear') {
       const soleAnswer = getAnswerKey(inputData, 'sole')
       const upperTypeAnswer = getAnswerKey(inputData, 'upperType')
       if (!upperTypeAnswer) {
-        return createResult('', getQuestion('upperType'))
+        return createResult('', getQuestion('upperType', footwear))
       }
 
       if (!soleAnswer) {
-        return createResult('', getQuestion('sole'))
+        return createResult('', getQuestion('sole', footwear))
       }
 
       if (
@@ -26,12 +27,12 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
       ) {
         const processAnswer = getAnswerKey(inputData, 'process')
         if (!processAnswer) {
-          return createResult('', getQuestion('process'))
+          return createResult('', getQuestion('process', footwear))
         }
 
         let waterProofAnswer = getAnswerKey(inputData, 'waterProof')
         if (!waterProofAnswer) {
-          return createResult('', getQuestion('waterProof'))
+          return createResult('', getQuestion('waterProof', footwear))
         }
         if (
           waterProofAnswer === 'yes' &&
@@ -42,7 +43,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
           let toeCapAnswer = getAnswerKey(inputData, 'toeCap')
 
           if (!toeCapAnswer) {
-            return createResult('6401', getQuestion('toeCap'))
+            return createResult('6401', getQuestion('toeCap', footwear))
           }
           if (toeCapAnswer === 'yes') {
             return systemSpecificCallback(inputData, '640110')
@@ -50,7 +51,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
 
           let shaftAnswer = getAnswerKey(inputData, 'shaft')
           if (!shaftAnswer) {
-            return createResult('6401', getQuestion('shaft'))
+            return createResult('6401', getQuestion('shaft', footwear))
           }
           if (shaftAnswer === 'ankle') {
             return systemSpecificCallback(inputData, '640192')
@@ -60,13 +61,13 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
 
         let winterSportsAnswer = getAnswerKey(inputData, 'winterSports')
         if (!winterSportsAnswer) {
-          return createResult('6402', getQuestion('winterSports'))
+          return createResult('6402', getQuestion('winterSports', footwear))
         }
         if (winterSportsAnswer === 'yes') {
           let skiBootsAnswer = getAnswerKey(inputData, 'skiBoots')
 
           if (!skiBootsAnswer) {
-            return createResult('6402', getQuestion('skiBoots'))
+            return createResult('6402', getQuestion('skiBoots', footwear))
           }
           if (
             skiBootsAnswer === 'skiBoots' ||
@@ -79,7 +80,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
         let strapsAnswer = getAnswerKey(inputData, 'upperStrapsOrThongs')
 
         if (!strapsAnswer) {
-          return createResult('6402', getQuestion('upperStrapsOrThongs'))
+          return createResult('6402', getQuestion('upperStrapsOrThongs', footwear))
         }
         if (strapsAnswer === 'yes') {
           return systemSpecificCallback(inputData, '640220')
@@ -87,7 +88,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
         let shaftAnswer = getAnswerKey(inputData, 'shaft')
 
         if (!shaftAnswer) {
-          return createResult('6402', getQuestion('shaft'))
+          return createResult('6402', getQuestion('shaft', footwear))
         }
         if (shaftAnswer === 'ankle') {
           return systemSpecificCallback(inputData, '640291')
@@ -103,14 +104,14 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
         if (soleAnswer === 'leather') {
           const strapsAnswer = getAnswerKey(inputData, 'leatherStraps')
           if (!strapsAnswer) {
-            return createResult('6403', getQuestion('leatherStraps'))
+            return createResult('6403', getQuestion('leatherStraps', footwear))
           }
           if (strapsAnswer === 'yes') {
             return systemSpecificCallback(inputData, '640320')
           }
           const shaftAnswer = getAnswerKey(inputData, 'shaft')
           if (!shaftAnswer) {
-            return createResult('640351', getQuestion('shaft'))
+            return createResult('640351', getQuestion('shaft', footwear))
           }
           if (shaftAnswer === 'ankle' || shaftAnswer === 'knee') {
             return systemSpecificCallback(inputData, '640351')
@@ -120,14 +121,14 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
 
         const toeCapAnswer = getAnswerKey(inputData, 'toeCap')
         if (!toeCapAnswer) {
-          return createResult('6403', getQuestion('toeCap'))
+          return createResult('6403', getQuestion('toeCap', footwear))
         }
         if (toeCapAnswer === 'yes') {
           return systemSpecificCallback(inputData, '640340')
         }
         const shaftAnswer = getAnswerKey(inputData, 'shaft')
         if (!shaftAnswer) {
-          return createResult('6403', getQuestion('shaft'))
+          return createResult('6403', getQuestion('shaft', footwear))
         }
         if (shaftAnswer === 'ankle' || shaftAnswer === 'knee') {
           return systemSpecificCallback(inputData, '640391')
@@ -145,7 +146,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
         } else if (soleAnswer === 'plastic' || soleAnswer === 'rubber') {
           const sportsAnswer = getAnswerKey(inputData, 'sports')
           if (!sportsAnswer) {
-            return createResult('6404', getQuestion('sports'))
+            return createResult('6404', getQuestion('sports', footwear))
           }
           if (sportsAnswer === 'yes') {
             return systemSpecificCallback(inputData, '640411')
@@ -163,5 +164,5 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
       return systemSpecificCallback(inputData, '640590')
     }
   }
-  return createResult('', getQuestion('country'))
+  return createResult('', getQuestion('country', footwear))
 }
