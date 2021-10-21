@@ -296,7 +296,7 @@ describe('6402', () => {
   })
 })
 
-describe('6403', () => {
+describe.only('6403', () => {
   describe.each([
     [
       {
@@ -308,11 +308,96 @@ describe('6403', () => {
     [
       {
         upperType: 'leather',
+        sole: 'leather',
+        leatherStraps: 'yes'
+      },
+      '640320'
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: 'leather',
+        leatherStraps: 'no'
+      },
+      { code: '6403', questionKey: 'shaft' }
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: 'leather',
+        leatherStraps: 'no',
+        shaft: 'ankle'
+      },
+      '640351'
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: 'leather',
+        leatherStraps: 'no',
+        shaft: 'knee'
+      },
+      '640351'
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: 'leather',
+        leatherStraps: 'no',
+        shaft: 'other'
+      },
+      '640359'
+    ],
+    [
+      {
+        upperType: 'leather',
         sole: ['imitationLeather', 'rubber', 'plastic']
       },
       { code: '6403', questionKey: 'toeCap' }
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: ['imitationLeather', 'rubber', 'plastic'],
+        toeCap: 'yes'
+      },
+      '640340'
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: ['imitationLeather', 'rubber', 'plastic'],
+        toeCap: 'no'
+      },
+      { code: '6403', questionKey: 'shaft' }
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: ['imitationLeather', 'rubber', 'plastic'],
+        toeCap: 'no',
+        shaft: 'ankle'
+      },
+      '640391'
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: ['imitationLeather', 'rubber', 'plastic'],
+        toeCap: 'no',
+        shaft: 'knee'
+      },
+      '640391'
+    ],
+    [
+      {
+        upperType: 'leather',
+        sole: ['imitationLeather', 'rubber', 'plastic'],
+        toeCap: 'no',
+        shaft: 'other'
+      },
+      '6403xx'
     ]
-    // TODO: The rest...
   ])('', multiTestCasesTestRunner)
 })
 
