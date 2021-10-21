@@ -159,18 +159,7 @@ describe('6401', () => {
         waterProof: 'yes',
         process: ['cementing', 'vulcanization', 'direct injection process'],
         toeCap: 'no',
-        shaft: 'knee'
-      },
-      '640199'
-    ],
-    [
-      {
-        upperType: ['rubber', 'plastic'],
-        sole: ['rubber', 'plastic'],
-        waterProof: 'yes',
-        process: ['cementing', 'vulcanization', 'direct injection process'],
-        toeCap: 'no',
-        shaft: 'other'
+        shaft: ['knee', 'other']
       },
       '640199'
     ]
@@ -221,15 +210,7 @@ describe('6402', () => {
         {
           ...baseFor6402,
           winterSports: 'yes',
-          skiBoots: 'skiBoots'
-        },
-        '640212'
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'yes',
-          skiBoots: 'snowboardBoots'
+          skiBoots: ['skiBoots', 'snowboardBoots']
         },
         '640212'
       ],
@@ -278,20 +259,10 @@ describe('6402', () => {
           ...baseFor6402,
           winterSports: 'no',
           upperStrapsOrThongs: 'no',
-          shaft: 'knee'
-        },
-        '640299'
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'no',
-          upperStrapsOrThongs: 'no',
-          shaft: 'other'
+          shaft: ['knee', 'other']
         },
         '640299'
       ]
-      // TODO: The rest...
     ])('', multiTestCasesTestRunner)
   })
 })
@@ -326,16 +297,7 @@ describe('6403', () => {
         upperType: 'leather',
         sole: 'leather',
         leatherStraps: 'no',
-        shaft: 'ankle'
-      },
-      '640351'
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: 'leather',
-        leatherStraps: 'no',
-        shaft: 'knee'
+        shaft: ['ankle', 'knee']
       },
       '640351'
     ],
@@ -376,16 +338,7 @@ describe('6403', () => {
         upperType: 'leather',
         sole: ['imitationLeather', 'rubber', 'plastic'],
         toeCap: 'no',
-        shaft: 'ankle'
-      },
-      '640391'
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: ['imitationLeather', 'rubber', 'plastic'],
-        toeCap: 'no',
-        shaft: 'knee'
+        shaft: ['ankle', 'knee']
       },
       '640391'
     ],
@@ -401,7 +354,7 @@ describe('6403', () => {
   ])('', multiTestCasesTestRunner)
 })
 
-describe.only('6404', () => {
+describe('6404', () => {
   describe.each([
     [
       {
@@ -416,8 +369,23 @@ describe.only('6404', () => {
         sole: ['rubber', 'plastic']
       },
       { code: '6404', questionKey: 'sports' }
+    ],
+    [
+      {
+        upperType: 'textile',
+        sole: ['rubber', 'plastic'],
+        sports: 'yes'
+      },
+      '640411'
+    ],
+    [
+      {
+        upperType: 'textile',
+        sole: ['rubber', 'plastic'],
+        sports: 'no'
+      },
+      '640419'
     ]
-    // TODO: The rest...
   ])('', multiTestCasesTestRunner)
 })
 
