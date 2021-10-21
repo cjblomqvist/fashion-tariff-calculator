@@ -57,38 +57,6 @@ export const footwear = [
     ]
   },
   {
-    key: 'part',
-    title: `What kind of parts?`,
-    text: `Determine what kind of parts?
-`,
-    answers: [
-      {
-        key: 'uppers',
-        text: 'Uppers and parts thereof, other stiffeners'
-      },
-      {
-        key: 'heels',
-        text: 'Outer soles and heels'
-      },
-      {
-        key: 'withoutOuter',
-        text: 'Assemblies of uppers affixed to inne soles or to outer soles but without outer soles'
-      },
-      {
-        key: 'removable',
-        text: 'Removable insoles and other removable accesories'
-      },
-      {
-        key: 'outer',
-        text: 'Outer soles'
-      },
-      {
-        key: 'Gaiters',
-        text: 'Gaiters, bone leather and similar articles and parts thereof'
-      }
-    ]
-  },
-  {
     key: 'sole',
     title: `Sole material`,
     text: `What is the sole made of?`,

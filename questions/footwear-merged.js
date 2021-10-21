@@ -196,6 +196,10 @@ export const footwearNew = [
     type: 'single',
     answers: [
       {
+        key: 'cementing',
+        text: 'Cementing'
+      },
+      {
         key: 'moccasins',
         text: 'Moccasins'
       },
@@ -253,12 +257,12 @@ export const footwearNew = [
     type: 'single',
     answers: [
       {
-        key: 'knee',
-        text: 'Knee'
-      },
-      {
         key: 'ankle',
         text: 'Ankle'
+      },
+      {
+        key: 'knee',
+        text: 'Knee'
       },
       {
         key: 'other',
