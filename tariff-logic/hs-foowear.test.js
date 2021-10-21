@@ -209,6 +209,87 @@ describe('6402', () => {
           ...baseFor6402
         },
         { code: '6402', questionKey: 'winterSports' }
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'yes'
+        },
+        { code: '6402', questionKey: 'skiBoots' }
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'yes',
+          skiBoots: 'skiBoots'
+        },
+        '640212'
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'yes',
+          skiBoots: 'snowboardBoots'
+        },
+        '640212'
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'yes',
+          skiBoots: 'other'
+        },
+        '640219'
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'no'
+        },
+        { code: '6402', questionKey: 'upperStrapsOrThongs' }
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'no',
+          upperStrapsOrThongs: 'yes'
+        },
+        '640220'
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'no',
+          upperStrapsOrThongs: 'no'
+        },
+        { code: '6402', questionKey: 'shaft' }
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'no',
+          upperStrapsOrThongs: 'no',
+          shaft: 'ankle'
+        },
+        '640291'
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'no',
+          upperStrapsOrThongs: 'no',
+          shaft: 'knee'
+        },
+        '640299'
+      ],
+      [
+        {
+          ...baseFor6402,
+          winterSports: 'no',
+          upperStrapsOrThongs: 'no',
+          shaft: 'other'
+        },
+        '640299'
       ]
       // TODO: The rest...
     ])('', multiTestCasesTestRunner)
