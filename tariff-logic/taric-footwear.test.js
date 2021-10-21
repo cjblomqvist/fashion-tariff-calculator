@@ -180,12 +180,23 @@ test.each([
     '6402999300'
   ],
   // 6403
+  //Sole 1 & leatherStraps
   ['640320', [], '6403200000'],
+  // Sole !1 & toeCap
+  ['640340', [], '6403400000'],
   // Shaft = knee or ankle
   [
     '640351',
     [{ questionKey: 'shaft', answerKey: 'ankle' }],
     { code: '640351', questionKey: 'madeOnBase' }
+  ],
+  [
+    '640351',
+    [
+      { questionKey: 'shaft', answerKey: 'ankle' },
+      { questionKey: 'madeOnBase', answerKey: 'yes' }
+    ],
+    { code: '640351', questionKey: 'handmade' }
   ],
   [
     '640351',
@@ -209,10 +220,27 @@ test.each([
     '640351',
     [
       { questionKey: 'shaft', answerKey: 'ankle' },
+      { questionKey: 'madeOnBase', answerKey: 'no' }
+    ],
+    { code: '640351', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640351',
+    [
+      { questionKey: 'shaft', answerKey: 'ankle' },
       { questionKey: 'madeOnBase', answerKey: 'no' },
       { questionKey: 'lengthOfInsole', answerKey: 'no' }
     ],
     '6403519100'
+  ],
+  [
+    '640351',
+    [
+      { questionKey: 'shaft', answerKey: 'ankle' },
+      { questionKey: 'madeOnBase', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' }
+    ],
+    { code: '640351', questionKey: 'genderType' }
   ],
   [
     '640351',
@@ -237,10 +265,33 @@ test.each([
   [
     '640351',
     [
+      { questionKey: 'shaft', answerKey: 'ankle' },
+      { questionKey: 'madeOnBase', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'unisex/other' }
+    ],
+    '6403519900'
+  ],
+  [
+    '640351',
+    [{ questionKey: 'shaft', answerKey: 'knee' }],
+    { code: '640351', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640351',
+    [
       { questionKey: 'shaft', answerKey: 'knee' },
       { questionKey: 'lengthOfInsole', answerKey: 'no' }
     ],
     '6403511100'
+  ],
+  [
+    '640351',
+    [
+      { questionKey: 'shaft', answerKey: 'knee' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' }
+    ],
+    { code: '640351', questionKey: 'genderType' }
   ],
   [
     '640351',
@@ -257,6 +308,15 @@ test.each([
       { questionKey: 'shaft', answerKey: 'knee' },
       { questionKey: 'lengthOfInsole', answerKey: 'yes' },
       { questionKey: 'genderType', answerKey: 'women' }
+    ],
+    '6403511900'
+  ],
+  [
+    '640351',
+    [
+      { questionKey: 'shaft', answerKey: 'knee' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'unisex/other' }
     ],
     '6403511900'
   ],
@@ -360,6 +420,17 @@ test.each([
     ],
     '6403593900'
   ],
+  [
+    '640359',
+    [
+      { questionKey: 'madeOnBase', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'yes' },
+      { questionKey: 'heightOfSoleAndHeel', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'unisex/other' }
+    ],
+    '6403593900'
+  ],
   // Vamp = no
   [
     '640359',
@@ -429,7 +500,17 @@ test.each([
     ],
     '6403599900'
   ],
-  ['640340', [], '6403400000'],
+  [
+    '640359',
+    [
+      { questionKey: 'madeOnBase', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'unisex/other' }
+    ],
+    '6403599900'
+  ],
   // Shaft = ankle
   [
     '640391',
@@ -563,6 +644,15 @@ test.each([
     [
       { questionKey: 'shaft', answerKey: 'knee' },
       { questionKey: 'sports', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' }
+    ],
+    { code: '640391', questionKey: 'genderType' }
+  ],
+  [
+    '640391',
+    [
+      { questionKey: 'shaft', answerKey: 'knee' },
+      { questionKey: 'sports', answerKey: 'yes' },
       { questionKey: 'lengthOfInsole', answerKey: 'yes' }
     ],
     { code: '640391', questionKey: 'genderType' }
@@ -790,6 +880,17 @@ test.each([
       { questionKey: 'vamp', answerKey: 'no' },
       { questionKey: 'slippers', answerKey: 'no' },
       { questionKey: 'winterSports', answerKey: 'yes' },
+      { questionKey: 'skiBoots', answerKey: 'snowboardBoots' }
+    ],
+    '6403120000'
+  ],
+  [
+    '6403xx',
+    [
+      { questionKey: 'madeOnBase', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'winterSports', answerKey: 'yes' },
       { questionKey: 'skiBoots', answerKey: 'other' }
     ],
     '6403190000'
@@ -813,6 +914,17 @@ test.each([
       { questionKey: 'slippers', answerKey: 'no' },
       { questionKey: 'winterSports', answerKey: 'no' },
       { questionKey: 'sports', answerKey: 'no' }
+    ],
+    { code: '640399', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '6403xx',
+    [
+      { questionKey: 'madeOnBase', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'winterSports', answerKey: 'no' },
+      { questionKey: 'sports', answerKey: 'yes' }
     ],
     { code: '640399', questionKey: 'lengthOfInsole' }
   ],
@@ -943,35 +1055,14 @@ test.each([
     '6403999390'
   ],
   // 6404
+  ['640411', [], '6404110000'],
+  ['640419', [], { code: '640419', questionKey: 'slippers' }],
+  ['640419', [{ questionKey: 'slippers', answerKey: 'yes' }], '6404191000'],
+  ['640419', [{ questionKey: 'slippers', answerKey: 'no' }], '6404199000'],
   ['640420', [], { code: '640420', questionKey: 'slippers' }],
   ['640420', [{ questionKey: 'slippers', answerKey: 'yes' }], '6404201000'],
   ['640420', [{ questionKey: 'slippers', answerKey: 'no' }], '6404209000'],
-  [
-    '640411',
-    [
-      { questionKey: 'sole', answerKey: 'plastic' },
-      { questionKey: 'sports', answerKey: 'yes' }
-    ],
-    '6404110000'
-  ],
-  [
-    '640419',
-    [
-      { questionKey: 'sole', answerKey: 'plastic' },
-      { questionKey: 'sports', answerKey: 'yes' },
-      { questionKey: 'slippers', answerKey: 'yes' }
-    ],
-    '6404191000'
-  ],
-  [
-    '640419',
-    [
-      { questionKey: 'sole', answerKey: 'plastic' },
-      { questionKey: 'sports', answerKey: 'yes' },
-      { questionKey: 'slippers', answerKey: 'no' }
-    ],
-    '6404199000'
-  ],
+
   // 6405
   ['640510', [], '6405100000'],
   ['640520', [{ questionKey: 'sole', answerKey: 'wood' }], '6405201000'],
@@ -997,7 +1088,12 @@ test.each([
     '6405209900'
   ],
   ['640590', [{ questionKey: 'sole', answerKey: 'other' }], '6405909000'],
-  ['640590', [{ questionKey: 'sole', answerKey: 'leather' }], '6405901000']
+  ['640590', [{ questionKey: 'sole', answerKey: 'leather' }], '6405901000'],
+  [
+    '640590',
+    [{ questionKey: 'sole', answerKey: 'imitationLeather' }],
+    '6405901000'
+  ]
 ])('TBD', (hsCode, questionAnswers, resultData) => {
   const inputData = {
     questionAnswers
