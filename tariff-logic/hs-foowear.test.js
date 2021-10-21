@@ -296,7 +296,7 @@ describe('6402', () => {
   })
 })
 
-describe.only('6403', () => {
+describe('6403', () => {
   describe.each([
     [
       {
@@ -401,7 +401,7 @@ describe.only('6403', () => {
   ])('', multiTestCasesTestRunner)
 })
 
-describe('6404', () => {
+describe.only('6404', () => {
   describe.each([
     [
       {
