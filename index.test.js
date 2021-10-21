@@ -171,7 +171,7 @@ describe('Abstraction logic test', () => {
         { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'rubber' },
         { questionKey: 'sole', answerKey: 'rubber' },
-        { questionKey: 'process', answerKey: 'moccasins' },
+        { questionKey: 'process', answerKey: 'cementing' },
         { questionKey: 'waterProof', answerKey: 'yes' },
         { questionKey: 'sports', answerKey: 'no' },
         { questionKey: 'slippers', answerKey: 'yes' },

@@ -126,6 +126,10 @@ export const footwear = [
     text: ``,
     answers: [
       {
+        key: 'cementing',
+        text: 'Cementing'
+      },
+      {
         key: 'moccasins',
         text: 'Moccasins'
       },
