@@ -2,6 +2,7 @@ import { footwear } from '../questions/footwear.js'
 import { createResult, getAnswerKey, getQuestion } from '../lib/helpers.js'
 
 export default function hsFootwear(inputData, systemSpecificCallback) {
+  // TODO: REFACTOR out country (and possibly footwearOrComponents as well?) out of this logic, and into some base logic
   if (getAnswerKey(inputData, 'country') === 'eu') {
     const footwearOrComponentsAnswer = getAnswerKey(
       inputData,
@@ -36,8 +37,8 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
         }
         if (
           waterProofAnswer === 'yes' &&
-          (processAnswer === 'moccasins' ||
-            processAnswer === 'handStitched' ||
+          (processAnswer === 'cementing' ||
+            processAnswer === 'vulcanization' ||
             processAnswer === 'direct injection process')
         ) {
           let toeCapAnswer = getAnswerKey(inputData, 'toeCap')
