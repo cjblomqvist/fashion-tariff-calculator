@@ -81,7 +81,10 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
         let strapsAnswer = getAnswerKey(inputData, 'upperStrapsOrThongs')
 
         if (!strapsAnswer) {
-          return createResult('6402', getQuestion('upperStrapsOrThongs', footwear))
+          return createResult(
+            '6402',
+            getQuestion('upperStrapsOrThongs', footwear)
+          )
         }
         if (strapsAnswer === 'yes') {
           return systemSpecificCallback(inputData, '640220')
@@ -112,7 +115,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
           }
           const shaftAnswer = getAnswerKey(inputData, 'shaft')
           if (!shaftAnswer) {
-            return createResult('640351', getQuestion('shaft', footwear))
+            return createResult('6403', getQuestion('shaft', footwear))
           }
           if (shaftAnswer === 'ankle' || shaftAnswer === 'knee') {
             return systemSpecificCallback(inputData, '640351')
