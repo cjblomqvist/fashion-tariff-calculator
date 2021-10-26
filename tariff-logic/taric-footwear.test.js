@@ -40,7 +40,6 @@ test.each([
     [{ toeCap: 'no' }, { upperType: 'plastic' }, { slippers: 'no' }],
     { code: '640299', questionKey: 'vamp' }
   ],
-  // Vamp = Yes
   [
     '640299',
     [
@@ -73,7 +72,6 @@ test.each([
     ],
     '6402993900'
   ],
-  // Vamp = No
   [
     '640299',
     [
@@ -95,7 +93,6 @@ test.each([
     ],
     '6402999100'
   ],
-  // LengthOfInsole = Yes
   [
     '640299',
     [
@@ -142,6 +139,909 @@ test.each([
       { genderType: 'other' }
     ],
     '6402999300'
+  ],
+  // 6403
+  ['640320', [], '6403200000'],
+  ['640340', [], '6403400000'],
+  [
+    '640351',
+    [{shaft: 'ankle' }],
+    { code: '640351', questionKey: 'madeOnBase' }
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'yes' }
+    ],
+    { code: '640351', questionKey: 'handmade' }
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'yes' },
+      {handmade: 'yes' }
+    ],
+    '6403510510'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'yes' },
+      {handmade: 'no' }
+    ],
+    '6403510590'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' }
+    ],
+    { code: '640351', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403519100'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640351', questionKey: 'genderType' }
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403519500'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403519900'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403519900'
+  ],
+  [
+    '640351',
+    [{shaft: 'knee' }],
+    { code: '640351', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'knee' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403511100'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'knee' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640351', questionKey: 'genderType' }
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'knee' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403511500'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'knee' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403511900'
+  ],
+  [
+    '640351',
+    [
+      {shaft: 'knee' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403511900'
+  ],
+  ['640359', [], { code: '640359', questionKey: 'madeOnBase' }],
+  [
+    '640359',
+    [{madeOnBase: 'yes' }],
+    { code: '640359', questionKey: 'handmade' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'yes' },
+      {handmade: 'yes' }
+    ],
+    '6403590510'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'yes' },
+      {handmade: 'no' }
+    ],
+    '6403590590'
+  ],
+  [
+    '640359',
+    [{madeOnBase: 'no' }],
+    { code: '640359', questionKey: 'vamp' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' }
+    ],
+    {
+      code: '640359',
+      questionKey: 'heightOfSoleAndHeel'
+    }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'yes' }
+    ],
+    '6403591100'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' }
+    ],
+    { code: '640359', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403593100'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640359', questionKey: 'genderType' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403593500'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403593900'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403593900'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' }
+    ],
+    { code: '640359', questionKey: 'slippers' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'yes' }
+    ],
+    '6403595000'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' }
+    ],
+    { code: '640359', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403599100'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640359', questionKey: 'genderType' }
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403599500'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403599900'
+  ],
+  [
+    '640359',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403599900'
+  ],
+  [
+    '640391',
+    [{shaft: 'ankle' }],
+    { code: '640391', questionKey: 'madeOnBase' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'yes' }
+    ],
+    { code: '640391', questionKey: 'handmade' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'yes' },
+      {handmade: 'yes' }
+    ],
+    '6403910510'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'yes' },
+      {handmade: 'no' }
+    ],
+    '6403910590'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' }
+    ],
+    { code: '640391', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403919100'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640391', questionKey: 'genderType' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403919600'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403919800'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'ankle' },
+      {madeOnBase: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403919300'
+  ],
+  [
+    '640391',
+    [{shaft: 'knee' }],
+    { code: '640391', questionKey: 'sports' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'no' }
+    ],
+    { code: '640391', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'yes' }
+    ],
+    { code: '640391', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403911190'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403911110'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640391', questionKey: 'genderType' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640391', questionKey: 'genderType' }
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403911690'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403911610'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403911810'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403911890'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403911390'
+  ],
+  [
+    '640391',
+    [
+      {shaft: 'knee' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403911310'
+  ],
+  ['6403xx', [], { code: '6403xx', questionKey: 'madeOnBase' }],
+  [
+    '6403xx',
+    [{madeOnBase: 'yes' }],
+    { code: '640399', questionKey: 'handmade' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'yes' },
+      {handmade: 'yes' }
+    ],
+    '6403990510'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'yes' },
+      {handmade: 'no' }
+    ],
+    '6403990590'
+  ],
+  [
+    '6403xx',
+    [{madeOnBase: 'no' }],
+    { code: '640399', questionKey: 'vamp' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' }
+    ],
+    { code: '640399', questionKey: 'heightOfSoleAndHeel' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'yes' }
+    ],
+    '6403991100'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' }
+    ],
+    { code: '640399', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403993100'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640399', questionKey: 'genderType' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403993600'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403993800'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'yes' },
+      {heightOfSoleAndHeel: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403993300'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' }
+    ],
+    { code: '640399', questionKey: 'slippers' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'yes' }
+    ],
+    '6403995000'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' }
+    ],
+    { code: '6403xx', questionKey: 'winterSports' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'yes' }
+    ],
+    { code: '6403xx', questionKey: 'skiBoots' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'yes' },
+      {skiBoots: 'skiBoots' }
+    ],
+    '6403120000'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'yes' },
+      {skiBoots: 'snowboardBoots' }
+    ],
+    '6403120000'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'yes' },
+      {skiBoots: 'other' }
+    ],
+    '6403190000'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' }
+    ],
+    { code: '640399', questionKey: 'sports' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'no' }
+    ],
+    { code: '640399', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'yes' }
+    ],
+    { code: '640399', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'no' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403999190'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'no' }
+    ],
+    '6403999110'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640399', questionKey: 'genderType' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' }
+    ],
+    { code: '640399', questionKey: 'genderType' }
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403999610'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'men' }
+    ],
+    '6403999690'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403999810'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'women' }
+    ],
+    '6403999890'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'yes' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403999310'
+  ],
+  [
+    '6403xx',
+    [
+      {madeOnBase: 'no' },
+      {vamp: 'no' },
+      {slippers: 'no' },
+      {winterSports: 'no' },
+      {sports: 'no' },
+      {lengthOfInsole: 'yes' },
+      {genderType: 'unisex/other' }
+    ],
+    '6403999390'
+  ],
+  // 6404
+  ['640411', [], '6404110000'],
+  ['640419', [], { code: '640419', questionKey: 'slippers' }],
+  ['640419', [{slippers: 'yes' }], '6404191000'],
+  ['640419', [{slippers: 'no' }], '6404199000'],
+  ['640420', [], { code: '640420', questionKey: 'slippers' }],
+  ['640420', [{slippers: 'yes' }], '6404201000'],
+  ['640420', [{slippers: 'no' }], '6404209000'],
+
+  // 6405
+  ['640510', [], '6405100000'],
+  ['640520', [{sole: 'wood' }], '6405201000'],
+  [
+    '640520',
+    [{sole: 'other' }],
+    { code: '640520', questionKey: 'slippers' }
+  ],
+  [
+    '640520',
+    [
+      {sole: 'other' },
+      {slippers: 'yes' }
+    ],
+    '6405209100'
+  ],
+  [
+    '640520',
+    [
+      {sole: 'other' },
+      {slippers: 'no' }
+    ],
+    '6405209900'
+  ],
+  ['640590', [{sole: 'other' }], '6405909000'],
+  ['640590', [{sole: 'leather' }], '6405901000'],
+  [
+    '640590',
+    [{sole: 'imitationLeather' }],
+    '6405901000'
   ]
 ])('TBD', (hsCode, questionAnswersSimpleFormat, resultData) => {
   let questionAnswers = []
@@ -155,7 +1055,6 @@ test.each([
       .flat()
     questionAnswers.push.apply(questionAnswers, qas)
   })
-  console.log('questionanswers: ', questionAnswers)
   const inputData = {
     questionAnswers: [...footwearQuestionAnswers, ...questionAnswers]
   }
@@ -164,10 +1063,5 @@ test.each([
     ? getQuestion(resultData.questionKey, footwear)
     : null
   const result = createResult(resultCode, question)
-  console.log('resultData: ', resultData)
-  console.log('question: ', question)
-  console.log('result: ', result)
-  console.log('inputData: ', inputData)
-  console.log('expected', taricFootwear(inputData, hsCode))
   expect(taricFootwear(inputData, hsCode)).toStrictEqual(result)
 })
