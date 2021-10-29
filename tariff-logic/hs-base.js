@@ -22,5 +22,9 @@ export default function hsBase(inputData) {
       return 'componentsYesYes'
     }
   }
+  if (getAnswerKey(inputData, 'country') === 'other') {
+    // Temp solution to avoid crash
+    return createResult('', getQuestion('country', base))
+  }
   return createResult('', getQuestion('country', base))
 }

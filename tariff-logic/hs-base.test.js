@@ -1,10 +1,11 @@
 import hsBase from './hs-base.js'
 import base from '../questions/base'
 import { createResult, getQuestion } from '../lib/helpers.js'
-import { calculatorOriginal } from '../lib/calculator.js'
 
 test.each([
-  [[{ questionKey: 'country', answerKey: 'eu' }], 'footwearOrComponents']
+  [[], 'country'],
+  [[{ questionKey: 'country', answerKey: 'eu' }], 'footwearOrComponents'],
+  [[{ questionKey: 'country', answerKey: 'other' }], 'country']
 ])(
   'If country = eu in hs-base get question footwearOrComponents',
   (questionAnswers, resultKey) => {
