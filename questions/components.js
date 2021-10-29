@@ -49,8 +49,8 @@ export const components = [
         text: 'Plastic'
       },
       {
-        key: 'leatherOrCompositionLeather',
-        text: 'LeatherOrCompositionLeather'
+        key: 'compositionLeather',
+        text: 'Composition (Bonded) Leather'
       },
       {
         key: 'other',

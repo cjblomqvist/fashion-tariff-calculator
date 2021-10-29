@@ -111,16 +111,13 @@ function outerOrGaiters640690(inputData) {
   if (!materialTypeAnswer) {
     return createResult('640690', getQuestion('materialType', components))
   }
-  if (
-    materialTypeAnswer === 'leatherOrCompositionLeather' &&
-    partAnswer === 'outer'
-  ) {
-    return outerLeatherOrCompositionLeather640690(inputData)
+  if (materialTypeAnswer === 'compositionLeather' && partAnswer === 'outer') {
+    return outercompositionLeather640690(inputData)
   }
-  return outerOrGaitersNotLeatherOrCompositionLeather640690(inputData)
+  return outerOrGaitersNotcompositionLeather640690(inputData)
 }
 
-function outerLeatherOrCompositionLeather640690(inputData) {
+function outercompositionLeather640690(inputData) {
   const handmadeAnswer = getAnswerKey(inputData, 'handmade')
   const partAnswer = getAnswerKey(inputData, 'part')
   if (!handmadeAnswer) {
@@ -131,7 +128,7 @@ function outerLeatherOrCompositionLeather640690(inputData) {
   }
   return createResult('6406906090')
 }
-function outerOrGaitersNotLeatherOrCompositionLeather640690(inputData) {
+function outerOrGaitersNotcompositionLeather640690(inputData) {
   const handmadeAnswer = getAnswerKey(inputData, 'handmade')
   const partAnswer = getAnswerKey(inputData, 'part')
   if (!handmadeAnswer) {

@@ -1,10 +1,6 @@
 import taricFootwearComponents from './taric-footwear-components.js'
-
-import { calculatorFactory } from '../lib/calculator.js'
 import { components } from '../questions/components.js'
 import { createResult, getQuestion } from '../lib/helpers.js'
-
-const calculator = calculatorFactory({ questions: 'simple' })
 
 test.each([
   // 640610
@@ -20,12 +16,7 @@ test.each([
     '640610',
     [
       {
-        materialType: [
-          'rubber',
-          'plastic',
-          'leatherOrCompositionLeather',
-          'other'
-        ]
+        materialType: ['rubber', 'plastic', 'compositionLeather', 'other']
       }
     ],
     { code: '640610', questionKey: 'handmade' }
@@ -44,7 +35,7 @@ test.each([
     '640610',
     [
       {
-        materialType: ['rubber', 'plastic', 'leatherOrCompositionLeather'],
+        materialType: ['rubber', 'plastic', 'compositionLeather'],
         handmade: 'yes'
       }
     ],
@@ -54,12 +45,7 @@ test.each([
     '640610',
     [
       {
-        materialType: [
-          'rubber',
-          'plastic',
-          'leatherOrCompositionLeather',
-          'other'
-        ],
+        materialType: ['rubber', 'plastic', 'compositionLeather', 'other'],
         handmade: 'no'
       }
     ],
@@ -79,7 +65,7 @@ test.each([
     '640620',
     [
       {
-        materialType: ['leatherOrCompositionLeather', 'other'],
+        materialType: ['compositionLeather', 'other'],
         handmade: 'yes'
       }
     ],
@@ -89,7 +75,7 @@ test.each([
     '640620',
     [
       {
-        materialType: ['plastic', 'leatherOrCompositionLeather', 'other'],
+        materialType: ['plastic', 'compositionLeather', 'other'],
         handmade: 'no'
       }
     ],
@@ -120,7 +106,7 @@ test.each([
     [
       {
         part: 'outer',
-        materialType: 'leatherOrCompositionLeather'
+        materialType: 'compositionLeather'
       }
     ],
     { code: '640690', questionKey: 'handmade' }
@@ -130,7 +116,7 @@ test.each([
     [
       {
         part: 'outer',
-        materialType: 'leatherOrCompositionLeather',
+        materialType: 'compositionLeather',
         handmade: 'yes'
       }
     ],
@@ -141,7 +127,7 @@ test.each([
     [
       {
         part: 'outer',
-        materialType: 'leatherOrCompositionLeather',
+        materialType: 'compositionLeather',
         handmade: 'no'
       }
     ],
@@ -156,7 +142,7 @@ test.each([
           'leather',
           'rubber',
           'plastic',
-          'leatherOrCompositionLeather',
+          'compositionLeather',
           'other'
         ],
         handmade: 'no'
@@ -173,7 +159,7 @@ test.each([
           'leather',
           'rubber',
           'plastic',
-          'leatherOrCompositionLeather',
+          'compositionLeather',
           'other'
         ],
         handmade: 'yes'
