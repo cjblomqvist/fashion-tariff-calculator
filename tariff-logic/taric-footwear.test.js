@@ -4,132 +4,188 @@ import { calculatorFactory } from '../lib/calculator.js'
 import { footwear } from '../questions/footwear.js'
 import { createResult, getQuestion } from '../lib/helpers.js'
 
-const calculator = calculatorFactory({ questions: 'simple' });
-
-const footwearQuestionAnswers = [
-  { questionKey: 'country', answerKey: 'eu' },
-  { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
-]
+const calculator = calculatorFactory({ questions: 'simple' })
 
 test.each([
   // 6401
   ['640110', [], '6401100000'],
   ['640192', [{ questionKey: 'upperType', answerKey: 'rubber' }], '6401921000'],
-  ['640192', [{ questionKey: 'upperType', answerKey: 'plastic' }], '6401929000'],
+  [
+    '640192',
+    [{ questionKey: 'upperType', answerKey: 'plastic' }],
+    '6401929000'
+  ],
   ['640199', [{ questionKey: 'shaft', answerKey: 'knee' }], '6401990010'],
   ['640199', [{ questionKey: 'shaft', answerKey: 'other' }], '6401990090'],
 
   // 6402
-  ['640212', [{ questionKey: 'skiBoots', answerKey: 'skiBoots' }], '6402121000'],
-  ['640212', [{ questionKey: 'skiBoots', answerKey: 'snowboardBoots' }], '6402129000'],
+  [
+    '640212',
+    [{ questionKey: 'skiBoots', answerKey: 'skiBoots' }],
+    '6402121000'
+  ],
+  [
+    '640212',
+    [{ questionKey: 'skiBoots', answerKey: 'snowboardBoots' }],
+    '6402129000'
+  ],
   ['640219', [], '6402190000'],
   ['640220', [], '6402200000'],
   ['640291', [{ questionKey: 'toeCap', answerKey: 'yes' }], '6402911000'],
   ['640291', [{ questionKey: 'toeCap', answerKey: 'no' }], '6402919000'],
   // 640299
   ['640299', [{ questionKey: 'toeCap', answerKey: 'yes' }], '6402990500'],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'rubber' }
-  ], '6402991000'],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-  ], { code: '640299', questionKey: 'slippers' }],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'yes' }
-  ], '6402995000'],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' }
-  ], { code: '640299', questionKey: 'vamp' }],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'rubber' }
+    ],
+    '6402991000'
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' }
+    ],
+    { code: '640299', questionKey: 'slippers' }
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'yes' }
+    ],
+    '6402995000'
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' }
+    ],
+    { code: '640299', questionKey: 'vamp' }
+  ],
   // Vamp = Yes
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'yes' }
-  ], { code: '640299', questionKey: 'heightOfSoleAndHeel' }],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'yes' },
-    { questionKey: 'heightOfSoleAndHeel', answerKey: 'yes' }
-  ], '6402993100'],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'yes' },
-    { questionKey: 'heightOfSoleAndHeel', answerKey: 'no' }
-  ], '6402993900'],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'yes' }
+    ],
+    { code: '640299', questionKey: 'heightOfSoleAndHeel' }
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'yes' },
+      { questionKey: 'heightOfSoleAndHeel', answerKey: 'yes' }
+    ],
+    '6402993100'
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'yes' },
+      { questionKey: 'heightOfSoleAndHeel', answerKey: 'no' }
+    ],
+    '6402993900'
+  ],
   // Vamp = No
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'no' }
-  ], { code: '640299', questionKey: 'lengthOfInsole' }],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'no' },
-    { questionKey: 'lengthOfInsole', answerKey: 'no' }
-  ], '6402999100'],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' }
+    ],
+    { code: '640299', questionKey: 'lengthOfInsole' }
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'no' }
+    ],
+    '6402999100'
+  ],
   // LengthOfInsole = Yes
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'no' },
-    { questionKey: 'lengthOfInsole', answerKey: 'yes' }
-  ], { code: '640299', questionKey: 'genderType' }],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'no' },
-    { questionKey: 'lengthOfInsole', answerKey: 'yes' },
-    { questionKey: 'genderType', answerKey: 'men' }
-  ], '6402999600' ],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'no' },
-    { questionKey: 'lengthOfInsole', answerKey: 'yes' },
-    { questionKey: 'genderType', answerKey: 'women' }
-  ], '6402999800' ],
-  ['640299', [
-    { questionKey: 'toeCap', answerKey: 'no' },
-    { questionKey: 'upperType', answerKey: 'plastic' },
-    { questionKey: 'slippers', answerKey: 'no' },
-    { questionKey: 'vamp', answerKey: 'no' },
-    { questionKey: 'lengthOfInsole', answerKey: 'yes' },
-    { questionKey: 'genderType', answerKey: 'other' }
-  ], '6402999300' ],
-])(
-  'TBD',
-  (hsCode, questionAnswers, resultData) => {
-    const inputData = {
-      questionAnswers
-    };
-
-    const resultCode = resultData.code || resultData;
-    const questionKey = resultData.questionKey
-      ? getQuestion(resultData.questionKey, footwear)
-      : null;
-
-    const result = createResult(resultCode, questionKey);
-
-    expect(taricFootwear(inputData, hsCode)).toStrictEqual(result);
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' }
+    ],
+    { code: '640299', questionKey: 'genderType' }
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'men' }
+    ],
+    '6402999600'
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'women' }
+    ],
+    '6402999800'
+  ],
+  [
+    '640299',
+    [
+      { questionKey: 'toeCap', answerKey: 'no' },
+      { questionKey: 'upperType', answerKey: 'plastic' },
+      { questionKey: 'slippers', answerKey: 'no' },
+      { questionKey: 'vamp', answerKey: 'no' },
+      { questionKey: 'lengthOfInsole', answerKey: 'yes' },
+      { questionKey: 'genderType', answerKey: 'other' }
+    ],
+    '6402999300'
+  ]
+])('TBD', (hsCode, questionAnswers, resultData) => {
+  const inputData = {
+    questionAnswers
   }
-);
+
+  const resultCode = resultData.code || resultData
+  const questionKey = resultData.questionKey
+    ? getQuestion(resultData.questionKey, footwear)
+    : null
+
+  const result = createResult(resultCode, questionKey)
+
+  expect(taricFootwear(inputData, hsCode)).toStrictEqual(result)
+})
 
 describe('6403', () => {
   describe.each([
@@ -145,14 +201,16 @@ describe('6403', () => {
 
         inputData = {
           questionAnswers: [
-            ...footwearQuestionAnswers,
             { questionKey: 'upperType', answerKey: 'leather' },
             { questionKey: 'sole', answerKey: sole },
             { questionKey: 'leatherStraps', answerKey: leatherStraps },
             { questionKey: 'toeCap', answerKey: toeCap }
           ]
         }
-        result = createResult(code, question ? getQuestion(question, footwear) : null)
+        result = createResult(
+          code,
+          question ? getQuestion(question, footwear) : null
+        )
 
         expect(calculator(inputData)).toStrictEqual(result)
       })
@@ -161,7 +219,6 @@ describe('6403', () => {
 
   describe('640351', () => {
     const questionAnswers640351 = [
-      ...footwearQuestionAnswers,
       { questionKey: 'upperType', answerKey: 'leather' },
       { questionKey: 'sole', answerKey: 'leather' },
       { questionKey: 'leatherStraps', answerKey: 'no' },
@@ -182,7 +239,10 @@ describe('6403', () => {
             { questionKey: 'handmade', answerKey: handmade }
           ]
         }
-        result = createResult(code, question ? getQuestion(question, footwear) : null)
+        result = createResult(
+          code,
+          question ? getQuestion(question, footwear) : null
+        )
 
         expect(calculator(inputData)).toStrictEqual(result)
       })
@@ -201,7 +261,6 @@ describe('6403', () => {
 
           inputData = {
             questionAnswers: [
-              ...footwearQuestionAnswers,
               { questionKey: 'upperType', answerKey: 'leather' },
               { questionKey: 'sole', answerKey: 'leather' },
               { questionKey: 'leatherStraps', answerKey: 'no' },
@@ -210,7 +269,10 @@ describe('6403', () => {
               { questionKey: 'genderType', answerKey: genderType }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -220,7 +282,6 @@ describe('6403', () => {
 
   describe('640359', () => {
     const questionAnswers650359 = [
-      ...footwearQuestionAnswers,
       { questionKey: 'upperType', answerKey: 'leather' },
       { questionKey: 'sole', answerKey: 'leather' },
       { questionKey: 'leatherStraps', answerKey: 'no' },
@@ -245,7 +306,10 @@ describe('6403', () => {
               { questionKey: 'handmade', answerKey: handmade }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -274,7 +338,10 @@ describe('6403', () => {
               }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -306,7 +373,10 @@ describe('6403', () => {
               { questionKey: 'genderType', answerKey: genderType }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -335,7 +405,10 @@ describe('6403', () => {
               { questionKey: 'genderType', answerKey: genderType }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -345,7 +418,6 @@ describe('6403', () => {
 
   describe('64039', () => {
     const questionAnswers640391 = [
-      ...footwearQuestionAnswers,
       { questionKey: 'upperType', answerKey: 'leather' },
       { questionKey: 'sole', answerKey: 'rubber' },
       { questionKey: 'toeCap', answerKey: 'no' }
@@ -365,14 +437,7 @@ describe('6403', () => {
         ['no', 'yes', 'unisex/other', null, null, '6403919300']
       ])(
         'madeOnBase=%s lengthOfInsole=%s genderType=%s handmade=%s',
-        (
-          madeOnBase,
-          lengthOfInsole,
-          genderType,
-          handmade,
-          question,
-          code
-        ) => {
+        (madeOnBase, lengthOfInsole, genderType, handmade, question, code) => {
           test(' ', () => {
             let inputData, result
 
@@ -447,7 +512,6 @@ describe('6403', () => {
 
   describe('6403XX', () => {
     const questionAnswers6403xx = [
-      ...footwearQuestionAnswers,
       { questionKey: 'upperType', answerKey: 'leather' },
       { questionKey: 'sole', answerKey: 'rubber' },
       { questionKey: 'toeCap', answerKey: 'no' },
@@ -602,7 +666,6 @@ describe('6403', () => {
 })
 describe('6404', () => {
   const questionAnswers6404 = [
-    ...footwearQuestionAnswers,
     { questionKey: 'upperType', answerKey: 'textile' }
   ]
 
@@ -623,7 +686,10 @@ describe('6404', () => {
               { questionKey: 'slippers', answerKey: slippers }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -651,7 +717,10 @@ describe('6404', () => {
               { questionKey: 'slippers', answerKey: slippers }
             ]
           }
-          result = createResult(code, question ? getQuestion(question, footwear) : null)
+          result = createResult(
+            code,
+            question ? getQuestion(question, footwear) : null
+          )
 
           expect(calculator(inputData)).toStrictEqual(result)
         })
@@ -661,7 +730,6 @@ describe('6404', () => {
 })
 describe('6405', () => {
   const questionAnswers6405 = [
-    ...footwearQuestionAnswers,
     { questionKey: 'upperType', answerKey: 'textile' }
   ]
 
@@ -680,7 +748,10 @@ describe('6405', () => {
             { questionKey: 'slippers', answerKey: slippers }
           ]
         }
-        result = createResult(code, question ? getQuestion(question, footwear) : null)
+        result = createResult(
+          code,
+          question ? getQuestion(question, footwear) : null
+        )
         expect(calculator(inputData)).toStrictEqual(result)
       })
     })

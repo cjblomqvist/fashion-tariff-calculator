@@ -1,34 +1,11 @@
-import { calculator as calculatorNew, calculatorFactory } from './lib/calculator.js'
-import { footwear } from './questions/footwear.js'
+import { calculator as calculatorNew } from './lib/calculator.js'
 import { getQuestion } from './lib/helpers.js'
 
-const calculator = calculatorFactory({ questions: 'simple' });
-
 describe('Abstraction logic test', () => {
-  test('Answering footwear will give you the question upperType', () => {
-    let inputData, result
-    inputData = {
-      questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' }
-      ]
-    }
-
-    result = {
-      question: getQuestion('upperType'),
-      code: '',
-      partial: true
-    }
-    expect(calculatorNew(inputData)).toStrictEqual(result)
-  })
   test('Answering upperType will give you the question sole', () => {
     let inputData, result
     inputData = {
-      questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
-        { questionKey: 'upperType', answerKey: 'leather' }
-      ]
+      questionAnswers: [{ questionKey: 'upperType', answerKey: 'leather' }]
     }
 
     result = {
@@ -43,8 +20,6 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },
 
@@ -68,8 +43,6 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },
         // { questionKey: 'waterProof', answerKey: 'yes' },
@@ -93,8 +66,6 @@ describe('Abstraction logic test', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'leather' },
         { questionKey: 'sole', answerKey: 'leather' },
         { questionKey: 'leatherStraps', answerKey: 'no' },
@@ -111,32 +82,6 @@ describe('Abstraction logic test', () => {
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
   })
-  test('Answering country will give you the question  footwearOrComponents', () => {
-    let inputData, result
-    inputData = {
-      questionAnswers: [{ questionKey: 'country', answerKey: 'eu' }]
-    }
-
-    result = {
-      question: getQuestion('footwearOrComponents'),
-      code: '',
-      partial: true
-    }
-    expect(calculatorNew(inputData)).toStrictEqual(result)
-  })
-  test('Answering country will give you the oldQuestion  footwearOrComponents', () => {
-    let inputData, result
-    inputData = {
-      questionAnswers: [{ questionKey: 'country', answerKey: 'eu' }]
-    }
-
-    result = {
-      question: getQuestion('footwearOrComponents', footwear),
-      code: '',
-      partial: true
-    }
-    expect(calculator(inputData)).toStrictEqual(result)
-  })
   test('If the input is empty you shall get the first question', () => {
     let inputData, result
     inputData = {
@@ -144,31 +89,16 @@ describe('Abstraction logic test', () => {
     }
 
     result = {
-      question: getQuestion('country'),
+      question: getQuestion('upperType'),
       code: '',
       partial: true
     }
     expect(calculatorNew(inputData)).toStrictEqual(result)
-  })
-  test('If the input is empty you shall get the first question', () => {
-    let inputData, result
-    inputData = {
-      questionAnswers: []
-    }
-
-    result = {
-      question: getQuestion('country', footwear),
-      code: '',
-      partial: true
-    }
-    expect(calculator(inputData)).toStrictEqual(result)
   })
   test('Input matches a specific number (6401921000)', () => {
     let inputData, result
     inputData = {
       questionAnswers: [
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
         { questionKey: 'upperType', answerKey: 'rubber' },
         { questionKey: 'sole', answerKey: 'rubber' },
         { questionKey: 'process', answerKey: 'cementing' },
