@@ -10,8 +10,8 @@ test.each([
     [{ materialType: 'leather' }],
     { code: '640610', questionKey: 'handmade' }
   ],
-  ['640610', [{ materialType: 'leather' }, { handmade: 'yes' }], '6406101010'],
-  ['640610', [{ materialType: 'leather' }, { handmade: 'no' }], '6406101090'],
+  ['640610', [{ materialType: 'leather', handmade: 'yes' }], '6406101010'],
+  ['640610', [{ materialType: 'leather', handmade: 'no' }], '6406101090'],
   [
     '640610',
     [
@@ -180,7 +180,6 @@ test.each([
   ]
 ])('TBD', (hsCode, questionAnswersSimpleFormat, resultData) => {
   let questionAnswers = []
-
   Object.entries(questionAnswersSimpleFormat).forEach(([questionKey, val]) => {
     const qas = Object.keys(val)
       .map((e) => ({
