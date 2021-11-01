@@ -2,8 +2,6 @@ import taricFootwear from './taric-footwear.js'
 import { footwear } from '../questions/footwear.js'
 import { createResult, getQuestion } from '../lib/helpers.js'
 
-const calculator = calculatorFactory({ questions: 'simple' })
-
 test.each([
   // 6401
   ['640110', [], '6401100000'],

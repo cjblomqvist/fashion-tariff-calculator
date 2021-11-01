@@ -102,7 +102,7 @@ export default function hsFootwear(inputData, systemSpecificCallback) {
       }
       const shaftAnswer = getAnswerKey(inputData, 'shaft')
       if (!shaftAnswer) {
-        return createResult('640351', getQuestion('shaft', footwear))
+        return createResult('6403', getQuestion('shaft', footwear))
       }
       if (shaftAnswer === 'ankle' || shaftAnswer === 'knee') {
         return systemSpecificCallback(inputData, '640351')
