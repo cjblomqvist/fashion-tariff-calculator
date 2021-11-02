@@ -1,7 +1,7 @@
 export const footwear = [
   {
     key: 'country',
-    title: 'What country are you shipping to',
+    title: 'Which region are you shipping to',
     text: '',
     answers: [
       {
@@ -16,7 +16,7 @@ export const footwear = [
   },
   {
     key: 'footwearOrComponents',
-    title: `Are you importing Footwear or Footwear Components?`,
+    title: `What are you importing`,
     text: ``,
     answers: [
       {

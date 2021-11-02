@@ -6,17 +6,14 @@ test.each([
   [[], 'country'],
   [[{ questionKey: 'country', answerKey: 'eu' }], 'footwearOrComponents'],
   [[{ questionKey: 'country', answerKey: 'other' }], 'country']
-])(
-  'If country = eu in hs-base get question footwearOrComponents else get country question again',
-  (questionAnswers, resultKey) => {
-    const inputData = {
-      questionAnswers
-    }
-    const result = createResult('', getQuestion(resultKey, base))
-
-    expect(hsBase(inputData)).toStrictEqual(result)
+])('Check if the input returns a question', (questionAnswers, resultKey) => {
+  const inputData = {
+    questionAnswers
   }
-)
+  const result = createResult('', getQuestion(resultKey, base))
+
+  expect(hsBase(inputData)).toStrictEqual(result)
+})
 test.each([
   [
     [
@@ -33,7 +30,7 @@ test.each([
     'componentsYesYes'
   ]
 ])(
-  'If footwearOrComponents is footwear/components result is footwear/componentsYesYes',
+  'Check if the input returns the string footwear/componentsYesYes',
   (questionAnswers, result) => {
     const inputData = {
       questionAnswers
