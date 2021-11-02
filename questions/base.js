@@ -1,7 +1,7 @@
 export const base = [
   {
     key: 'country',
-    title: 'What country are you shipping to',
+    title: 'Which region are you shipping to',
     text: '',
     type: 'single',
     answers: [
@@ -17,7 +17,7 @@ export const base = [
   },
   {
     key: 'footwearOrComponents',
-    title: `Are you importing footwear or footwear components`,
+    title: `What are you importing`,
     text: ``,
     type: 'single',
     answers: [

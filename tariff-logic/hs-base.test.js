@@ -7,7 +7,7 @@ test.each([
   [[{ questionKey: 'country', answerKey: 'eu' }], 'footwearOrComponents'],
   [[{ questionKey: 'country', answerKey: 'other' }], 'country']
 ])(
-  'If country = eu in hs-base get question footwearOrComponents',
+  'If country = eu in hs-base get question footwearOrComponents else get country question again',
   (questionAnswers, resultKey) => {
     const inputData = {
       questionAnswers
