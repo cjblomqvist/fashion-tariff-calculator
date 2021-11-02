@@ -1,7 +1,7 @@
 export const components = [
   {
     key: 'part',
-    title: `What kind of parts?`,
+    title: `What kind of parts are you importing:`,
     text: `Determine what kind of parts?
 `,
     answers: [
@@ -33,8 +33,8 @@ export const components = [
   },
   {
     key: 'materialType',
-    title: 'What kind of materials?',
-    text: 'Determin what kind of material',
+    title: 'What material are the parts made of:',
+    text: 'Determin what kind of material:',
     answers: [
       {
         key: 'leather',
@@ -60,7 +60,7 @@ export const components = [
   },
   {
     key: 'handmade',
-    title: `Is the footwear handmade?`,
+    title: `Is the footwear handmmade but hand (Not useing stitching machines):`,
     text: ``,
     answers: [
       {
