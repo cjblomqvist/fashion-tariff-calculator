@@ -1,5 +1,35 @@
 export const footwear = [
   {
+    key: 'country',
+    title: 'Which region are you shipping to',
+    text: '',
+    answers: [
+      {
+        key: 'eu',
+        text: 'EU'
+      },
+      {
+        key: 'other',
+        text: 'Other'
+      }
+    ]
+  },
+  {
+    key: 'footwearOrComponents',
+    title: `What are you importing`,
+    text: ``,
+    answers: [
+      {
+        key: 'footwear',
+        text: 'Footwear'
+      },
+      {
+        key: 'components',
+        text: 'Components & Parts of Footwear'
+      }
+    ]
+  },
+  {
     key: 'upperType',
     title: `What's the upper of the shoes made of?`,
     text: ``,
