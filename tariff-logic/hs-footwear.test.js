@@ -56,12 +56,7 @@ function multiTestCasesTestRunner(
       }
     )
     const inputData = {
-      questionAnswers: [
-        // TODO: Move this out of here? See hs-footwear.js
-        { questionKey: 'country', answerKey: 'eu' },
-        { questionKey: 'footwearOrComponents', answerKey: 'footwear' },
-        ...questionAnswers
-      ]
+      questionAnswers: [...questionAnswers]
     }
 
     const actualResult = hsFootwear(inputData, (inputData, code) => code)

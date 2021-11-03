@@ -1,5 +1,5 @@
 import hsBase from './hs-base.js'
-import base from '../questions/base'
+import { base } from '../questions/base'
 import { createResult, getQuestion } from '../lib/helpers.js'
 
 test.each([
