@@ -1,37 +1,7 @@
 export const footwear = [
   {
-    key: 'country',
-    title: 'What country are you shipping to',
-    text: '',
-    answers: [
-      {
-        key: 'eu',
-        text: 'EU'
-      },
-      {
-        key: 'other',
-        text: 'Other'
-      }
-    ]
-  },
-  {
-    key: 'footwearOrComponents',
-    title: `Are you importing Footwear or Footwear Components?`,
-    text: ``,
-    answers: [
-      {
-        key: 'footwear',
-        text: 'Footwear'
-      },
-      {
-        key: 'components',
-        text: 'Components & Parts of Footwear'
-      }
-    ]
-  },
-  {
     key: 'upperType',
-    title: `What's the upper of the shoes made of?`,
+    title: `What is the upper made of:`,
     text: ``,
     answers: [
       {
@@ -59,7 +29,7 @@ export const footwear = [
   {
     key: 'sole',
     title: `Sole material`,
-    text: `What is the sole made of?`,
+    text: `What is the sole made of:`,
     answers: [
       {
         key: 'leather',
@@ -79,7 +49,7 @@ export const footwear = [
       },
       {
         key: 'wood',
-        text: 'Wood or cork'
+        text: 'Wood or Cork'
       },
 
       {
@@ -90,7 +60,7 @@ export const footwear = [
   },
   {
     key: 'process',
-    title: `Which process have you used?`,
+    title: `Which process is used to assemble the shoe:`,
     text: ``,
     answers: [
       {
@@ -150,7 +120,7 @@ export const footwear = [
   },
   {
     key: 'waterProof',
-    title: `Is it water proof`,
+    title: `Is it water proof:`,
     text: ``,
     answers: [
       {
@@ -165,7 +135,7 @@ export const footwear = [
   },
   {
     key: 'toeCap',
-    title: `Does it have a metal toe cap?`,
+    title: `Does it have a metal toe cap:`,
     text: ``,
     answers: [
       {
@@ -180,26 +150,26 @@ export const footwear = [
   },
   {
     key: 'shaft',
-    title: `Determine the length of the shafts?`,
+    title: `How high is the shaft:`,
     text: ``,
     answers: [
       {
         key: 'ankle',
-        text: 'Shafts that cover the ankle but not the knee'
+        text: 'Up to the ankle'
       },
       {
         key: 'knee',
-        text: 'Shafts that cover the knee'
+        text: 'Up to the knee'
       },
       {
         key: 'other',
-        text: 'Other'
+        text: 'Lower than the ankle'
       }
     ]
   },
   {
     key: 'winterSports',
-    title: `Is the footwear for winter sports?`,
+    title: `Is the footwear for winter sports:`,
     text: `
 	`,
     answers: [
@@ -215,7 +185,7 @@ export const footwear = [
   },
   {
     key: 'skiBoots',
-    title: `What kind of winter sports footwear is it?`,
+    title: `What kind of winter sports footwear is it:`,
     text: ``,
     answers: [
       {
@@ -235,7 +205,7 @@ export const footwear = [
 
   {
     key: 'slippers',
-    title: `Is it slippers or other indoor footwear`,
+    title: `Is it slippers or other indoor footwear:`,
     text: ``,
     answers: [
       {
@@ -250,7 +220,7 @@ export const footwear = [
   },
   {
     key: 'vamp',
-    title: `Does the footwear have a vamp made of straps and one or several pieces cut out?`,
+    title: `Is the shoe a sandal:`,
     text: ``,
     answers: [
       {
@@ -265,7 +235,7 @@ export const footwear = [
   },
   {
     key: 'heightOfSoleAndHeel',
-    title: `Is the height of the sole and heel more than 3cm ?`,
+    title: `Is the height of your sole and heel more than 3cm:`,
     text: ``,
     answers: [
       {
@@ -280,7 +250,7 @@ export const footwear = [
   },
   {
     key: 'lengthOfInsole',
-    title: `Is the size of the shoe bigger than 36EU?`,
+    title: `Is it a kids shoe:`,
     text: ``,
     answers: [
       {
@@ -295,7 +265,7 @@ export const footwear = [
   },
   {
     key: 'genderType',
-    title: `Is the footwear for women or men?`,
+    title: `Which gender describes the footwear best:`,
     text: ``,
     answers: [
       {
@@ -314,7 +284,7 @@ export const footwear = [
   },
   {
     key: 'leatherStraps',
-    title: `Does the footwear have a leather straps across the instep and around the big toe?`,
+    title: `Does the footwear have a leather straps across the instep and around the big toe:`,
     text: ``,
     answers: [
       {
@@ -329,7 +299,7 @@ export const footwear = [
   },
   {
     key: 'sports',
-    title: `Is it sports footwear`,
+    title: `Is it sports footwear:`,
     text: ``,
     answers: [
       {
@@ -344,7 +314,7 @@ export const footwear = [
   },
   {
     key: 'upperStrapsOrThongs',
-    title: `Does the footwear have upper straps or thongs assembled to the sole by the means of plugs?`,
+    title: `Does the footwear have upper straps or thongs assembled to the sole by the means of plugs:`,
     text: ``,
     answers: [
       {
@@ -359,7 +329,7 @@ export const footwear = [
   },
   {
     key: 'madeOnBase',
-    title: `Is the footwear made on base or plattform made of wood, not having an inner sole?`,
+    title: `Is the footwear made on a base or plattform made of wood without an inner sole:`,
     text: ``,
     answers: [
       {
@@ -374,7 +344,7 @@ export const footwear = [
   },
   {
     key: 'handmade',
-    title: `Is the footwear handmade?`,
+    title: `Is the footwear made by hand (Not useing stitching machines):`,
     text: ``,
     answers: [
       {

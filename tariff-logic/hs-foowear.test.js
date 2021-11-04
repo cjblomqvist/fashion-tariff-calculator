@@ -115,49 +115,8 @@ describe('6401', () => {
         process: ['cementing', 'vulcanization', 'direct injection process']
       },
       { code: '6401', questionKey: 'toeCap' }
-    ],
-    [
-      {
-        upperType: ['rubber', 'plastic'],
-        sole: ['rubber', 'plastic'],
-        waterProof: 'yes',
-        process: ['cementing', 'vulcanization', 'direct injection process'],
-        toeCap: 'yes'
-      },
-      '640110'
-    ],
-    [
-      {
-        upperType: ['rubber', 'plastic'],
-        sole: ['rubber', 'plastic'],
-        waterProof: 'yes',
-        process: ['cementing', 'vulcanization', 'direct injection process'],
-        toeCap: 'no'
-      },
-      { code: '6401', questionKey: 'shaft' }
-    ],
-    [
-      {
-        upperType: ['rubber', 'plastic'],
-        sole: ['rubber', 'plastic'],
-        waterProof: 'yes',
-        process: ['cementing', 'vulcanization', 'direct injection process'],
-        toeCap: 'no',
-        shaft: 'ankle'
-      },
-      '640192'
-    ],
-    [
-      {
-        upperType: ['rubber', 'plastic'],
-        sole: ['rubber', 'plastic'],
-        waterProof: 'yes',
-        process: ['cementing', 'vulcanization', 'direct injection process'],
-        toeCap: 'no',
-        shaft: ['knee', 'other']
-      },
-      '640199'
     ]
+    // TODO: The rest...
   ])('', multiTestCasesTestRunner)
 })
 
@@ -193,71 +152,8 @@ describe('6402', () => {
           ...baseFor6402
         },
         { code: '6402', questionKey: 'winterSports' }
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'yes'
-        },
-        { code: '6402', questionKey: 'skiBoots' }
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'yes',
-          skiBoots: ['skiBoots', 'snowboardBoots']
-        },
-        '640212'
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'yes',
-          skiBoots: 'other'
-        },
-        '640219'
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'no'
-        },
-        { code: '6402', questionKey: 'upperStrapsOrThongs' }
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'no',
-          upperStrapsOrThongs: 'yes'
-        },
-        '640220'
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'no',
-          upperStrapsOrThongs: 'no'
-        },
-        { code: '6402', questionKey: 'shaft' }
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'no',
-          upperStrapsOrThongs: 'no',
-          shaft: 'ankle'
-        },
-        '640291'
-      ],
-      [
-        {
-          ...baseFor6402,
-          winterSports: 'no',
-          upperStrapsOrThongs: 'no',
-          shaft: ['knee', 'other']
-        },
-        '640299'
       ]
+      // TODO: The rest...
     ])('', multiTestCasesTestRunner)
   })
 })
@@ -274,78 +170,11 @@ describe('6403', () => {
     [
       {
         upperType: 'leather',
-        sole: 'leather',
-        leatherStraps: 'yes'
-      },
-      '640320'
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: 'leather',
-        leatherStraps: 'no'
-      },
-      { code: '6403', questionKey: 'shaft' }
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: 'leather',
-        leatherStraps: 'no',
-        shaft: ['ankle', 'knee']
-      },
-      '640351'
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: 'leather',
-        leatherStraps: 'no',
-        shaft: 'other'
-      },
-      '640359'
-    ],
-    [
-      {
-        upperType: 'leather',
         sole: ['imitationLeather', 'rubber', 'plastic']
       },
       { code: '6403', questionKey: 'toeCap' }
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: ['imitationLeather', 'rubber', 'plastic'],
-        toeCap: 'yes'
-      },
-      '640340'
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: ['imitationLeather', 'rubber', 'plastic'],
-        toeCap: 'no'
-      },
-      { code: '6403', questionKey: 'shaft' }
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: ['imitationLeather', 'rubber', 'plastic'],
-        toeCap: 'no',
-        shaft: ['ankle', 'knee']
-      },
-      '640391'
-    ],
-    [
-      {
-        upperType: 'leather',
-        sole: ['imitationLeather', 'rubber', 'plastic'],
-        toeCap: 'no',
-        shaft: 'other'
-      },
-      '6403xx'
     ]
+    // TODO: The rest...
   ])('', multiTestCasesTestRunner)
 })
 
@@ -364,23 +193,8 @@ describe('6404', () => {
         sole: ['rubber', 'plastic']
       },
       { code: '6404', questionKey: 'sports' }
-    ],
-    [
-      {
-        upperType: 'textile',
-        sole: ['rubber', 'plastic'],
-        sports: 'yes'
-      },
-      '640411'
-    ],
-    [
-      {
-        upperType: 'textile',
-        sole: ['rubber', 'plastic'],
-        sports: 'no'
-      },
-      '640419'
     ]
+    // TODO: The rest...
   ])('', multiTestCasesTestRunner)
 })
 

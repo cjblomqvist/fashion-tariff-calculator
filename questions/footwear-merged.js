@@ -1,39 +1,7 @@
 export const footwearNew = [
   {
-    key: 'country',
-    title: 'What country are you shipping to',
-    text: '',
-    type: 'single',
-    answers: [
-      {
-        key: 'eu',
-        text: 'EU'
-      },
-      {
-        key: 'other',
-        text: 'Other'
-      }
-    ]
-  },
-  {
-    key: 'footwearOrComponents',
-    title: 'Are you importing footwear or footwear components',
-    text: '',
-    type: 'single',
-    answers: [
-      {
-        key: 'footwear',
-        text: 'Footwear'
-      },
-      {
-        key: 'components',
-        text: 'Components'
-      }
-    ]
-  },
-  {
     key: 'upperType',
-    title: 'What is the upper made of',
+    title: 'What is the upper made of:',
     text: '',
     type: 'single',
     answers: [
@@ -61,7 +29,7 @@ export const footwearNew = [
   },
   {
     key: 'sole',
-    title: 'What is the sole made of',
+    title: 'What is the sole made of:',
     text: '',
     type: 'single',
     answers: [
@@ -83,7 +51,7 @@ export const footwearNew = [
       },
       {
         key: 'wood',
-        text: 'Wood or cork'
+        text: 'Wood or Cork'
       },
       {
         key: 'other',
@@ -93,7 +61,7 @@ export const footwearNew = [
   },
   {
     key: 'qualities',
-    title: 'What are the qualities of your shoe',
+    title: 'Mark what is true for your product:',
     text: '',
     type: 'multi',
     subQuestions: [
@@ -171,7 +139,7 @@ export const footwearNew = [
   },
   {
     key: 'skiBoots',
-    title: 'What kind of winter sports footwear is it',
+    title: 'What kind of winter sports footwear is it:',
     text: '',
     type: 'single',
     answers: [
@@ -191,7 +159,7 @@ export const footwearNew = [
   },
   {
     key: 'process',
-    title: 'Which process is use',
+    title: 'Which process is used to assemble the shoe:',
     text: '',
     type: 'single',
     answers: [
@@ -252,27 +220,27 @@ export const footwearNew = [
   },
   {
     key: 'shaft',
-    title: 'What part does the shaft cover',
+    title: 'How high is the shaft:',
     text: '',
     type: 'single',
     answers: [
       {
         key: 'ankle',
-        text: 'Ankle'
+        text: 'Up to the ankle'
       },
       {
         key: 'knee',
-        text: 'Knee'
+        text: 'Up to the knee'
       },
       {
         key: 'other',
-        text: 'Other'
+        text: 'Lower than the ankle'
       }
     ]
   },
   {
     key: 'sandal',
-    title: 'Is the shoe a sandal',
+    title: 'Is the shoe a sandal:',
     text: '',
     type: 'single',
     answers: [
@@ -289,7 +257,7 @@ export const footwearNew = [
   },
   {
     key: 'gender',
-    title: 'What gender is the shoes for',
+    title: 'Which gender describes the footwear best:',
     text: '',
     type: 'single',
     answers: [
@@ -310,7 +278,7 @@ export const footwearNew = [
   },
   {
     key: 'kidsShoe',
-    title: 'Is it a kids shoe',
+    title: 'Is it a kids shoe:',
     text: '',
     type: 'single',
     answers: [
@@ -327,7 +295,7 @@ export const footwearNew = [
   },
   {
     key: 'heightOfSoleAndHeel',
-    title: 'Is the height of your sole and heal more then 3cm',
+    title: 'Is the height of your sole and heel more than 3cm:',
     text: '',
     type: 'single',
     answers: [
@@ -344,7 +312,7 @@ export const footwearNew = [
   {
     key: 'madeOnBase',
     title:
-      'Is the footwear made on a base or plattform made of wood not having an inner sole',
+      'Is the footwear made on a base or plattform made of wood not having an inner sole:',
     text: '',
     type: 'single',
     answers: [
@@ -360,7 +328,7 @@ export const footwearNew = [
   },
   {
     key: 'handmade',
-    title: 'Is the footwear handmade',
+    title: 'Is the footwear made by hand (Not useing stitching machines):',
     text: '',
     type: 'single',
     answers: [
@@ -377,7 +345,7 @@ export const footwearNew = [
   {
     key: 'leatherStraps',
     title:
-      'Does the footwear have a leather straps across the instep and around the big toe',
+      'Does the footwear have a leather straps across the instep and around the big toe:',
     text: '',
     type: 'single',
     answers: [
@@ -394,7 +362,7 @@ export const footwearNew = [
   {
     key: 'upperStrapsOrThongs',
     title:
-      'Does the footwear have upper straps or thongs assembled to the sole by the means of plugs',
+      'Does the footwear have upper straps or thongs assembled to the sole by the means of plugs:',
     text: '',
     type: 'single',
     answers: [
