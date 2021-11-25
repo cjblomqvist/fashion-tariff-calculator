@@ -2,6 +2,7 @@ export const footwear = [
   {
     key: 'country',
     title: 'What country are you shipping to',
+    shortTitle: 'Country',
     text: '',
     answers: [
       {
@@ -17,6 +18,7 @@ export const footwear = [
   {
     key: 'footwearOrComponents',
     title: `Are you importing Footwear or Footwear Components?`,
+    shortTitle: 'Footwear oComponents',
     text: ``,
     answers: [
       {
@@ -32,6 +34,7 @@ export const footwear = [
   {
     key: 'upperType',
     title: `What's the upper of the shoes made of?`,
+    shortTitle: 'Upper',
     text: ``,
     answers: [
       {
@@ -59,6 +62,7 @@ export const footwear = [
   {
     key: 'sole',
     title: `Sole material`,
+    shortTitle: 'Sole',
     text: `What is the sole made of?`,
     answers: [
       {
@@ -91,6 +95,7 @@ export const footwear = [
   {
     key: 'process',
     title: `Which process have you used?`,
+    shortTitle: 'Process',
     text: ``,
     answers: [
       {
@@ -151,6 +156,7 @@ export const footwear = [
   {
     key: 'waterProof',
     title: `Is it water proof`,
+    shortTitle: 'Is Waterproof',
     text: ``,
     answers: [
       {
@@ -166,6 +172,7 @@ export const footwear = [
   {
     key: 'toeCap',
     title: `Does it have a metal toe cap?`,
+    shortTitle: 'Metal Toe Cap',
     text: ``,
     answers: [
       {
@@ -181,6 +188,7 @@ export const footwear = [
   {
     key: 'shaft',
     title: `Determine the length of the shafts?`,
+    shortTitle: 'Shafts length',
     text: ``,
     answers: [
       {
@@ -200,6 +208,7 @@ export const footwear = [
   {
     key: 'winterSports',
     title: `Is the footwear for winter sports?`,
+    shortTitle: 'Is Winter Sports',
     text: `
 	`,
     answers: [
@@ -216,6 +225,7 @@ export const footwear = [
   {
     key: 'skiBoots',
     title: `What kind of winter sports footwear is it?`,
+    shortTitle: 'Kind',
     text: ``,
     answers: [
       {
@@ -236,6 +246,7 @@ export const footwear = [
   {
     key: 'slippers',
     title: `Is it slippers or other indoor footwear`,
+    shortTitle: 'Is it Slippers',
     text: ``,
     answers: [
       {
@@ -251,6 +262,7 @@ export const footwear = [
   {
     key: 'vamp',
     title: `Does the footwear have a vamp made of straps and one or several pieces cut out?`,
+    shortTitle: 'Vamp made of straps',
     text: ``,
     answers: [
       {
@@ -266,6 +278,7 @@ export const footwear = [
   {
     key: 'heightOfSoleAndHeel',
     title: `Is the height of the sole and heel more than 3cm ?`,
+    shortTitle: 'Sole and heel > 3cm',
     text: ``,
     answers: [
       {
@@ -281,6 +294,7 @@ export const footwear = [
   {
     key: 'lengthOfInsole',
     title: `Is the size of the shoe bigger than 36EU?`,
+    shortTitle: 'Is bigger than 36EU',
     text: ``,
     answers: [
       {
@@ -296,6 +310,7 @@ export const footwear = [
   {
     key: 'genderType',
     title: `Is the footwear for women or men?`,
+    shortTitle: 'Women or men',
     text: ``,
     answers: [
       {
@@ -315,6 +330,7 @@ export const footwear = [
   {
     key: 'leatherStraps',
     title: `Does the footwear have a leather straps across the instep and around the big toe?`,
+    shortTitle: 'Leather straps',
     text: ``,
     answers: [
       {
@@ -330,6 +346,7 @@ export const footwear = [
   {
     key: 'sports',
     title: `Is it sports footwear`,
+    shortTitle: 'Is sports footwear',
     text: ``,
     answers: [
       {
@@ -345,6 +362,7 @@ export const footwear = [
   {
     key: 'upperStrapsOrThongs',
     title: `Does the footwear have upper straps or thongs assembled to the sole by the means of plugs?`,
+    shortTitle: 'Upper straps or thongs',
     text: ``,
     answers: [
       {
@@ -360,6 +378,7 @@ export const footwear = [
   {
     key: 'madeOnBase',
     title: `Is the footwear made on base or plattform made of wood, not having an inner sole?`,
+    shortTitle: 'Inner sole',
     text: ``,
     answers: [
       {
@@ -375,6 +394,7 @@ export const footwear = [
   {
     key: 'handmade',
     title: `Is the footwear handmade?`,
+    shortTitle: 'Is Handmade',
     text: ``,
     answers: [
       {
