@@ -2,6 +2,7 @@ export const footwearNew = [
   {
     key: 'country',
     title: 'What country are you shipping to',
+    shortTitle: 'Country',
     text: '',
     type: 'single',
     answers: [
@@ -18,6 +19,7 @@ export const footwearNew = [
   {
     key: 'footwearOrComponents',
     title: 'Are you importing footwear or footwear components',
+    shortTitle: 'Importing',
     text: '',
     type: 'single',
     answers: [
@@ -34,6 +36,7 @@ export const footwearNew = [
   {
     key: 'upperType',
     title: 'What is the upper made of',
+    shortTitle: 'Upper',
     text: '',
     type: 'single',
     answers: [
@@ -62,6 +65,7 @@ export const footwearNew = [
   {
     key: 'sole',
     title: 'What is the sole made of',
+    shortTitle: 'Sole',
     text: '',
     type: 'single',
     answers: [
@@ -94,6 +98,7 @@ export const footwearNew = [
   {
     key: 'qualities',
     title: 'What are the qualities of your shoe',
+    shortTitle: 'Qualities',
     text: '',
     type: 'multi',
     subQuestions: [
@@ -172,6 +177,7 @@ export const footwearNew = [
   {
     key: 'skiBoots',
     title: 'What kind of winter sports footwear is it',
+    shortTitle: 'Kind of winter sports',
     text: '',
     type: 'single',
     answers: [
@@ -192,6 +198,7 @@ export const footwearNew = [
   {
     key: 'process',
     title: 'Which process is use',
+    shortTitle: 'Process',
     text: '',
     type: 'single',
     answers: [
@@ -253,6 +260,7 @@ export const footwearNew = [
   {
     key: 'shaft',
     title: 'What part does the shaft cover',
+    shortTitle: 'What shaft part cover',
     text: '',
     type: 'single',
     answers: [
@@ -273,6 +281,7 @@ export const footwearNew = [
   {
     key: 'sandal',
     title: 'Is the shoe a sandal',
+    shortTitle: 'Is Sandal',
     text: '',
     type: 'single',
     answers: [
@@ -290,6 +299,7 @@ export const footwearNew = [
   {
     key: 'gender',
     title: 'What gender is the shoes for',
+    shortTitle: 'Gender',
     text: '',
     type: 'single',
     answers: [
@@ -311,6 +321,7 @@ export const footwearNew = [
   {
     key: 'kidsShoe',
     title: 'Is it a kids shoe',
+    shortTitle: 'Is kids shoe',
     text: '',
     type: 'single',
     answers: [
@@ -328,6 +339,7 @@ export const footwearNew = [
   {
     key: 'heightOfSoleAndHeel',
     title: 'Is the height of your sole and heal more then 3cm',
+    shortTitle: 'Is height > 3cm',
     text: '',
     type: 'single',
     answers: [
@@ -345,6 +357,7 @@ export const footwearNew = [
     key: 'madeOnBase',
     title:
       'Is the footwear made on a base or plattform made of wood not having an inner sole',
+    shortTitle: 'Is not having inner sole',
     text: '',
     type: 'single',
     answers: [
@@ -361,6 +374,7 @@ export const footwearNew = [
   {
     key: 'handmade',
     title: 'Is the footwear handmade',
+    shortTitle: 'Is handmade',
     text: '',
     type: 'single',
     answers: [
@@ -378,6 +392,7 @@ export const footwearNew = [
     key: 'leatherStraps',
     title:
       'Does the footwear have a leather straps across the instep and around the big toe',
+    shortTitle: 'Is have leather straps',
     text: '',
     type: 'single',
     answers: [
@@ -395,6 +410,7 @@ export const footwearNew = [
     key: 'upperStrapsOrThongs',
     title:
       'Does the footwear have upper straps or thongs assembled to the sole by the means of plugs',
+    shortTitle: 'Does have upper straps',
     text: '',
     type: 'single',
     answers: [
